@@ -1,0 +1,252 @@
+/* ============================================================
+   SHARED CSS – Navbar, Footer, Global Styles
+   Used across ALL pages
+   ============================================================ */
+
+/* ── Variables ── */
+:root {
+    --primary-orange: #E85D26;
+    --primary-orange-dark: #C44A1A;
+    --primary-orange-deeper: #8B1A0A;
+    --gold: #FFD700;
+    --dark-bg: #1a0a2e;
+    --dark-bg-light: #2d1b4e;
+}
+
+/* ── Reset ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #1A1A2E;
+    background: #fff;
+    overflow-x: hidden;
+    padding-top: 76px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ── Utilities ── */
+.text-accent {
+    color: var(--primary-orange) !important;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #1A1A2E;
+}
+
+.section-subtitle {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.section-pad {
+    padding: 5rem 0;
+}
+
+.section-pad-sm {
+    padding: 3rem 0;
+}
+
+/* ── Navbar ── */
+#mainNav {
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    padding: 0.75rem 0;
+    transition: box-shadow 0.3s;
+}
+
+#mainNav.scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.nav-logo-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-orange), #FF7A1A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.nav-brand-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1A1A2E;
+    letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.2s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-orange);
+}
+
+.btn-cta {
+    background: var(--primary-orange) !important;
+    border: none !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #fff !important;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+    background: var(--primary-orange-dark) !important;
+    transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+.footer {
+    background: #0f0f1a;
+    color: #9ca3af;
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-logo-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-orange), #FF7A1A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.footer-brand-text {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.footer-text-sm {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #9ca3af;
+}
+
+.footer-heading {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #9ca3af;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer-social-icon:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 1.5rem 0;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    body {
+        padding-top: 70px;
+    }
+    .section-pad {
+        padding: 3rem 0;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.4rem;
+    }
+    .btn-cta {
+        width: 100%;
+        text-align: center;
+    }
+}

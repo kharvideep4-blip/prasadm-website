@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Base – PRASADM</title>
+
+    <!-- ===== BOOTSTRAP 5 ===== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ===== FONT AWESOME ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== SHARED CSS ===== -->
+    <link rel="stylesheet" href="assets/css/shared/shared.css">
+
+    <!-- ===== KNOWLEDGE BASE CSS ===== -->
+    <link rel="stylesheet" href="assets/css/knowledge-base.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <!-- ============================================================
+NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
+============================================================ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container-xl">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <span class="nav-logo-box">🛕</span>
+            <span class="nav-brand-text">PRASADM</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto gap-lg-2">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <!-- About Us -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+
+                <!-- Features – DROPDOWN (each links to its own page) -->
+                <li class="nav-item dropdown features-dropdown">
+                    <a class="nav-link dropdown-toggle" href="features.html" id="featuresDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Features
+                    </a>
+                    <ul class="dropdown-menu features-menu" aria-labelledby="featuresDropdown">
+                        <li><a class="dropdown-item" href="features/setting-up.html">Setting Up</a></li>
+                        <li><a class="dropdown-item" href="features/devotee-connect.html">Devotee Connect</a></li>
+                        <li><a class="dropdown-item" href="features/payment-gateway.html">Payment Gateway</a></li>
+                        <li><a class="dropdown-item" href="features/calendar-events.html">Calendar Events</a></li>
+                        <li><a class="dropdown-item" href="features/hall-booking.html">Hall Booking</a></li>
+                        <li><a class="dropdown-item" href="features/ecommerce.html">E‑commerce</a></li>
+                        <li><a class="dropdown-item" href="features/inventory.html">Inventory</a></li>
+                        <li><a class="dropdown-item" href="features/ai-features.html">AI Features</a></li>
+                        <li><a class="dropdown-item" href="features/procedures.html">Procedures</a></li>
+                        <li><a class="dropdown-item" href="features/smart-donations.html">Smart Donations</a></li>
+                        <li><a class="dropdown-item" href="features/website-template.html">Website Template</a></li>
+                        <li><a class="dropdown-item" href="features/deva-program.html">Deva Program</a></li>
+                    </ul>
+                </li>
+
+                <!-- Knowledge Base -->
+                <li class="nav-item">
+                    <a class="nav-link" href="knowledge-base.html">Knowledge Base</a>
+                </li>
+
+                <!-- Media -->
+                <li class="nav-item">
+                    <a class="nav-link" href="media.html">Media</a>
+                </li>
+
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <!-- Request Quote Button -->
+            <a href="contact.html" class="btn btn-cta flex-shrink-0">Request Quote</a>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- ============================================================
+    KNOWLEDGE HERO
+    ============================================================ -->
+    <section class="knowledge-hero" id="knowledgeHero">
+        <div class="container-xl">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <h1>Temple Knowledge</h1>
+                    <p class="hero-sub-text">
+                        Cultural Heritage — Discover the rich cultural and historical heritage of Hindu temples
+                        through our comprehensive AI-powered knowledge repository. Explore traditions, rituals,
+                        architecture, and spiritual wisdom.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KNOWLEDGE IMPACT STATS
+    ============================================================ -->
+    <section class="section-stats-knowledge" id="statsKnowledge">
+        <div class="container-xl">
+            <div class="row g-4 stats-knowledge-grid" id="statsKnowledgeGrid">
+                <!-- Stats rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    AI-POWERED FEATURES
+    ============================================================ -->
+    <section class="section-pad section-ai-features" id="aiFeatures">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">AI-Powered <span class="gradient-text">Cultural Insights</span></h2>
+                <p class="section-subtitle">Intelligent search and discovery for temple knowledge</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="ai-feature-card">
+                        <div class="ai-feature-icon">🔍</div>
+                        <h3 class="ai-feature-title">Intelligent Search</h3>
+                        <p class="ai-feature-desc">Advanced search that understands cultural context, synonyms, and related concepts to provide comprehensive results.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="ai-feature-card">
+                        <div class="ai-feature-icon">🧠</div>
+                        <h3 class="ai-feature-title">Contextual Understanding</h3>
+                        <p class="ai-feature-desc">AI analyzes historical context, cultural significance, and spiritual meanings to provide deeper insights.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="ai-feature-card">
+                        <div class="ai-feature-icon">🔗</div>
+                        <h3 class="ai-feature-title">Smart Connections</h3>
+                        <p class="ai-feature-desc">Automatically discover related topics, historical connections, and cultural parallels across different traditions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="ai-feature-card">
+                        <div class="ai-feature-icon">📈</div>
+                        <h3 class="ai-feature-title">Continuous Learning</h3>
+                        <p class="ai-feature-desc">Knowledge base continuously updated with new research, archaeological findings, and cultural documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    SEARCH & FILTERS
+    ============================================================ -->
+    <section class="section-search" id="searchSection">
+        <div class="container-xl">
+            <div class="search-wrapper">
+                <div class="search-input-group">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search temple knowledge, rituals, history, festivals...">
+                </div>
+                <div class="filter-wrapper" id="filterWrapper">
+                    <button class="filter-btn active" data-filter="all">All Topics</button>
+                    <button class="filter-btn" data-filter="history">History</button>
+                    <button class="filter-btn" data-filter="rituals">Rituals</button>
+                    <button class="filter-btn" data-filter="architecture">Architecture</button>
+                    <button class="filter-btn" data-filter="festivals">Festivals</button>
+                    <button class="filter-btn" data-filter="deities">Deities</button>
+                    <button class="filter-btn" data-filter="traditions">Traditions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KNOWLEDGE CATEGORIES
+    ============================================================ -->
+    <section class="section-pad section-categories" id="categoriesSection">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Explore <span class="gradient-text">Knowledge Categories</span></h2>
+                <p class="section-subtitle">Dive into the rich heritage of Hindu temples</p>
+            </div>
+
+            <div class="row g-4" id="categoriesGrid">
+                <!-- Categories rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KNOWLEDGE ARTICLES GRID
+    ============================================================ -->
+    <section class="section-pad section-articles" id="articlesSection">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Popular <span class="gradient-text">Temple Knowledge</span></h2>
+                <p class="section-subtitle">Explore articles on history, rituals, architecture, festivals, deities, and traditions</p>
+            </div>
+
+            <div class="row g-4" id="articlesGrid">
+                <!-- Articles rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KNOWLEDGE IMPACT (bottom stats)
+    ============================================================ -->
+    <section class="section-pad-sm section-impact" id="impactSection">
+        <div class="container-xl">
+            <div class="impact-banner">
+                <h2 class="impact-title">Knowledge <span class="text-white">Impact</span></h2>
+                <div class="row g-4 impact-grid" id="impactGrid">
+                    <!-- Impact stats rendered by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    CTA
+    ============================================================ -->
+    <section class="section-pad-sm section-cta-knowledge" id="ctaKnowledge">
+        <div class="container-xl">
+            <div class="cta-knowledge-banner">
+                <h2>Explore the Wisdom of Temples</h2>
+                <p>Discover the rich cultural and historical heritage of Hindu temples through our AI-powered knowledge repository.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="#" class="btn btn-cta-white">Browse Knowledge Base</a>
+                    <a href="contact.html" class="btn btn-cta-outline-white">Request Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container-xl">
+            <div class="row g-4 pb-4">
+
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="footer-logo-box">🛕</span>
+                        <span class="footer-brand-text">PRASADM</span>
+                    </div>
+                    <p class="footer-text-sm">Planning &amp; Resource Automation System for Analytical Data Management</p>
+                    <p class="footer-text-sm">Digitizing devotion with modern temple management solutions that honor tradition.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="media.html">Media</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About PRASADM</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Connect With Us</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">&copy; 2025 PRASADM. All rights reserved. Built with dedication for temples worldwide.</div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+    BOOTSTRAP JS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== SHARED JS ===== -->
+    <script src="assets/js/shared/shared.js">
+    </script>
+
+    <!-- ===== KNOWLEDGE BASE JS ===== -->
+    <script src="assets/js/knowledge-base.js">
+    </script>
+
+</body>
+
+</html>

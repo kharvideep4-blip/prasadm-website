@@ -1,0 +1,645 @@
+/* ============================================================
+   FEATURES PAGE STYLES (for individual feature pages)
+   ============================================================ */
+
+/* ── Feature Hero ── */
+.feature-page-hero {
+    background: linear-gradient(135deg, var(--dark-bg, #1a0a2e) 0%, var(--dark-bg-light, #2d1b4e) 100%);
+    padding: 3.5rem 0 3rem;
+    color: #fff;
+}
+
+.feature-page-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.feature-page-hero .lead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    max-width: 600px;
+}
+
+/* ── Feature Grid Section ── */
+.feature-grid-section {
+    padding: 4rem 0;
+}
+
+.feature-grid-section.bg-light {
+    background: #f8f9fa;
+}
+
+/* ── Feature Grid Cards ── */
+.feature-grid-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    text-align: left;
+}
+
+.feature-grid-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.feature-grid-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.feature-grid-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    color: #1A1A2E;
+}
+
+.feature-grid-card p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feature-grid-card .explore-link {
+    color: var(--primary-orange, #E85D26);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.feature-grid-card .explore-link:hover {
+    color: var(--primary-orange-dark, #C44A1A);
+    text-decoration: underline;
+}
+
+/* ── CTA Feature Section ── */
+.section-cta-feature {
+    padding: 3rem 0;
+}
+
+.cta-feature-banner {
+    background: linear-gradient(135deg, var(--primary-orange, #E85D26) 0%, var(--primary-orange-dark, #C44A1A) 50%, var(--primary-orange-deeper, #8B1A0A) 100%);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.cta-feature-banner h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.cta-feature-banner p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.btn-cta-white {
+    background: #fff !important;
+    color: var(--primary-orange, #E85D26) !important;
+    border: none !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta-white:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px);
+}
+
+.btn-cta-outline-white {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .feature-grid-section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-page-hero {
+        padding: 2.5rem 0 2rem;
+    }
+    .feature-page-hero h1 {
+        font-size: 2rem;
+    }
+    .feature-page-hero .lead {
+        font-size: 1rem;
+    }
+    .feature-grid-section {
+        padding: 2rem 0;
+    }
+    .cta-feature-banner {
+        padding: 2.5rem 1.5rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.6rem;
+    }
+    .cta-feature-banner p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-grid-card {
+        padding: 1.25rem 1rem;
+    }
+    .feature-grid-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+    .feature-grid-card h3 {
+        font-size: 0.95rem;
+    }
+    .feature-grid-card p {
+        font-size: 0.85rem;
+    }
+    .cta-feature-banner {
+        padding: 2rem 1.25rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.4rem;
+    }
+    .btn-cta-white,
+    .btn-cta-outline-white {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ── Testimonial & Benefit Cards ── */
+.section-testimonial {
+    padding: 4rem 0;
+}
+
+.benefit-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card h4 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+/* ============================================================
+   PAYMENT GATEWAY PAGE STYLES
+   ============================================================ */
+
+/* ── Payment Stats ── */
+.section-stats-payment {
+    padding: 3rem 0 1rem;
+    background: #fff;
+}
+
+.stat-payment-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-payment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-payment-number {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--primary-orange, #E85D26);
+    line-height: 1.2;
+}
+
+.stat-payment-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+/* ── Security Section ── */
+.section-security {
+    background: #f8f9fa;
+    padding: 4rem 0;
+}
+
+@media (max-width: 992px) {
+    .stat-payment-number {
+        font-size: 2.2rem;
+    }
+    .section-security {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .stat-payment-number {
+        font-size: 1.8rem;
+    }
+    .section-stats-payment {
+        padding: 2rem 0 0.5rem;
+    }
+}
+/* ============================================================
+   CALENDAR EVENTS PAGE STYLES
+   ============================================================ */
+
+/* ── Event Cards ── */
+.section-events-list {
+    padding: 4rem 0;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.event-badge {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.event-badge-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
+.event-title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.event-desc {
+    color: #777;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+}
+
+.event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.event-meta i {
+    color: var(--primary-orange, #E85D26);
+    width: 18px;
+}
+
+.btn-event-sync {
+    background: var(--primary-orange, #E85D26);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-event-sync:hover {
+    background: var(--primary-orange-dark, #C44A1A);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* ── Sync Buttons ── */
+.btn-sync-google {
+    background: #4285F4;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-sync-google:hover {
+    background: #3367D6;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-sync-ics {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-sync-ics:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* ── Stay Connected Cards ── */
+.section-stay-connected {
+    padding: 4rem 0;
+}
+
+.stay-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.stay-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stay-card h4 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1A1A2E;
+    margin-bottom: 0.3rem;
+}
+
+.stay-card p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Event Detail Section ── */
+.section-event-detail {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+@media (max-width: 992px) {
+    .section-event-detail {
+        padding: 3rem 0;
+    }
+    .section-events-list {
+        padding: 3rem 0;
+    }
+    .section-stay-connected {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-card {
+        padding: 1.25rem 1rem;
+    }
+    .event-title {
+        font-size: 1rem;
+    }
+    .btn-sync-google,
+    .btn-sync-ics {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   HALL BOOKING PAGE STYLES
+   ============================================================ */
+
+/* ── Venue Types ── */
+.section-venue-types {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.venue-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.venue-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.venue-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+    color: #fff;
+}
+
+.venue-title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #1A1A2E;
+    margin-bottom: 0.3rem;
+}
+
+.venue-capacity {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-orange, #E85D26);
+    margin-bottom: 0.5rem;
+}
+
+.venue-features {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem;
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.venue-features li::before {
+    content: "• ";
+    color: var(--primary-orange, #E85D26);
+    font-weight: 700;
+}
+
+.venue-use {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* ── Booking Process ── */
+.section-booking-process {
+    padding: 4rem 0;
+}
+
+.process-step {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    position: relative;
+}
+
+.process-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--primary-orange, #E85D26);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 auto 0.5rem;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.process-step h4 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.3rem;
+}
+
+.process-step p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .section-venue-types {
+        padding: 3rem 0;
+    }
+    .section-booking-process {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .venue-card {
+        padding: 1.25rem 1rem;
+    }
+    .process-step {
+        padding: 1.25rem 0.75rem;
+    }
+    .venue-title {
+        font-size: 1rem;
+    }
+}
