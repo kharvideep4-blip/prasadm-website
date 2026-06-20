@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Features – PRASADM</title>
+
+    <!-- ===== BOOTSTRAP 5 ===== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== SHARED CSS ===== -->
+    <link rel="stylesheet" href="../assets/css/shared/shared.css">
+
+    <!-- ===== FEATURES CSS (includes all feature styles, including AI) ===== -->
+    <link rel="stylesheet" href="../assets/css/features.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container-xl">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                <span class="nav-logo-box">🛕</span>
+                <span class="nav-brand-text">PRASADM</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+                    <li class="nav-item dropdown features-dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="featuresDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Features
+                        </a>
+                        <ul class="dropdown-menu features-menu" aria-labelledby="featuresDropdown">
+                            <li><a class="dropdown-item" href="setting-up.html">Setting Up</a></li>
+                            <li><a class="dropdown-item" href="devotee-connect.html">Devotee Connect</a></li>
+                            <li><a class="dropdown-item" href="payment-gateway.html">Payment Gateway</a></li>
+                            <li><a class="dropdown-item" href="calendar-events.html">Calendar Events</a></li>
+                            <li><a class="dropdown-item" href="hall-booking.html">Hall Booking</a></li>
+                            <li><a class="dropdown-item" href="ecommerce.html">E‑commerce</a></li>
+                            <li><a class="dropdown-item" href="inventory.html">Inventory</a></li>
+                            <li><a class="dropdown-item" href="ai-features.html">AI Features</a></li>
+                            <li><a class="dropdown-item" href="procedures.html">Procedures</a></li>
+                            <li><a class="dropdown-item" href="smart-donations.html">Smart Donations</a></li>
+                            <li><a class="dropdown-item" href="website-template.html">Website Template</a></li>
+                            <li><a class="dropdown-item" href="deva-program.html">Deva Program</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge-base.html">Knowledge Base</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../media.html">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+                <a href="../contact.html" class="btn btn-cta flex-shrink-0">Request Quote</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ============================================================
+    FEATURE HERO
+    ============================================================ -->
+    <section class="feature-page-hero">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>Advanced Temple AI Features</h1>
+                    <p class="lead">Experience cutting-edge technology that brings divine wisdom, interactive workflows, and live spiritual experiences directly to your device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    TAB NAVIGATION
+    ============================================================ -->
+    <section class="section-tabs">
+        <div class="container-xl">
+            <ul class="nav nav-tabs ai-tabs" id="aiTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="guide-tab" data-bs-toggle="tab" data-bs-target="#guide" type="button" role="tab" aria-controls="guide" aria-selected="true">
+                        <span class="tab-icon">🤖</span> AI Spiritual Guide
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="workflow-tab" data-bs-toggle="tab" data-bs-target="#workflow" type="button" role="tab" aria-controls="workflow" aria-selected="false">
+                        <span class="tab-icon">🔄</span> Interactive Workflow
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="darshan-tab" data-bs-toggle="tab" data-bs-target="#darshan" type="button" role="tab" aria-controls="darshan" aria-selected="false">
+                        <span class="tab-icon">📡</span> Live Darshan
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    TAB CONTENT
+    ============================================================ -->
+    <section class="section-tab-content">
+        <div class="container-xl">
+            <div class="tab-content" id="aiTabContent">
+
+                <!-- ============================================================
+                TAB 1: AI SPIRITUAL GUIDE
+                ============================================================ -->
+                <div class="tab-pane fade show active" id="guide" role="tabpanel" aria-labelledby="guide-tab">
+                    <!-- 3 Feature Cards -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="ai-feature-card">
+                                <div class="ai-feature-icon" style="background:linear-gradient(135deg,#7C3AED,#9F67F0);">🧠</div>
+                                <h3>AI Spiritual Guidance</h3>
+                                <p>Advanced natural language processing understands spiritual context and provides meaningful guidance.</p>
+                                <ul>
+                                    <li>Multilingual support (8+ languages)</li>
+                                    <li>Text-to-speech for authentic pronunciation</li>
+                                    <li>Contextual spiritual guidance and mantras</li>
+                                    <li>Quick access to common spiritual questions</li>
+                                </ul>
+                                <a href="#" class="explore-link">Try AI Guide →</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="ai-feature-card">
+                                <div class="ai-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669);">🌐</div>
+                                <h3>Multilingual Support</h3>
+                                <p>Connect with devotees in their native language with support for over 8 languages including Sanskrit.</p>
+                                <ul>
+                                    <li>English, Hindi, Sanskrit</li>
+                                    <li>Tamil, Telugu, Marathi</li>
+                                    <li>Gujarati, Bengali</li>
+                                    <li>More languages coming soon</li>
+                                </ul>
+                                <a href="#" class="explore-link">Explore Languages →</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="ai-feature-card">
+                                <div class="ai-feature-icon" style="background:linear-gradient(135deg,#E85D26,#FF7A1A);">📖</div>
+                                <h3>Smart Texts &amp; Mantras</h3>
+                                <p>Access a vast library of Smart texts, mantras, and spiritual teachings with AI-powered recommendations.</p>
+                                <ul>
+                                    <li>Daily verses and meditation guides</li>
+                                    <li>Personalized spiritual content</li>
+                                    <li>Audio and video teachings</li>
+                                    <li>Smart learning paths</li>
+                                </ul>
+                                <a href="#" class="explore-link">Explore Library →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="section-languages-inner">
+                        <h3 class="text-center" style="font-weight:700; color:#1A1A2E; margin-bottom:1rem;">Supported Languages</h3>
+                        <p class="text-center text-muted" style="margin-bottom:1.5rem;">Click the floating button in the bottom-left corner to start your conversation. Available 24/7 for spiritual guidance.</p>
+                        <div class="language-tags">
+                            <span class="lang-tag">English</span>
+                            <span class="lang-tag">Hindi</span>
+                            <span class="lang-tag">Sanskrit</span>
+                            <span class="lang-tag">Tamil</span>
+                            <span class="lang-tag">Telugu</span>
+                            <span class="lang-tag">Marathi</span>
+                            <span class="lang-tag">Gujarati</span>
+                            <span class="lang-tag">Bengali</span>
+                            <span class="lang-tag" style="font-family:'Noto Sans',sans-serif;">தமிழ்</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="ai-stat-card">
+                                <div class="ai-stat-number">24/7</div>
+                                <div class="ai-stat-label">AI Support Available</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="ai-stat-card">
+                                <div class="ai-stat-number">8+</div>
+                                <div class="ai-stat-label">Languages Supported</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="ai-stat-card">
+                                <div class="ai-stat-number">100K+</div>
+                                <div class="ai-stat-label">Active Users</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+                TAB 2: INTERACTIVE WORKFLOW
+                ============================================================ -->
+                <div class="tab-pane fade" id="workflow" role="tabpanel" aria-labelledby="workflow-tab">
+                    <div class="workflow-container">
+                        <div class="workflow-progress">
+                            <span>Progress:</span>
+                            <span id="workflowProgress">0%</span>
+                        </div>
+                        <div class="workflow-steps" id="workflowSteps">
+                            <div class="workflow-step" data-step="0">
+                                <span class="step-icon">📝</span>
+                                <span class="step-label">Devotee Registration</span>
+                                <span class="step-status pending">Pending</span>
+                            </div>
+                            <div class="workflow-arrow">→</div>
+                            <div class="workflow-step" data-step="1">
+                                <span class="step-icon">📅</span>
+                                <span class="step-label">Service Booking</span>
+                                <span class="step-status pending">Pending</span>
+                            </div>
+                            <div class="workflow-arrow">→</div>
+                            <div class="workflow-step" data-step="2">
+                                <span class="step-icon">💳</span>
+                                <span class="step-label">Secure Payment</span>
+                                <span class="step-status pending">Pending</span>
+                            </div>
+                            <div class="workflow-arrow">→</div>
+                            <div class="workflow-step" data-step="3">
+                                <span class="step-icon">✅</span>
+                                <span class="step-label">Booking Confirm</span>
+                                <span class="step-status pending">Pending</span>
+                            </div>
+                            <div class="workflow-arrow">→</div>
+                            <div class="workflow-step" data-step="4">
+                                <span class="step-icon">📊</span>
+                                <span class="step-label">Analytics &amp; Reports</span>
+                                <span class="step-status pending">Pending</span>
+                            </div>
+                            <div class="workflow-arrow">→</div>
+                            <div class="workflow-step" data-step="5">
+                                <span class="step-icon">🏛️</span>
+                                <span class="step-label">Temple Management</span>
+                                <span class="step-status pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="workflow-controls">
+                            <button class="btn btn-workflow-start" id="startAnimation">▶ Start Animation</button>
+                            <button class="btn btn-workflow-reset" id="resetAnimation">⟲ Reset</button>
+                        </div>
+                        <div class="workflow-footer-text">Interactive journey from devotee registration to temple analytics</div>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+                TAB 3: LIVE DARSHAN
+                ============================================================ -->
+                <div class="tab-pane fade" id="darshan" role="tabpanel" aria-labelledby="darshan-tab">
+                    <div class="row g-4">
+                        <!-- Live Stream -->
+                        <div class="col-lg-8">
+                            <div class="live-stream-card">
+                                <div class="live-stream-badge">🔴 LIVE</div>
+                                <div class="live-stream-thumbnail" style="background:linear-gradient(135deg,#1a0a2e,#2d1b4e);">
+                                    <span style="font-size:4rem; color:#FFD700;">🛕</span>
+                                    <p style="color:#fff; margin-top:0.5rem;">Mahakal Live Darshan</p>
+                                    <p style="color:rgba(255,255,255,0.6); font-size:0.8rem;">Experience the divine morning arati with Smart chants and offerings to Lord Shiva.</p>
+                                </div>
+                                <div class="live-stream-info">
+                                    <span><i class="fas fa-map-pin"></i> Shree Mahakaleshwar Temple, Ujjain</span>
+                                    <span><i class="far fa-clock"></i> 01:47 AM</span>
+                                    <span><i class="fas fa-users"></i> 1,247 watching</span>
+                                </div>
+                                <div class="live-stream-actions">
+                                    <button class="btn btn-youtube">Watch on YouTube</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Chat -->
+                        <div class="col-lg-4">
+                            <div class="live-chat-card">
+                                <h4>Live Chat</h4>
+                                <div class="chat-messages">
+                                    <div class="chat-message">
+                                        <span class="chat-user">DevoteeRam</span>
+                                        <span class="chat-time">10:45 PM</span>
+                                        <p>Om Namah Shivaya 🌸</p>
+                                    </div>
+                                    <div class="chat-message">
+                                        <span class="chat-user">SpiritualSeeker</span>
+                                        <span class="chat-time">10:45 PM</span>
+                                        <p>Such peaceful darshan, feeling blessed</p>
+                                    </div>
+                                    <div class="chat-message">
+                                        <span class="chat-user">Temple Priest</span>
+                                        <span class="chat-time">10:46 PM</span>
+                                        <p>May Lord's blessings be with all devotees ❤️</p>
+                                    </div>
+                                    <div class="chat-message">
+                                        <span class="chat-user">Bhakti123</span>
+                                        <span class="chat-time">10:46 PM</span>
+                                        <p>Har Har Mahadev! Beautiful arati</p>
+                                    </div>
+                                </div>
+                                <div class="chat-input-group">
+                                    <input type="text" class="chat-input" placeholder="Share your devotional thoughts...">
+                                    <button class="chat-send-btn">Send</button>
+                                </div>
+                                <p class="chat-join-count">Join 1,247 devotees in live darshan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next & Other Darshan -->
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-6">
+                            <div class="next-darshan-card">
+                                <span class="next-badge">Next Live Darshan</span>
+                                <div class="next-time">01:47 AM</div>
+                                <span class="next-label">Live Darshan</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="other-darshan-card">
+                                <span class="live-badge">🔴 LIVE</span>
+                                <div>
+                                    <strong>Siddhi Vinayak Live Darshan</strong>
+                                    <span style="color:#888; font-size:0.85rem;">Lord Ganesh • 892 watching</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="section-pad-sm section-cta-feature">
+        <div class="container-xl">
+            <div class="cta-feature-banner">
+                <h2>Embrace the Future of Temple Technology</h2>
+                <p>Discover how PRASADM's AI features can transform your temple's spiritual engagement and administrative efficiency.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="../contact.html" class="btn btn-cta-white">Get Started</a>
+                    <a href="#" class="btn btn-cta-outline-white">Try AI Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container-xl">
+            <div class="row g-4 pb-4">
+
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="footer-logo-box">🛕</span>
+                        <span class="footer-brand-text">PRASADM</span>
+                    </div>
+                    <p class="footer-text-sm">Planning &amp; Resource Automation System for Analytical Data Management</p>
+                    <p class="footer-text-sm">Digitizing devotion with modern temple management solutions that honor tradition.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="setting-up.html">Features</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../media.html">Media</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About PRASADM</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Connect With Us</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">&copy; 2025 PRASADM. All rights reserved. Built with dedication for temples worldwide.</div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+    BOOTSTRAP JS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/shared/shared.js"></script>
+    <script src="../assets/js/ai-features.js"></script>
+
+</body>
+
+</html>

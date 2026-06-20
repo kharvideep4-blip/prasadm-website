@@ -1,0 +1,677 @@
+/* ============================================================
+   SMART DONATIONS PAGE STYLES
+   ============================================================ */
+
+/* ── Hero ── */
+.smart-donations-hero {
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 100%);
+    padding: 3.5rem 0 3rem;
+    color: #fff;
+}
+
+.smart-donations-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.smart-donations-hero .lead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    max-width: 750px;
+    line-height: 1.7;
+}
+
+/* ── Feature Grid Cards ── */
+.section-features-grid {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.feature-grid-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    text-align: left;
+}
+
+.feature-grid-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.feature-grid-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.feature-grid-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    color: #1A1A2E;
+}
+
+.feature-grid-card p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feature-grid-card .explore-link {
+    color: #E85D26;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.feature-grid-card .explore-link:hover {
+    color: #C44A1A;
+    text-decoration: underline;
+}
+
+/* ── Section Utilities ── */
+.section-pad {
+    padding: 4rem 0;
+}
+
+.section-pad-sm {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #1A1A2E;
+}
+
+.section-subtitle {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #E85D26, #C44A1A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-light {
+    background: #f8f9fa !important;
+}
+
+/* ── User Stats Box ── */
+.user-stats-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.greeting-icon {
+    font-size: 2.5rem;
+}
+
+.greeting-name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #1A1A2E;
+}
+
+.greeting-sub {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.user-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.user-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-stat .stat-label {
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-stat .stat-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1A1A2E;
+}
+
+/* ── Recommendation Cards ── */
+.section-recommendations {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.recommendation-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-card.urgent {
+    border-top: 4px solid #dc2626;
+}
+
+.rec-badge {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.badge-urgent {
+    background: #dc2626;
+    color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-match {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10B981;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.badge-progress {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3B82F6;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.badge-urgency {
+    background: rgba(232, 93, 38, 0.15);
+    color: #E85D26;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.recommendation-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-card p {
+    color: #666;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    flex: 1;
+}
+
+.rec-meta {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+.rec-meta strong {
+    color: #1A1A2E;
+}
+
+.rec-progress {
+    margin-bottom: 0.75rem;
+}
+
+.progress-bar-track {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #E85D26, #FF7A1A);
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.btn-donate {
+    background: #E85D26;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.btn-donate:hover {
+    background: #C44A1A;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* ── AI Insights ── */
+.section-ai-insights {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.insight-card {
+    background: linear-gradient(135deg, #f8f9fa, #fff);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.insight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.insight-number {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #E85D26;
+    line-height: 1.2;
+}
+
+.insight-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-top: 0.3rem;
+}
+
+.insight-desc {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 0.2rem;
+}
+
+/* ── How It Works Steps ── */
+.section-how-it-works {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.how-step-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.how-step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.how-step-card .step-number {
+    width: 48px;
+    height: 48px;
+    background: #E85D26;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 0 auto 0.75rem;
+}
+
+.how-step-card h4 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.4rem;
+}
+
+.how-step-card p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Benefits Cards ── */
+.section-benefits {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.benefit-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-top: 4px solid #E85D26;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card .benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.benefit-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Success Stories ── */
+.section-success-stories {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.story-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.story-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E85D26, #FF7A1A);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.story-header h4 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin: 0;
+}
+
+.story-role {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.story-card blockquote {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    border: none;
+}
+
+.story-impact {
+    background: #f0fff8;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid #10B981;
+}
+
+.story-impact .impact-label {
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.story-impact .impact-value {
+    color: #10B981;
+    font-weight: 700;
+}
+
+/* ── CTA ── */
+.section-cta-feature {
+    padding: 3rem 0;
+}
+
+.cta-feature-banner {
+    background: linear-gradient(135deg, #E85D26 0%, #C44A1A 50%, #8B1A0A 100%);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.cta-feature-banner h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.cta-feature-banner p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.btn-cta-white {
+    background: #fff !important;
+    color: #E85D26 !important;
+    border: none !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta-white:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px);
+}
+
+.btn-cta-outline-white {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .smart-donations-hero h1 {
+        font-size: 2.2rem;
+    }
+    .user-stats {
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+    }
+    .insight-number {
+        font-size: 2.2rem;
+    }
+    .cta-feature-banner {
+        padding: 2.5rem 1.5rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .smart-donations-hero {
+        padding: 2.5rem 0 2rem;
+    }
+    .smart-donations-hero h1 {
+        font-size: 1.8rem;
+    }
+    .smart-donations-hero .lead {
+        font-size: 1rem;
+    }
+    .user-stats-box {
+        padding: 1.25rem 1rem;
+    }
+    .user-greeting {
+        flex-direction: column;
+        text-align: center;
+    }
+    .user-stats {
+        justify-content: center;
+    }
+    .insight-number {
+        font-size: 1.8rem;
+    }
+    .recommendation-card {
+        padding: 1.25rem 1rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.5rem;
+    }
+    .story-card {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .smart-donations-hero h1 {
+        font-size: 1.5rem;
+    }
+    .user-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .insight-number {
+        font-size: 1.5rem;
+    }
+    .how-step-card {
+        padding: 1.25rem 1rem;
+    }
+    .benefit-card {
+        padding: 1.25rem 1rem;
+    }
+    .btn-cta-white,
+    .btn-cta-outline-white {
+        width: 100%;
+        text-align: center;
+    }
+    .cta-feature-banner {
+        padding: 2rem 1.25rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.3rem;
+    }
+}

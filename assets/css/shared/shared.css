@@ -250,3 +250,45 @@ a {
         text-align: center;
     }
 }
+/* ============================================================
+   BELL CURSOR – Static (No Sound, No Ring)
+   ============================================================ */
+
+/* ── Hide default cursor ── */
+* {
+    cursor: none !important;
+}
+
+body {
+    cursor: none !important;
+}
+
+/* ── Bell Cursor Element ── */
+.bell-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    font-size: 28px;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    will-change: transform;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ── Ripple Effect on Click ── */
+.bell-ripple {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    border-radius: 50%;
+    background: rgba(255, 165, 0, 0.25);
+    border: 2px solid rgba(255, 165, 0, 0.4);
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleOut 0.6s ease-out forwards;
+}
+
+@keyframes rippleOut {
+    0% { width: 0; height: 0; opacity: 1; }
+    100% { width: 80px; height: 80px; opacity: 0; }
+}

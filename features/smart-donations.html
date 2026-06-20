@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Donations – PRASADM</title>
+
+    <!-- ===== BOOTSTRAP 5 ===== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== SHARED CSS ===== -->
+    <link rel="stylesheet" href="../assets/css/shared/shared.css">
+
+    <!-- ===== SMART DONATIONS CSS ===== -->
+    <link rel="stylesheet" href="../assets/css/smart-donations.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container-xl">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                <span class="nav-logo-box">🛕</span>
+                <span class="nav-brand-text">PRASADM</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+                    <li class="nav-item dropdown features-dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="featuresDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Features
+                        </a>
+                        <ul class="dropdown-menu features-menu" aria-labelledby="featuresDropdown">
+                            <li><a class="dropdown-item" href="setting-up.html">Setting Up</a></li>
+                            <li><a class="dropdown-item" href="devotee-connect.html">Devotee Connect</a></li>
+                            <li><a class="dropdown-item" href="payment-gateway.html">Payment Gateway</a></li>
+                            <li><a class="dropdown-item" href="calendar-events.html">Calendar Events</a></li>
+                            <li><a class="dropdown-item" href="hall-booking.html">Hall Booking</a></li>
+                            <li><a class="dropdown-item" href="ecommerce.html">E‑commerce</a></li>
+                            <li><a class="dropdown-item" href="inventory.html">Inventory</a></li>
+                            <li><a class="dropdown-item" href="ai-features.html">AI Features</a></li>
+                            <li><a class="dropdown-item" href="procedures.html">Procedures</a></li>
+                            <li><a class="dropdown-item" href="smart-donations.html">Smart Donations</a></li>
+                            <li><a class="dropdown-item" href="website-template.html">Website Template</a></li>
+                            <li><a class="dropdown-item" href="deva-program.html">Deva Program</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge-base.html">Knowledge Base</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../media.html">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+                <a href="../contact.html" class="btn btn-cta flex-shrink-0">Request Quote</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ============================================================
+    FEATURE HERO
+    ============================================================ -->
+    <section class="smart-donations-hero">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>Smart Donation Recommendations</h1>
+                    <p class="lead">Experience AI-powered donation guidance that understands your spiritual journey and maximizes your impact. Get personalized recommendations based on temple needs, your preferences, and divine timing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    THREE KEY FEATURES
+    ============================================================ -->
+    <section class="section-pad section-features-grid">
+        <div class="container-xl">
+            <div class="row g-4">
+                <!-- Intelligent Analysis -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-grid-card">
+                        <div class="feature-grid-icon" style="background:linear-gradient(135deg,#7C3AED,#9F67F0);">🧠</div>
+                        <h3>Intelligent Analysis</h3>
+                        <p>AI analyzes your donation history, spiritual preferences, and temple needs to provide smart recommendations.</p>
+                        <a href="#" class="explore-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Targeted Impact -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-grid-card">
+                        <div class="feature-grid-icon" style="background:linear-gradient(135deg,#E85D26,#FF7A1A);">🎯</div>
+                        <h3>Targeted Impact</h3>
+                        <p>Focus donations where they're needed most, ensuring maximum spiritual and practical benefit.</p>
+                        <a href="#" class="explore-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Personal Connection -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-grid-card">
+                        <div class="feature-grid-icon" style="background:linear-gradient(135deg,#10B981,#059669);">💗</div>
+                        <h3>Personal Connection</h3>
+                        <p>Connect deeply with causes that resonate with your spiritual journey and values.</p>
+                        <a href="#" class="explore-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    AI-POWERED DONATION RECOMMENDATIONS
+    ============================================================ -->
+    <section class="section-pad section-recommendations">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">AI-Powered <span class="gradient-text">Donation Recommendations</span></h2>
+                <p class="section-subtitle">Our intelligent system analyzes your spiritual journey and temple needs to suggest meaningful donation opportunities that align with your values and maximize impact.</p>
+            </div>
+
+            <!-- User Stats -->
+            <div class="user-stats-box mb-4">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-6">
+                        <div class="user-greeting">
+                            <span class="greeting-icon">🙏</span>
+                            <div>
+                                <div class="greeting-name">Welcome back, Devotee Raman</div>
+                                <div class="greeting-sub">Your spiritual journey matters to us</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="user-stats">
+                            <div class="user-stat">
+                                <span class="stat-label">Total contributions:</span>
+                                <span class="stat-value">₹15,000</span>
+                            </div>
+                            <div class="user-stat">
+                                <span class="stat-label">Last donation:</span>
+                                <span class="stat-value">45 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalized Recommendations Heading -->
+            <h3 class="text-center mb-4" style="font-weight:700; color:#1A1A2E; font-size:1.5rem;">Personalized Recommendations</h3>
+
+            <div class="row g-4">
+                <!-- Card 1: Support Ganesh Chaturthi Celebration -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-badge">
+                            <span class="badge-urgent">Urgent</span>
+                            <span class="badge-match">95% match</span>
+                        </div>
+                        <h3>Support Ganesh Chaturthi Celebration</h3>
+                        <p>Based on your previous festival donations and high engagement. Your past support for festivals has been invaluable. Ganesh Chaturthi is approaching and needs urgent funding.</p>
+                        <div class="rec-meta">
+                            <span><strong>Match Score:</strong> 98%</span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Daily Puja Services -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card">
+                        <div class="rec-badge">
+                            <span class="badge-progress">Progress</span>
+                            <span class="badge-urgency">85% urgency</span>
+                        </div>
+                        <h3>Daily Puja Services</h3>
+                        <p>Support daily temple rituals and ceremonial offerings. Your regular support helps maintain the spiritual energy.</p>
+                        <div class="rec-progress">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width:64%;"></div>
+                            </div>
+                            <span class="progress-text">64% complete</span>
+                        </div>
+                        <div class="rec-meta">
+                            <span><strong>High priority</strong></span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Festival Celebrations -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card">
+                        <div class="rec-badge">
+                            <span class="badge-progress">Progress</span>
+                            <span class="badge-urgency">92% urgency</span>
+                        </div>
+                        <h3>Festival Celebrations</h3>
+                        <p>Grand celebrations for upcoming Ganesh Chaturthi. Join thousands of devotees in this spiritual celebration.</p>
+                        <div class="rec-progress">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width:72.5%;"></div>
+                            </div>
+                            <span class="progress-text">72.5% complete</span>
+                        </div>
+                        <div class="rec-meta">
+                            <span><strong>High priority</strong></span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Continue Daily Puja Support -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card">
+                        <div class="rec-badge">
+                            <span class="badge-match">88% match</span>
+                        </div>
+                        <h3>Continue Daily Puja Support</h3>
+                        <p>Matches your spiritual preferences and donation pattern. Your regular support for daily pujas helps maintain the spiritual energy you value in morning aartis.</p>
+                        <div class="rec-meta">
+                            <span><strong>Match Score:</strong> 92%</span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Prasadam Distribution -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card">
+                        <div class="rec-badge">
+                            <span class="badge-match">75% match</span>
+                            <span class="badge-urgency" style="background:rgba(232,93,38,0.15); color:#E85D26;">Medium priority</span>
+                        </div>
+                        <h3>Prasadam Distribution Drive</h3>
+                        <p>New opportunity aligned with your seva inclination. Given your high engagement level, expanding to food seva could amplify your spiritual merit.</p>
+                        <div class="rec-meta">
+                            <span><strong>Match Score:</strong> 85%</span>
+                        </div>
+                        <div class="rec-progress">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width:60%;"></div>
+                            </div>
+                            <span class="progress-text">₹48,000 / ₹80,000</span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Temple Infrastructure -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card">
+                        <div class="rec-badge">
+                            <span class="badge-match">60% match</span>
+                            <span class="badge-urgency" style="background:rgba(232,93,38,0.15); color:#E85D26;">Medium priority</span>
+                        </div>
+                        <h3>Temple Infrastructure</h3>
+                        <p>Maintenance and improvement of temple facilities. Help preserve the sacred space for generations to come.</p>
+                        <div class="rec-progress">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width:24%;"></div>
+                            </div>
+                            <span class="progress-text">₹1,20,000 / ₹5,00,000</span>
+                        </div>
+                        <div class="rec-meta">
+                            <span><strong>Match Score:</strong> 60%</span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 7: Spiritual Education -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recommendation-card">
+                        <div class="rec-badge">
+                            <span class="badge-match">45% match</span>
+                            <span class="badge-urgency" style="background:rgba(107,114,128,0.15); color:#6b7280;">Low priority</span>
+                        </div>
+                        <h3>Spiritual Education</h3>
+                        <p>Religious classes and cultural programs. Support the next generation of spiritual leaders and knowledge keepers.</p>
+                        <div class="rec-progress">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" style="width:35%;"></div>
+                            </div>
+                            <span class="progress-text">₹35,000 / ₹1,00,000</span>
+                        </div>
+                        <div class="rec-meta">
+                            <span><strong>Match Score:</strong> 45%</span>
+                        </div>
+                        <a href="#" class="btn btn-donate">Donate Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    AI INSIGHTS & RECOMMENDATIONS
+    ============================================================ -->
+    <section class="section-pad section-ai-insights">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">AI Insights &amp; <span class="gradient-text">Recommendations</span></h2>
+                <p class="section-subtitle">Data-driven insights to maximize your spiritual impact</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="insight-card">
+                        <div class="insight-number">85%</div>
+                        <div class="insight-label">Donation Timing Accuracy</div>
+                        <div class="insight-desc">Based on your past patterns</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="insight-card">
+                        <div class="insight-number">₹1,750</div>
+                        <div class="insight-label">Optimal Monthly Amount</div>
+                        <div class="insight-desc">For maximum spiritual impact</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="insight-card">
+                        <div class="insight-number">3.2x</div>
+                        <div class="insight-label">Impact Multiplier</div>
+                        <div class="insight-desc">Vs random donations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    HOW AI RECOMMENDATIONS WORK
+    ============================================================ -->
+    <section class="section-pad section-how-it-works bg-light">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">How AI <span class="gradient-text">Recommendations</span> Work</h2>
+                <p class="section-subtitle">Four steps to smarter, more impactful donations</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="how-step-card">
+                        <div class="step-number">1</div>
+                        <h4>Data Analysis</h4>
+                        <p>AI analyzes your donation history, spiritual preferences, and engagement patterns.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="how-step-card">
+                        <div class="step-number">2</div>
+                        <h4>Need Assessment</h4>
+                        <p>System evaluates current temple needs, urgency levels, and funding gaps.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="how-step-card">
+                        <div class="step-number">3</div>
+                        <h4>Smart Matching</h4>
+                        <p>AI matches your profile with optimal donation opportunities and timing.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="how-step-card">
+                        <div class="step-number">4</div>
+                        <h4>Personalized Suggestions</h4>
+                        <p>Receive tailored recommendations with impact projections and spiritual benefits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    BENEFITS OF AI-POWERED DONATIONS
+    ============================================================ -->
+    <section class="section-pad section-benefits">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Benefits of <span class="gradient-text">AI-powered Donations</span></h2>
+                <p class="section-subtitle">Transform your giving experience with intelligent technology</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Targeted Impact</h3>
+                        <p>Your donations go exactly where they're needed most, maximizing spiritual and practical benefits.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⏰</div>
+                        <h3>Perfect Timing</h3>
+                        <p>AI identifies optimal donation timing based on temple cycles and your spiritual journey.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌱</div>
+                        <h3>Growing Merit</h3>
+                        <p>Strategic donations aligned with your values amplify spiritual merit and community impact.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🤝</div>
+                        <h3>Community Connection</h3>
+                        <p>Connect with like-minded devotees and participate in collective spiritual endeavors.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h3>Clear Insights</h3>
+                        <p>Understand the real impact of your contributions with detailed analytics and feedback.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌿</div>
+                        <h3>Spiritual Growth</h3>
+                        <p>Each recommended donation supports your personal spiritual development and temple community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    SUCCESS STORIES
+    ============================================================ -->
+    <section class="section-pad section-success-stories bg-light">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Success <span class="gradient-text">Stories</span></h2>
+                <p class="section-subtitle">Real devotees, real impact</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-avatar">RS</div>
+                            <div>
+                                <h4>Rajesh Sharma</h4>
+                                <span class="story-role">Regular Devotee</span>
+                            </div>
+                        </div>
+                        <blockquote>"The AI recommendations helped me donate ₹50,000 strategically over 6 months. I could see exactly how my contributions supported the Diwali celebration and daily pujas. The impact visibility made my spiritual journey more meaningful."</blockquote>
+                        <div class="story-impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">3x more effective donations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-avatar">PM</div>
+                            <div>
+                                <h4>Priya Mehta</h4>
+                                <span class="story-role">Community Leader</span>
+                            </div>
+                        </div>
+                        <blockquote>"The system understood my passion for education and recommended supporting the youth spiritual programs. Now 200+ children benefit from classes I helped fund. The AI made my donations feel personally connected."</blockquote>
+                        <div class="story-impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">200+ children benefited</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="section-pad-sm section-cta-feature">
+        <div class="container-xl">
+            <div class="cta-feature-banner">
+                <h2>Start Your Smart Donation Journey</h2>
+                <p>Let AI guide you to make the most meaningful contributions for your spiritual growth and temple community.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="../contact.html" class="btn btn-cta-white">Get Started</a>
+                    <a href="payment-gateway.html" class="btn btn-cta-outline-white">Explore Payment Gateway</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container-xl">
+            <div class="row g-4 pb-4">
+
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="footer-logo-box">🛕</span>
+                        <span class="footer-brand-text">PRASADM</span>
+                    </div>
+                    <p class="footer-text-sm">Planning &amp; Resource Automation System for Analytical Data Management</p>
+                    <p class="footer-text-sm">Digitizing devotion with modern temple management solutions that honor tradition.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="setting-up.html">Features</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../media.html">Media</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About PRASADM</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Connect With Us</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">&copy; 2025 PRASADM. All rights reserved. Built with dedication for temples worldwide.</div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+    BOOTSTRAP JS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/shared/shared.js"></script>
+
+</body>
+
+</html>

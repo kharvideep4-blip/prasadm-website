@@ -1,0 +1,579 @@
+/* ============================================================
+   DEVA PROGRAM PAGE STYLES
+   ============================================================ */
+
+/* ── Hero ── */
+.deva-hero {
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 100%);
+    padding: 3.5rem 0 3rem;
+    color: #fff;
+}
+
+.deva-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.deva-hero .lead {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+.deva-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.hero-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+}
+
+/* ── Emergency Services ── */
+.section-emergency-services {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.emergency-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    text-align: center;
+}
+
+.emergency-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 0.75rem;
+    color: #fff;
+}
+
+.emergency-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-card p {
+    color: #666;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    flex: 1;
+}
+
+.emergency-status {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.status-badge {
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.response-time {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+/* ── Program Benefits ── */
+.section-program-benefits {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.benefit-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    text-align: left;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.benefit-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.4rem;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-card ul li {
+    padding: 0.2rem 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.benefit-card ul li::before {
+    content: "✓ ";
+    color: #10B981;
+    font-weight: 700;
+}
+
+/* ── Join DEVA Banner ── */
+.section-join-deva {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.join-banner {
+    background: linear-gradient(135deg, #1a0a2e, #2d1b4e);
+    border-radius: 20px;
+    padding: 3rem 3rem;
+    color: #fff;
+}
+
+.join-banner h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.join-banner p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.join-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.join-feature {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-join-deva {
+    background: #E85D26;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-join-deva:hover {
+    background: #C44A1A;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.join-trust-badges {
+    margin-top: 1rem;
+}
+
+.join-trust-badges span {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 0.5rem;
+}
+
+.trust-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+}
+
+/* ── Get Started ── */
+.section-get-started {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.start-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    text-align: center;
+}
+
+.start-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.start-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 0.75rem;
+    color: #fff;
+}
+
+.start-card h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1A1A2E;
+    margin-bottom: 0.4rem;
+}
+
+.start-card p {
+    color: #666;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.start-time {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    padding: 0.2rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.start-cta-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-align: center;
+    height: 100%;
+}
+
+.start-cta-box h3 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.start-cta-box p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.trusted-badges {
+    margin-top: 1.5rem;
+}
+
+.trusted-badges .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.trusted-badges .badges-row span {
+    background: #f0f0f0;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.security-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.security-icons span {
+    font-size: 0.8rem;
+    color: #666;
+    background: #f8f9fa;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+}
+
+/* ── CTA ── */
+.section-cta-feature {
+    padding: 3rem 0;
+}
+
+.cta-feature-banner {
+    background: linear-gradient(135deg, #E85D26 0%, #C44A1A 50%, #8B1A0A 100%);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.cta-feature-banner h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.cta-feature-banner p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.btn-cta-white {
+    background: #fff !important;
+    color: #E85D26 !important;
+    border: none !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta-white:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px);
+}
+
+.btn-cta-outline-white {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ── Utilities ── */
+.section-pad {
+    padding: 4rem 0;
+}
+
+.section-pad-sm {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #1A1A2E;
+}
+
+.section-subtitle {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #E85D26, #C44A1A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-light {
+    background: #f8f9fa !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .deva-hero h1 {
+        font-size: 2.2rem;
+    }
+    .deva-hero-badges {
+        justify-content: center;
+    }
+    .join-banner {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+    .join-banner p {
+        margin: 0 auto;
+    }
+    .join-features {
+        justify-content: center;
+    }
+    .cta-feature-banner {
+        padding: 2.5rem 1.5rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.8rem;
+    }
+    .start-cta-box {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .deva-hero {
+        padding: 2.5rem 0 2rem;
+    }
+    .deva-hero h1 {
+        font-size: 1.8rem;
+    }
+    .deva-hero .lead {
+        font-size: 1rem;
+    }
+    .emergency-card {
+        padding: 1.25rem 1rem;
+    }
+    .benefit-card {
+        padding: 1.25rem 1rem;
+    }
+    .start-card {
+        padding: 1.25rem 1rem;
+    }
+    .join-banner h2 {
+        font-size: 1.6rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.5rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-pad {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .deva-hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+    }
+    .deva-hero-badges {
+        gap: 0.4rem;
+    }
+    .join-banner {
+        padding: 1.5rem 1rem;
+    }
+    .join-banner h2 {
+        font-size: 1.3rem;
+    }
+    .join-feature {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+    }
+    .btn-join-deva {
+        width: 100%;
+        text-align: center;
+    }
+    .btn-cta-white,
+    .btn-cta-outline-white {
+        width: 100%;
+        text-align: center;
+    }
+    .cta-feature-banner {
+        padding: 2rem 1.25rem;
+    }
+    .cta-feature-banner h2 {
+        font-size: 1.3rem;
+    }
+    .start-cta-box {
+        padding: 1.5rem 1rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+}

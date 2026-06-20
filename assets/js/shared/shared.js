@@ -42,3 +42,42 @@
     });
 
 })();
+/**
+ * BELL CURSOR – Static (No Sound, No Ring)
+ */
+(function() {
+    'use strict';
+
+    // ── Create bell cursor element ──
+    var bellCursor = document.createElement('div');
+    bellCursor.className = 'bell-cursor';
+    bellCursor.textContent = '🔔';
+    document.body.appendChild(bellCursor);
+
+    // ── Track mouse position ──
+    document.addEventListener('mousemove', function(e) {
+        bellCursor.style.left = e.clientX + 'px';
+        bellCursor.style.top = e.clientY + 'px';
+    });
+
+    // ── Create ripple effect on click ──
+    function createRipple(x, y) {
+        var ripple = document.createElement('div');
+        ripple.className = 'bell-ripple';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        document.body.appendChild(ripple);
+
+        setTimeout(function() {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 600);
+    }
+
+    // ── Ripple on any click ──
+    document.addEventListener('click', function(e) {
+        createRipple(e.clientX, e.clientY);
+    });
+
+})();
