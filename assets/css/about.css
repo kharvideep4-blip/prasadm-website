@@ -1,86 +1,122 @@
 /* ============================================================
-   ABOUT PAGE SPECIFIC STYLES
+   ABOUT PAGE – STYLES MATCHING HOME PAGE THEME
    ============================================================ */
 
-/* ── About Hero ── */
+:root {
+    --primary-orange: #E85D26;
+    --primary-orange-dark: #C44A1A;
+    --primary-gold: #FFD700;
+    --primary-gold-dark: #D4A800;
+    --saffron: #FF9933;
+    --dark-bg: #1a0a0a;
+    --dark-bg-light: #2d1a0a;
+    --warm-white: #fff8f0;
+    --cream-bg: #fdf6f0;
+}
+
+/* ── ABOUT HERO ── */
 .about-hero {
-    background: linear-gradient(135deg, var(--dark-bg, #1a0a2e) 0%, var(--dark-bg-light, #2d1b4e) 100%);
-    padding: 3.5rem 0 3rem;
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
     color: #fff;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-orange);
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
 }
 
 .about-hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 900;
     margin-bottom: 0.5rem;
+    color: #fff;
 }
 
-.about-hero .hero-sub-text {
-    color: rgba(255, 255, 255, 0.8);
+.about-hero h1 .text-gold {
+    color: var(--primary-gold);
+}
+
+.about-hero-line {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-orange);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.hero-sub-text {
     font-size: 1.15rem;
-    max-width: 650px;
-    line-height: 1.6;
+    color: rgba(255, 215, 0, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
-
-/* ── Stats Section ── */
+/* ── STATS SECTION (on about page) ── */
 .section-stats-about {
-    padding: 3rem 0;
-    background: #fdf6f0;
+    padding: 3rem 0 4rem;
+    background: linear-gradient(135deg, #fdf6f0 0%, #fce8d0 100%);
+    border-bottom: 4px solid var(--primary-orange);
 }
 
-.stat-about-card {
-    background: #fff;
+.stats-about-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-about-item {
+    background: var(--warm-white);
     border-radius: 16px;
-    padding: 1.75rem 1.25rem;
+    padding: 1.8rem 1rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 20px rgba(232, 93, 38, 0.08);
+    border: 1px solid rgba(232, 93, 38, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
 }
 
-.stat-about-card:hover {
+.stat-about-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 30px rgba(232, 93, 38, 0.12);
+    border-color: var(--primary-orange);
 }
 
 .stat-about-number {
     font-size: 2.8rem;
     font-weight: 900;
-    color: var(--primary-orange, #E85D26);
+    color: var(--primary-orange);
     line-height: 1.2;
+    margin-bottom: 0.3rem;
 }
 
 .stat-about-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #555;
-    margin-top: 0.25rem;
+    color: #6b4226;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.stat-about-sub {
-    font-size: 0.75rem;
-    color: #999;
-    font-weight: 500;
-}
-
-
-/* ── Vision Section ── */
+/* ── VISION SECTION ── */
 .section-vision {
-    background: #fff;
+    background: linear-gradient(135deg, #fdf6f0 0%, #fce8d0 100%);
+    border-bottom: 4px solid var(--primary-orange);
 }
 
 .vision-image-placeholder {
-    background: linear-gradient(135deg, #fdf6f0, #f5e8df);
+    background: linear-gradient(135deg, var(--primary-orange), var(--saffron));
     border-radius: 20px;
     padding: 4rem 2rem;
     text-align: center;
-    border: 2px dashed rgba(232, 93, 38, 0.2);
+    color: #fff;
     min-height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 8px 30px rgba(232, 93, 38, 0.15);
 }
 
 .vision-icon {
@@ -89,272 +125,296 @@
 }
 
 .vision-label {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-orange, #E85D26);
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: rgba(0,0,0,0.15);
+    padding: 0.4rem 1.8rem;
+    border-radius: 50px;
 }
 
 .vision-title {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #1A1A2E;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3d1a0a;
     margin-bottom: 1rem;
 }
 
 .vision-text {
-    color: #555;
-    font-size: 1rem;
+    color: #6b4226;
     line-height: 1.8;
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
-
-/* ── What PRASADM Means ── */
+/* ── MEANING SECTION ── */
 .section-meaning {
-    background: #fdf6f0;
+    background: linear-gradient(135deg, #fff5ee 0%, #fde8d8 100%);
+    border-bottom: 4px solid var(--primary-orange);
 }
 
 .meaning-card {
-    background: #fff;
+    background: var(--warm-white);
     border-radius: 16px;
     padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+    border: 1px solid rgba(232, 93, 38, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     height: 100%;
 }
 
 .meaning-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 35px rgba(232, 93, 38, 0.12);
+    border-color: var(--primary-orange);
 }
 
 .meaning-icon {
     font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8rem;
+    display: block;
 }
 
 .meaning-title {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.1rem;
-    color: #1A1A2E;
+    color: #3d1a0a;
     margin-bottom: 0.5rem;
 }
 
 .meaning-desc {
-    color: #777;
+    color: #6b4226;
     font-size: 0.9rem;
     line-height: 1.6;
-    margin: 0;
 }
 
-
-/* ── Core Values ── */
+/* ── VALUES SECTION ── */
 .section-values {
-    background: #fff;
+    background: linear-gradient(135deg, #fdf6f0 0%, #fce8d0 100%);
+    border-bottom: 4px solid var(--primary-orange);
 }
 
 .value-card {
-    background: #fff;
+    background: var(--warm-white);
     border-radius: 16px;
     padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    border-top: 4px solid var(--primary-orange, #E85D26);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+    border: 1px solid rgba(232, 93, 38, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     height: 100%;
 }
 
 .value-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 35px rgba(232, 93, 38, 0.12);
+    border-color: var(--primary-orange);
 }
 
 .value-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    display: block;
 }
 
 .value-title {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.1rem;
-    color: #1A1A2E;
+    color: #3d1a0a;
     margin-bottom: 0.5rem;
 }
 
 .value-desc {
-    color: #777;
+    color: #6b4226;
     font-size: 0.9rem;
     line-height: 1.6;
-    margin: 0;
 }
 
-
-/* ── Leadership Team ── */
+/* ── LEADERSHIP TEAM ── */
 .section-leadership {
-    background: #fdf6f0;
+    background: linear-gradient(135deg, #fff5ee 0%, #fde8d8 100%);
+    border-bottom: 4px solid var(--primary-orange);
 }
 
 .leader-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
+    background: var(--warm-white);
+    border-radius: 20px;
+    padding: 2rem 1.5rem 1.8rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+    border: 1px solid rgba(232, 93, 38, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     height: 100%;
 }
 
 .leader-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 35px rgba(232, 93, 38, 0.12);
+    border-color: var(--primary-orange);
 }
 
 .leader-avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 1.8rem;
-    font-weight: 800;
     color: #fff;
+    font-weight: 700;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .leader-initial {
-    color: #fff;
-    font-weight: 800;
-    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
 }
 
 .leader-name {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.15rem;
-    color: #1A1A2E;
+    color: #3d1a0a;
     margin-bottom: 0.2rem;
 }
 
 .leader-title {
+    color: var(--primary-orange);
     font-weight: 600;
     font-size: 0.85rem;
-    color: var(--primary-orange, #E85D26);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .leader-desc {
-    color: #777;
-    font-size: 0.9rem;
+    color: #6b4226;
+    font-size: 0.85rem;
     line-height: 1.6;
-    margin: 0;
 }
 
-
-/* ── CTA About ── */
+/* ── CTA SECTION (about page) ── */
 .section-cta-about {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
     padding: 3rem 0;
 }
 
 .cta-about-banner {
-    background: linear-gradient(135deg, var(--primary-orange, #E85D26) 0%, var(--primary-orange-dark, #C44A1A) 50%, var(--primary-orange-deeper, #8B1A0A) 100%);
     border-radius: 24px;
-    padding: 4rem 3rem;
+    padding: 4rem 2.5rem;
     text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    background: rgba(255, 215, 0, 0.03);
 }
 
 .cta-about-banner h2 {
-    font-size: 2.4rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
     font-weight: 900;
-    color: #fff;
-    margin-bottom: 0.75rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
 }
 
 .cta-about-banner p {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 215, 0, 0.7);
     font-size: 1.05rem;
     max-width: 600px;
     margin: 0 auto 2rem;
     line-height: 1.7;
 }
 
+.cta-about-banner .btn-cta-white {
+    background: var(--primary-gold) !important;
+    color: #1a0a0a !important;
+    border: none !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-about-banner .btn-cta-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+}
+
+.cta-about-banner .btn-cta-outline-white {
+    background: transparent !important;
+    border: 2px solid rgba(255, 215, 0, 0.3) !important;
+    color: #fff !important;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cta-about-banner .btn-cta-outline-white:hover {
+    background: rgba(255, 215, 0, 0.05);
+    transform: translateY(-2px);
+}
 
 /* ── Responsive ── */
 @media (max-width: 992px) {
+    .about-hero {
+        padding: 120px 0 40px;
+        min-height: 30vh;
+    }
     .about-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     .stat-about-number {
         font-size: 2.2rem;
+    }
+    .vision-image-placeholder {
+        min-height: 200px;
+        padding: 2rem;
     }
     .cta-about-banner {
         padding: 2.5rem 1.5rem;
     }
     .cta-about-banner h2 {
         font-size: 1.8rem;
-    }
-    .vision-image-placeholder {
-        min-height: 200px;
-        padding: 2.5rem 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .about-hero {
-        padding: 2rem 0 1.5rem;
+        padding: 100px 0 30px;
     }
     .about-hero h1 {
-        font-size: 1.8rem;
-    }
-    .about-hero .hero-sub-text {
-        font-size: 1rem;
+        font-size: 2rem;
     }
     .stat-about-number {
         font-size: 1.8rem;
     }
     .cta-about-banner h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero {
+        padding: 90px 0 20px;
+    }
+    .about-hero h1 {
+        font-size: 1.6rem;
+    }
+    .hero-sub-text {
+        font-size: 0.95rem;
+    }
+    .stat-about-number {
         font-size: 1.5rem;
     }
     .vision-title {
         font-size: 1.3rem;
     }
-    .leader-avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 1.4rem;
-    }
-    .leader-initial {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .stat-about-card {
-        padding: 1.25rem 0.75rem;
-    }
-    .stat-about-number {
-        font-size: 1.5rem;
-    }
-    .meaning-card {
-        padding: 1.5rem 1rem;
-    }
-    .value-card {
-        padding: 1.5rem 1rem;
-    }
-    .leader-card {
-        padding: 1.5rem 1rem;
-    }
     .cta-about-banner {
-        padding: 2rem 1.25rem;
+        padding: 1.5rem 1rem;
     }
     .cta-about-banner h2 {
         font-size: 1.3rem;
-    }
-    .cta-about-banner p {
-        font-size: 0.95rem;
     }
 }

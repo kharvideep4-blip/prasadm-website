@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PRASADM – Smart Temple Management</title>
-    <meta name="description" content="PRASADM – Planning & Resource Automation System for Analytical Data Management. Smart temple management for the modern era.">
+    <title>SEWAI – Smart Temple Management</title>
+    <meta name="description" content="SEWAI – Smart Temple Management System.">
 
     <!-- ===== BOOTSTRAP 5 ===== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,11 +13,165 @@
     <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- ===== GOOGLE FONTS ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
     <!-- ===== SHARED CSS ===== -->
     <link rel="stylesheet" href="assets/css/shared/shared.css">
 
-    <!-- ===== HOME PAGE CSS ===== -->
+    <!-- ===== HOME CSS ===== -->
     <link rel="stylesheet" href="assets/css/home.css">
+
+    <!-- ===== SLIDESHOW STYLES ===== -->
+    <style>
+        .hero-shirdi {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            will-change: opacity;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slideshow-overlay {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 26, 0.55);
+            z-index: 2;
+        }
+
+        .hero-shirdi-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .slide-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+
+        .slide-controls button {
+            pointer-events: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-controls button:hover {
+            background: rgba(255, 215, 0, 0.25);
+            border-color: var(--primary-gold);
+            transform: scale(1.1);
+        }
+
+        .slide-controls button:active {
+            transform: scale(0.95);
+        }
+
+        .slide-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .slide-dots .dot {
+            pointer-events: auto;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-dots .dot.active {
+            background: var(--primary-gold);
+            border-color: var(--primary-gold);
+            transform: scale(1.2);
+        }
+
+        .slide-dots .dot:hover {
+            background: rgba(255, 215, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .slide-controls button {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            .slide-controls {
+                padding: 0 10px;
+            }
+            .slide-dots .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slide-controls button {
+                width: 34px;
+                height: 34px;
+                font-size: 0.8rem;
+            }
+            .slide-dots {
+                bottom: 20px;
+                gap: 8px;
+            }
+            .slide-dots .dot {
+                width: 8px;
+                height: 8px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -25,209 +179,104 @@
     <!-- ============================================================
     NAVBAR
     ============================================================ -->
-    <!-- ============================================================
-NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
-============================================================ -->
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container-xl">
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-            <span class="nav-logo-box">🛕</span>
-            <span class="nav-brand-text">PRASADM</span>
-        </a>
+    <nav class="navbar-shirdi" id="mainNav">
+        <div class="navbar-shirdi-container">
 
-        <!-- Mobile Toggle -->
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="navbar-shirdi-top">
+                <div class="navbar-shirdi-brand">
+                    <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                    <span class="brand-shirdi-main">SEWAI</span>
+                    <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                </div>
+            </div>
 
-        <!-- Nav Links -->
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav mx-auto gap-lg-2">
+            <div class="navbar-shirdi-bottom">
+                <ul class="nav-shirdi-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown-shirdi">
+                        <a href="features.html">Features ▼</a>
+                        <ul class="dropdown-shirdi-menu">
+                            <li><a href="features/setting-up.html">Setting Up</a></li>
+                            <li><a href="features/devotee-connect.html">Devotee Connect</a></li>
+                            <li><a href="features/payment-gateway.html">Payment Gateway</a></li>
+                            <li><a href="features/calendar-events.html">Calendar Events</a></li>
+                            <li><a href="features/hall-booking.html">Hall Booking</a></li>
+                            <li><a href="features/ecommerce.html">E‑commerce</a></li>
+                            <li><a href="features/inventory.html">Inventory</a></li>
+                            <li><a href="features/ai-features.html">AI Features</a></li>
+                            <li><a href="features/procedures.html">Procedures</a></li>
+                            <li><a href="features/smart-donations.html">Smart Donations</a></li>
+                            <li><a href="features/website-template.html">Website Template</a></li>
+                            <li><a href="features/deva-program.html">Deva Program</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-shirdi-cta"><a href="contact.html" class="btn-shirdi-cta">Request Quote</a></li>
+                </ul>
+            </div>
 
-                <!-- Home -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-
-                <!-- About Us -->
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-
-                <!-- Features – DROPDOWN (each links to its own page) -->
-                <li class="nav-item dropdown features-dropdown">
-                    <a class="nav-link dropdown-toggle" href="features.html" id="featuresDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Features
-                    </a>
-                    <ul class="dropdown-menu features-menu" aria-labelledby="featuresDropdown">
-                        <li><a class="dropdown-item" href="features/setting-up.html">Setting Up</a></li>
-                        <li><a class="dropdown-item" href="features/devotee-connect.html">Devotee Connect</a></li>
-                        <li><a class="dropdown-item" href="features/payment-gateway.html">Payment Gateway</a></li>
-                        <li><a class="dropdown-item" href="features/calendar-events.html">Calendar Events</a></li>
-                        <li><a class="dropdown-item" href="features/hall-booking.html">Hall Booking</a></li>
-                        <li><a class="dropdown-item" href="features/ecommerce.html">E‑commerce</a></li>
-                        <li><a class="dropdown-item" href="features/inventory.html">Inventory</a></li>
-                        <li><a class="dropdown-item" href="features/ai-features.html">AI Features</a></li>
-                        <li><a class="dropdown-item" href="features/procedures.html">Procedures</a></li>
-                        <li><a class="dropdown-item" href="features/smart-donations.html">Smart Donations</a></li>
-                        <li><a class="dropdown-item" href="features/website-template.html">Website Template</a></li>
-                        <li><a class="dropdown-item" href="features/deva-program.html">Deva Program</a></li>
-                    </ul>
-                </li>
-
-                <!-- Knowledge Base -->
-                <li class="nav-item">
-                    <a class="nav-link" href="knowledge-base.html">Knowledge Base</a>
-                </li>
-
-                <!-- Media -->
-                <li class="nav-item">
-                    <a class="nav-link" href="media.html">Media</a>
-                </li>
-
-                <!-- Contact -->
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-
-            </ul>
-
-            <!-- Request Quote Button -->
-            <a href="contact.html" class="btn btn-cta flex-shrink-0">Request Quote</a>
         </div>
-    </div>
-</nav>
+    </nav>
+
 
     <!-- ============================================================
-    HERO SECTION – 100% VIEWPORT HEIGHT (NO SCROLLING)
+    HERO SECTION – WITH SLIDESHOW
     ============================================================ -->
-    <section class="hero-section" id="hero">
-        <!-- Hero Background Image -->
-        <div class="hero-bg-overlay" 
-             style="background-image: url('assets/images/hero-temple-bg.webp');">
+    <section class="hero-shirdi" id="hero">
+
+        <div class="hero-slideshow" id="heroSlideshow">
+            <div class="hero-slide active" style="background-image: url('assets/images/hero-temple-bg.webp');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-temple-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-temple-3.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-temple-4.jpg');"></div>
         </div>
-        <div class="hero-deco-circle"></div>
 
-        <div class="container-xl hero-content-wrapper">
-            <div class="row align-items-center g-5 hero-grid">
+        <div class="hero-slideshow-overlay"></div>
 
-                <!-- LEFT COLUMN -->
-                <div class="col-lg-6 hero-left">
-                    <h1 class="hero-title">
-                        Smart<span class="text-accent">Temple</span><br>
+        <div class="slide-controls">
+            <button id="prevSlide" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextSlide" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="slide-dots" id="slideDots"></div>
+
+        <div class="container-xl hero-shirdi-content">
+            <div class="row align-items-center justify-content-center hero-shirdi-grid">
+                <div class="col-lg-8 col-xl-7 hero-shirdi-left text-center">
+
+                    <h1 class="hero-shirdi-title">
+                        Smart<span class="text-gold">Temple</span><br>
                         <span class="text-white">Management</span>
                     </h1>
 
-                    <p class="hero-subtitle">
+                    <p class="hero-shirdi-subtitle mx-auto">
                         Experience the future of temple administration with
-                        <span class="text-accent fw-bold">PRASADM</span>
-                        — Planning & Resource Automation System for Analytical Data Management.
+                        <span class="text-gold fw-bold">SEWAI</span>
+                        — Smart &amp; Automated Temple Management System.
                     </p>
 
-                    <!-- Quick Action Boxes -->
-                    <div class="d-flex flex-wrap gap-3 mb-4 hero-actions">
-                        <div class="hero-action-box">
-                            <div class="hero-action-icon">💰</div>
-                            <div class="hero-action-label">Smart Donations</div>
-                        </div>
-                        <div class="hero-action-box">
-                            <div class="hero-action-icon">📅</div>
-                            <div class="hero-action-label">Event Management</div>
-                        </div>
-                        <div class="hero-action-box">
-                            <div class="hero-action-icon">👥</div>
-                            <div class="hero-action-label">Community Connect</div>
-                        </div>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center hero-shirdi-actions">
+                        <div class="hero-shirdi-action"><span class="action-icon">💰</span><span class="action-label">Smart Donations</span></div>
+                        <div class="hero-shirdi-action"><span class="action-icon">📅</span><span class="action-label">Event Management</span></div>
+                        <div class="hero-shirdi-action"><span class="action-icon">👥</span><span class="action-label">Community Connect</span></div>
                     </div>
 
-                    <!-- CTA Buttons -->
-                    <div class="d-flex flex-wrap gap-3 hero-buttons">
-                        <a href="contact.html" class="btn btn-primary btn-lg btn-hero-primary">
-                            🕉 Start Smart Journey →
-                        </a>
-                        <a href="features.html" class="btn btn-outline-light btn-lg btn-hero-outline">
-                            📱 Explore Features →
-                        </a>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center hero-shirdi-buttons">
+                        <a href="contact.html" class="btn btn-shirdi-primary">🕉 Start Journey →</a>
+                        <a href="features.html" class="btn btn-shirdi-outline">📱 Explore Features →</a>
                     </div>
+
                 </div>
-
-                <!-- RIGHT COLUMN – Dashboard Preview -->
-                <div class="col-lg-6 hero-right">
-                    <div class="dashboard-card">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div>
-                                <p class="dashboard-title">Temple Dashboard</p>
-                                <p class="dashboard-subtitle">Real-time insights & management</p>
-                            </div>
-                            <span class="dashboard-live-badge">
-                                <span class="live-dot"></span> Live
-                            </span>
-                        </div>
-
-                        <div class="row g-2 mb-3">
-                            <div class="col-6">
-                                <div class="stat-mini-card" style="--stat-color:#E85D26; --stat-bg:#FFF5EE;">
-                                    <div class="stat-mini-icon">💰</div>
-                                    <div>
-                                        <div class="stat-mini-value">₹2.4L</div>
-                                        <div class="stat-mini-label">Today's Donations</div>
-                                        <div class="stat-mini-change">+12% from yesterday</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="stat-mini-card" style="--stat-color:#10B981; --stat-bg:#F0FFF8;">
-                                    <div class="stat-mini-icon">👥</div>
-                                    <div>
-                                        <div class="stat-mini-value">1,247</div>
-                                        <div class="stat-mini-label">Active Devotees</div>
-                                        <div class="stat-mini-change">Online now</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="stat-mini-card" style="--stat-color:#3B82F6; --stat-bg:#EFF6FF;">
-                                    <div class="stat-mini-icon">📅</div>
-                                    <div>
-                                        <div class="stat-mini-value">23</div>
-                                        <div class="stat-mini-label">Today's Events</div>
-                                        <div class="stat-mini-change">3 upcoming</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="stat-mini-card" style="--stat-color:#7C3AED; --stat-bg:#F5F3FF;">
-                                    <div class="stat-mini-icon">📈</div>
-                                    <div>
-                                        <div class="stat-mini-value">97%</div>
-                                        <div class="stat-mini-label">Efficiency Score</div>
-                                        <div class="stat-mini-change">Excellent</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="dashboard-activity-title">Live Temple Activities</p>
-                        <div class="dashboard-activity-item">
-                            <span class="d-flex align-items-center gap-2">
-                                <span class="live-dot"></span> Siddhi Vinayak Temple, Mumbai
-                            </span>
-                            <span class="dashboard-activity-status">Live Now</span>
-                        </div>
-                        <div class="dashboard-activity-item">
-                            <span class="d-flex align-items-center gap-2">
-                                <span class="live-dot"></span> Shre Mahakaleshwar Temple, Ujjain
-                            </span>
-                            <span class="dashboard-activity-status">Live</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
+
     </section>
 
 
@@ -237,19 +286,15 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
     <section class="section-pad section-features" id="features">
         <div class="container-xl">
             <div class="text-center mb-5">
-                <h2 class="section-title">
-                    Comprehensive <span class="gradient-text">Temple Management</span>
-                </h2>
+                <h2 class="section-title">Comprehensive <span class="gradient-text">Temple Management</span></h2>
+                <div class="section-title-line"></div>
                 <div class="section-subtitle-box mx-auto">
-                    <p class="mb-0">
-                        Discover our divine suite of features designed to
-                        <span class="gradient-text fw-bold">transform and streamline</span>
-                        every Smart aspect of temple operations
-                    </p>
+                    <p class="mb-0">Discover our divine suite of features designed to <span class="gradient-text fw-bold">transform and streamline</span> every aspect of temple operations</p>
                 </div>
             </div>
-
-            <div id="featuresGrid" class="row g-4"></div>
+            <div id="featuresGrid" class="row g-4">
+                <!-- Features will be populated by JS -->
+            </div>
         </div>
     </section>
 
@@ -260,16 +305,13 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
     <section class="section-pad section-how-it-works" id="how-it-works">
         <div class="container-xl">
             <div class="text-center mb-5">
-                <h2 class="section-title">
-                    How It <span class="gradient-text">Works</span>
-                </h2>
-                <p class="text-muted mx-auto" style="max-width:600px; line-height:1.7;">
-                    From devotee login to comprehensive reports, discover the seamless temple
-                    workflow that transforms spiritual administration
-                </p>
+                <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+                <div class="section-title-line"></div>
+                <p class="text-muted mx-auto" style="max-width:600px; line-height:1.7;">From devotee login to comprehensive reports, discover the seamless temple workflow that transforms spiritual administration</p>
             </div>
-
-            <div id="stepsGrid" class="row g-4 position-relative"></div>
+            <div id="stepsGrid" class="row g-4 position-relative">
+                <!-- Steps will be populated by JS -->
+            </div>
         </div>
     </section>
 
@@ -280,17 +322,13 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
     <section class="section-pad section-mission" id="mission">
         <div class="container-xl">
             <div class="text-center mb-5">
-                <h2 class="section-title">
-                    Smart Mission: <span class="gradient-text">Bridging Worlds</span>
-                </h2>
-                <p class="text-muted mx-auto" style="max-width:650px; line-height:1.7; font-size:1rem;">
-                    PRASADM harmoniously bridges the eternal wisdom of ancient traditions with the limitless
-                    possibilities of modern technology. We empower temples to serve their communities more
-                    effectively while preserving the Smart essence that has guided humanity for millennia.
-                </p>
+                <h2 class="section-title">Smart Mission: <span class="gradient-text">Bridging Worlds</span></h2>
+                <div class="section-title-line"></div>
+                <p class="text-muted mx-auto" style="max-width:650px; line-height:1.7; font-size:1rem;">SEWAI harmoniously bridges the eternal wisdom of ancient traditions with the limitless possibilities of modern technology. We empower temples to serve their communities more effectively while preserving the spiritual essence that has guided humanity for millennia.</p>
             </div>
-
-            <div id="missionGrid" class="row g-4"></div>
+            <div id="missionGrid" class="row g-4">
+                <!-- Mission cards will be populated by JS -->
+            </div>
         </div>
     </section>
 
@@ -303,12 +341,8 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
             <div class="philosophy-banner">
                 <h2 class="philosophy-title">Where Ancient Wisdom Meets Modern Innovation</h2>
                 <div class="philosophy-quote-box">
-                    <p class="philosophy-quote-text">
-                        "Technology should serve humanity's highest aspirations. PRASADM honors this principle
-                        by creating solutions that amplify the Smart work of temples while respecting the
-                        timeless traditions that anchor our spiritual lives."
-                    </p>
-                    <p class="philosophy-quote-author">— The PRASADM Philosophy</p>
+                    <p class="philosophy-quote-text">"Technology should serve humanity's highest aspirations. SEWAI honors this principle by creating solutions that amplify the sacred work of temples while respecting the timeless traditions that anchor our spiritual lives."</p>
+                    <p class="philosophy-quote-author">— The SEWAI Philosophy</p>
                 </div>
             </div>
         </div>
@@ -322,7 +356,9 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
         <div class="container-xl">
             <div class="stats-banner">
                 <h3 class="stats-title">Trusted by Temple Communities Worldwide</h3>
-                <div id="statsGrid" class="row g-4"></div>
+                <div id="statsGrid" class="row g-4">
+                    <!-- Stats will be populated by JS -->
+                </div>
             </div>
         </div>
     </section>
@@ -338,27 +374,27 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
                     <div class="ecosystem-icon">🔔</div>
                     <h2 class="ecosystem-title">Complete Temple Ecosystem</h2>
                 </div>
-                <div id="ecosystemGrid" class="row g-3"></div>
+                <div id="ecosystemGrid" class="row g-3">
+                    <!-- Ecosystem cards will be populated by JS -->
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- ============================================================
-    WHY CHOOSE PRASADM
+    WHY CHOOSE SEWAI
     ============================================================ -->
     <section class="section-pad section-why-choose" id="why-choose">
         <div class="container-xl">
             <div class="text-center mb-5">
-                <h2 class="section-title">
-                    Why Temples Choose <span class="gradient-text">PRASADM</span>
-                </h2>
-                <p class="text-muted" style="font-size:1rem;">
-                    Trusted by hundreds of temples worldwide for comprehensive digital transformation
-                </p>
+                <h2 class="section-title">Why Temples Choose <span class="gradient-text">SEWAI</span></h2>
+                <div class="section-title-line"></div>
+                <p class="text-muted" style="font-size:1rem;">Trusted by hundreds of temples worldwide for comprehensive digital transformation</p>
             </div>
-
-            <div id="whyChooseGrid" class="row g-4"></div>
+            <div id="whyChooseGrid" class="row g-4">
+                <!-- Why Choose cards will be populated by JS -->
+            </div>
         </div>
     </section>
 
@@ -369,10 +405,8 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
     <section class="section-pad-sm section-cta" id="cta">
         <div class="container-xl">
             <div class="cta-banner">
-                <h2 class="cta-title">Ready to Transform Your Smart Space?</h2>
-                <p class="cta-subtitle">
-                    Join thousands of temples worldwide who have already embraced the future of spiritual management
-                </p>
+                <h2 class="cta-title">Ready to Transform Your Temple?</h2>
+                <p class="cta-subtitle">Join thousands of temples worldwide who have already embraced the future of spiritual management</p>
                 <div class="d-flex flex-wrap gap-3 justify-content-center">
                     <a href="contact.html" class="btn btn-cta-white">Start Your Smart Journey</a>
                     <a href="contact.html" class="btn btn-cta-outline-white">Connect With Us</a>
@@ -383,21 +417,18 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
 
 
     <!-- ============================================================
-    FOOTER
+    FOOTER – ORANGE
     ============================================================ -->
     <footer class="footer" id="footer">
         <div class="container-xl">
             <div class="row g-4 pb-4">
-
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
                         <span class="footer-logo-box">🛕</span>
-                        <span class="footer-brand-text">PRASADM</span>
+                        <span class="footer-brand-text">SEWAI</span>
                     </div>
-                    <p class="footer-text-sm">Planning & Resource Automation System for Analytical Data Management</p>
-                    <p class="footer-text-sm">Digitizing devotion with modern temple management solutions that honor tradition.</p>
+                    <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
                 </div>
-
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
@@ -409,51 +440,211 @@ NAVBAR – WITH FEATURES DROPDOWN (EACH FEATURE = SEPARATE PAGE)
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
                     <h4 class="footer-heading">Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About PRASADM</a></li>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
-                    <h4 class="footer-heading">Connect With Us</h4>
+                    <h4 class="footer-heading">Connect</h4>
                     <div class="d-flex gap-2">
-                        <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="footer-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
             </div>
-
             <div class="footer-divider"></div>
-            <div class="footer-copyright">
-                &copy; 2025 PRASADM. All rights reserved. Built with dedication for temples worldwide.
-            </div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
         </div>
     </footer>
 
 
     <!-- ============================================================
-    BOOTSTRAP JS
+    SCRIPTS
     ============================================================ -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/shared/shared.js"></script>
+    <script src="assets/js/home.js"></script>
 
-    <!-- ===== SHARED JS ===== -->
-    <script src="assets/js/shared/shared.js">
-    </script>
+    <script>
+        // ============================================================
+        // 1. DYNAMIC HERO OFFSET
+        // ============================================================
+        (function() {
+            const navbar = document.getElementById('mainNav');
+            const hero = document.getElementById('hero');
 
-    <!-- ===== HOME JS ===== -->
-    <script src="assets/js/home.js">
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + h + 'px)';
+            }
+
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
+        })();
+
+        // ============================================================
+        // 2. NAVBAR HIDE ON SCROLL
+        // ============================================================
+        (function() {
+            const navbar = document.getElementById('mainNav');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+        })();
+
+        // ============================================================
+        // 3. HERO BACKGROUND SLIDESHOW
+        // ============================================================
+        (function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dotsContainer = document.getElementById('slideDots');
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+            let currentIndex = 0;
+            let slideInterval;
+            const intervalTime = 5000;
+
+            if (slides.length === 0) return;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (index === 0 ? ' active' : '');
+                dot.dataset.index = index;
+                dot.addEventListener('click', function() {
+                    goToSlide(parseInt(this.dataset.index));
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.dot');
+
+            function goToSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            function startAutoSlide() {
+                if (slideInterval) clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+
+            function stopAutoSlide() {
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                    slideInterval = null;
+                }
+            }
+
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+
+            const heroSection = document.getElementById('hero');
+            heroSection.addEventListener('mouseenter', stopAutoSlide);
+            heroSection.addEventListener('mouseleave', startAutoSlide);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    stopAutoSlide();
+                    prevSlide();
+                    startAutoSlide();
+                } else if (e.key === 'ArrowRight') {
+                    stopAutoSlide();
+                    nextSlide();
+                    startAutoSlide();
+                }
+            });
+
+            let wheelTimeout = false;
+            heroSection.addEventListener('wheel', function(e) {
+                if (e.target.closest('.hero-shirdi-content')) return;
+                e.preventDefault();
+                if (wheelTimeout) return;
+                wheelTimeout = true;
+
+                if (e.deltaY > 0) {
+                    stopAutoSlide();
+                    nextSlide();
+                } else {
+                    stopAutoSlide();
+                    prevSlide();
+                }
+                startAutoSlide();
+
+                setTimeout(() => {
+                    wheelTimeout = false;
+                }, 800);
+            }, { passive: false });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            heroSection.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            heroSection.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    stopAutoSlide();
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    startAutoSlide();
+                }
+            }, { passive: true });
+
+            goToSlide(0);
+            startAutoSlide();
+        })();
     </script>
 
 </body>
-
 </html>
