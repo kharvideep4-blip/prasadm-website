@@ -27,20 +27,28 @@
 <body>
 
     <!-- ============================================================
-    NAVBAR – Same as Home Page (Shirdi style)
+    RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE (same as all pages)
     ============================================================ -->
     <nav class="navbar-shirdi" id="mainNav">
         <div class="navbar-shirdi-container">
 
+            <!-- LINE 1: Brand + Toggle Button -->
             <div class="navbar-shirdi-top">
-                <div class="navbar-shirdi-brand">
-                    <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
-                    <span class="brand-shirdi-main">SEWAI</span>
-                    <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                <div class="navbar-top-row">
+                    <div class="navbar-shirdi-brand">
+                        <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ -->
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="navbar-shirdi-bottom">
+            <!-- LINE 2: Navigation (hidden on mobile, shown when toggle clicked) -->
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
                 <ul class="nav-shirdi-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -308,11 +316,60 @@
     <script src="assets/js/shared/shared.js"></script>
     <script src="assets/js/contact.js"></script>
 
-    <!-- ===== NAVBAR HIDE ON SCROLL (same as home) ===== -->
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR (same as all pages) ===== -->
     <script>
         (function() {
             const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
             let lastScroll = 0;
+
+            // ── Toggle Menu ──
+            if (toggle && menu) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            // ── Dropdown toggle on mobile ──
+            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Hide navbar on scroll ──
             window.addEventListener('scroll', function() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 if (scrollTop > lastScroll && scrollTop > 100) {
@@ -322,6 +379,17 @@
                 }
                 lastScroll = scrollTop;
             });
+
+            // ── Dynamic hero offset ──
+            const hero = document.getElementById('contactHero');
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + h + 'px)';
+            }
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
         })();
     </script>
 

@@ -19,7 +19,7 @@
     <!-- ===== SHARED CSS ===== -->
     <link rel="stylesheet" href="assets/css/shared/shared.css">
 
-    <!-- ===== HOME CSS ===== -->
+    <!-- ===== HOME CSS (keep even if empty) ===== -->
     <link rel="stylesheet" href="assets/css/home.css">
 
     <!-- ===== SLIDESHOW STYLES ===== -->
@@ -177,20 +177,28 @@
 <body>
 
     <!-- ============================================================
-    NAVBAR
+    RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE
     ============================================================ -->
     <nav class="navbar-shirdi" id="mainNav">
         <div class="navbar-shirdi-container">
 
+            <!-- LINE 1: Brand – WHITE BACKGROUND, LOGO + ORANGE TEXT -->
             <div class="navbar-shirdi-top">
-                <div class="navbar-shirdi-brand">
-                    <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
-                    <span class="brand-shirdi-main">SEWAI</span>
-                    <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                <div class="navbar-top-row">
+                    <div class="navbar-shirdi-brand">
+                        <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ -->
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="navbar-shirdi-bottom">
+            <!-- LINE 2: Navigation – ORANGE BACKGROUND (hidden on mobile) -->
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
                 <ul class="nav-shirdi-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -471,12 +479,75 @@
     <script src="assets/js/shared/shared.js"></script>
     <script src="assets/js/home.js"></script>
 
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR ===== -->
     <script>
-        // ============================================================
-        // 1. DYNAMIC HERO OFFSET
-        // ============================================================
         (function() {
             const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
+            let lastScroll = 0;
+
+            // ── Toggle Menu ──
+            if (toggle && menu) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    // Change icon
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                // Close menu when clicking a link (on mobile)
+                menu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            // ── Dropdown toggle on mobile ──
+            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Hide navbar on scroll ──
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+
+            // ── Dynamic hero offset ──
             const hero = document.getElementById('hero');
 
             function adjustHero() {
@@ -488,161 +559,141 @@
 
             window.addEventListener('load', adjustHero);
             window.addEventListener('resize', adjustHero);
-        })();
 
-        // ============================================================
-        // 2. NAVBAR HIDE ON SCROLL
-        // ============================================================
-        (function() {
-            const navbar = document.getElementById('mainNav');
-            let lastScroll = 0;
+            // ── Slideshow ──
+            (function() {
+                const slides = document.querySelectorAll('.hero-slide');
+                const dotsContainer = document.getElementById('slideDots');
+                const prevBtn = document.getElementById('prevSlide');
+                const nextBtn = document.getElementById('nextSlide');
+                let currentIndex = 0;
+                let slideInterval;
+                const intervalTime = 5000;
 
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScroll && scrollTop > 100) {
-                    navbar.classList.add('hidden-nav');
-                } else {
-                    navbar.classList.remove('hidden-nav');
+                if (slides.length === 0) return;
+
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.className = 'dot' + (index === 0 ? ' active' : '');
+                    dot.dataset.index = index;
+                    dot.addEventListener('click', function() {
+                        goToSlide(parseInt(this.dataset.index));
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+
+                const dots = dotsContainer.querySelectorAll('.dot');
+
+                function goToSlide(index) {
+                    if (index < 0) index = slides.length - 1;
+                    if (index >= slides.length) index = 0;
+
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+
+                    currentIndex = index;
                 }
-                lastScroll = scrollTop;
-            });
-        })();
 
-        // ============================================================
-        // 3. HERO BACKGROUND SLIDESHOW
-        // ============================================================
-        (function() {
-            const slides = document.querySelectorAll('.hero-slide');
-            const dotsContainer = document.getElementById('slideDots');
-            const prevBtn = document.getElementById('prevSlide');
-            const nextBtn = document.getElementById('nextSlide');
-            let currentIndex = 0;
-            let slideInterval;
-            const intervalTime = 5000;
-
-            if (slides.length === 0) return;
-
-            slides.forEach((_, index) => {
-                const dot = document.createElement('span');
-                dot.className = 'dot' + (index === 0 ? ' active' : '');
-                dot.dataset.index = index;
-                dot.addEventListener('click', function() {
-                    goToSlide(parseInt(this.dataset.index));
-                });
-                dotsContainer.appendChild(dot);
-            });
-
-            const dots = dotsContainer.querySelectorAll('.dot');
-
-            function goToSlide(index) {
-                if (index < 0) index = slides.length - 1;
-                if (index >= slides.length) index = 0;
-
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-
-                currentIndex = index;
-            }
-
-            function nextSlide() {
-                goToSlide(currentIndex + 1);
-            }
-
-            function prevSlide() {
-                goToSlide(currentIndex - 1);
-            }
-
-            function startAutoSlide() {
-                if (slideInterval) clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, intervalTime);
-            }
-
-            function stopAutoSlide() {
-                if (slideInterval) {
-                    clearInterval(slideInterval);
-                    slideInterval = null;
+                function nextSlide() {
+                    goToSlide(currentIndex + 1);
                 }
-            }
 
-            nextBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                stopAutoSlide();
-                nextSlide();
-                startAutoSlide();
-            });
+                function prevSlide() {
+                    goToSlide(currentIndex - 1);
+                }
 
-            prevBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                stopAutoSlide();
-                prevSlide();
-                startAutoSlide();
-            });
+                function startAutoSlide() {
+                    if (slideInterval) clearInterval(slideInterval);
+                    slideInterval = setInterval(nextSlide, intervalTime);
+                }
 
-            const heroSection = document.getElementById('hero');
-            heroSection.addEventListener('mouseenter', stopAutoSlide);
-            heroSection.addEventListener('mouseleave', startAutoSlide);
+                function stopAutoSlide() {
+                    if (slideInterval) {
+                        clearInterval(slideInterval);
+                        slideInterval = null;
+                    }
+                }
 
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') {
-                    stopAutoSlide();
-                    prevSlide();
-                    startAutoSlide();
-                } else if (e.key === 'ArrowRight') {
+                nextBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     stopAutoSlide();
                     nextSlide();
                     startAutoSlide();
-                }
-            });
+                });
 
-            let wheelTimeout = false;
-            heroSection.addEventListener('wheel', function(e) {
-                if (e.target.closest('.hero-shirdi-content')) return;
-                e.preventDefault();
-                if (wheelTimeout) return;
-                wheelTimeout = true;
-
-                if (e.deltaY > 0) {
-                    stopAutoSlide();
-                    nextSlide();
-                } else {
+                prevBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     stopAutoSlide();
                     prevSlide();
-                }
-                startAutoSlide();
+                    startAutoSlide();
+                });
 
-                setTimeout(() => {
-                    wheelTimeout = false;
-                }, 800);
-            }, { passive: false });
+                const heroSection = document.getElementById('hero');
+                heroSection.addEventListener('mouseenter', stopAutoSlide);
+                heroSection.addEventListener('mouseleave', startAutoSlide);
 
-            let touchStartX = 0;
-            let touchEndX = 0;
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowLeft') {
+                        stopAutoSlide();
+                        prevSlide();
+                        startAutoSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        stopAutoSlide();
+                        nextSlide();
+                        startAutoSlide();
+                    }
+                });
 
-            heroSection.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
+                let wheelTimeout = false;
+                heroSection.addEventListener('wheel', function(e) {
+                    if (e.target.closest('.hero-shirdi-content')) return;
+                    e.preventDefault();
+                    if (wheelTimeout) return;
+                    wheelTimeout = true;
 
-            heroSection.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    stopAutoSlide();
-                    if (diff > 0) {
+                    if (e.deltaY > 0) {
+                        stopAutoSlide();
                         nextSlide();
                     } else {
+                        stopAutoSlide();
                         prevSlide();
                     }
                     startAutoSlide();
-                }
-            }, { passive: true });
 
-            goToSlide(0);
-            startAutoSlide();
+                    setTimeout(() => {
+                        wheelTimeout = false;
+                    }, 800);
+                }, { passive: false });
+
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                heroSection.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                heroSection.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const diff = touchStartX - touchEndX;
+                    if (Math.abs(diff) > 50) {
+                        stopAutoSlide();
+                        if (diff > 0) {
+                            nextSlide();
+                        } else {
+                            prevSlide();
+                        }
+                        startAutoSlide();
+                    }
+                }, { passive: true });
+
+                goToSlide(0);
+                startAutoSlide();
+            })();
         })();
     </script>
 
