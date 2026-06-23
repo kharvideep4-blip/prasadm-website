@@ -4,64 +4,75 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smart Donations – PRASADM</title>
+    <title>Smart Donations – SEWAI | Smart Temple Management</title>
+    <meta name="description" content="AI-powered donation recommendations for your spiritual journey. Smart donation guidance for maximum impact.">
 
     <!-- ===== BOOTSTRAP 5 ===== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== GOOGLE FONTS ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
     <!-- ===== SHARED CSS ===== -->
     <link rel="stylesheet" href="../assets/css/shared/shared.css">
 
     <!-- ===== SMART DONATIONS CSS ===== -->
     <link rel="stylesheet" href="../assets/css/smart-donations.css">
+
 </head>
 
 <body>
 
     <!-- ============================================================
-    NAVBAR
+    RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE
     ============================================================ -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container-xl">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-                <span class="nav-logo-box">🛕</span>
-                <span class="nav-brand-text">SEWAI</span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav mx-auto gap-lg-2">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
-                    <li class="nav-item dropdown features-dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="featuresDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Features
-                        </a>
-                        <ul class="dropdown-menu features-menu" aria-labelledby="featuresDropdown">
-                            <li><a class="dropdown-item" href="setting-up.html">Setting Up</a></li>
-                            <li><a class="dropdown-item" href="devotee-connect.html">Devotee Connect</a></li>
-                            <li><a class="dropdown-item" href="payment-gateway.html">Payment Gateway</a></li>
-                            <li><a class="dropdown-item" href="calendar-events.html">Calendar Events</a></li>
-                            <li><a class="dropdown-item" href="hall-booking.html">Hall Booking</a></li>
-                            <li><a class="dropdown-item" href="ecommerce.html">E‑commerce</a></li>
-                            <li><a class="dropdown-item" href="inventory.html">Inventory</a></li>
-                            <li><a class="dropdown-item" href="ai-features.html">AI Features</a></li>
-                            <li><a class="dropdown-item" href="procedures.html">Procedures</a></li>
-                            <li><a class="dropdown-item" href="smart-donations.html">Smart Donations</a></li>
-                            <li><a class="dropdown-item" href="website-template.html">Website Template</a></li>
-                            <li><a class="dropdown-item" href="deva-program.html">Deva Program</a></li>
+    <nav class="navbar-shirdi" id="mainNav">
+        <div class="navbar-shirdi-container">
+
+            <!-- LINE 1: Brand + Toggle Button -->
+            <div class="navbar-shirdi-top">
+                <div class="navbar-top-row">
+                    <div class="navbar-shirdi-brand">
+                        <img src="../assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ -->
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- LINE 2: Navigation (hidden on mobile, shown when toggle clicked) -->
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
+                <ul class="nav-shirdi-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li class="dropdown-shirdi">
+                        <a href="features.html">Features ▼</a>
+                        <ul class="dropdown-shirdi-menu">
+                            <li><a href="setting-up.html">Setting Up</a></li>
+                            <li><a href="devotee-connect.html">Devotee Connect</a></li>
+                            <li><a href="payment-gateway.html">Payment Gateway</a></li>
+                            <li><a href="calendar-events.html">Calendar Events</a></li>
+                            <li><a href="hall-booking.html">Hall Booking</a></li>
+                            <li><a href="ecommerce.html">E‑commerce</a></li>
+                            <li><a href="inventory.html">Inventory</a></li>
+                            <li><a href="ai-features.html">AI Features</a></li>
+                            <li><a href="procedures.html">Procedures</a></li>
+                            <li><a href="smart-donations.html" class="active">Smart Donations</a></li>
+                            <li><a href="deva-program.html">Deva Program</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="../knowledge-base.html">Knowledge Base</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../media.html">Media</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                    <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                    <li><a href="../media.html">Media</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li class="nav-shirdi-cta"><a href="../contact.html" class="btn-shirdi-cta">Request Quote</a></li>
                 </ul>
-                <a href="../contact.html" class="btn btn-cta flex-shrink-0">Request Quote</a>
             </div>
+
         </div>
     </nav>
 
@@ -69,11 +80,12 @@
     <!-- ============================================================
     FEATURE HERO
     ============================================================ -->
-    <section class="smart-donations-hero">
+    <section class="smart-donations-hero" id="smartDonationsHero">
         <div class="container-xl">
-            <div class="row">
+            <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
-                    <h1>Smart Donation Recommendations</h1>
+                    <h1>Smart Donation <span class="text-gold">Recommendations</span></h1>
+                    <div class="hero-line"></div>
                     <p class="lead">Experience AI-powered donation guidance that understands your spiritual journey and maximizes your impact. Get personalized recommendations based on temple needs, your preferences, and divine timing.</p>
                 </div>
             </div>
@@ -128,6 +140,7 @@
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h2 class="section-title">AI-Powered <span class="gradient-text">Donation Recommendations</span></h2>
+                <div class="section-title-line"></div>
                 <p class="section-subtitle">Our intelligent system analyzes your spiritual journey and temple needs to suggest meaningful donation opportunities that align with your values and maximize impact.</p>
             </div>
 
@@ -159,7 +172,7 @@
             </div>
 
             <!-- Personalized Recommendations Heading -->
-            <h3 class="text-center mb-4" style="font-weight:700; color:#1A1A2E; font-size:1.5rem;">Personalized Recommendations</h3>
+            <h3 class="text-center mb-4" style="font-weight:700; color:#3d1a0a; font-size:1.5rem;">Personalized Recommendations</h3>
 
             <div class="row g-4">
                 <!-- Card 1: Support Ganesh Chaturthi Celebration -->
@@ -242,7 +255,7 @@
                     <div class="recommendation-card">
                         <div class="rec-badge">
                             <span class="badge-match">75% match</span>
-                            <span class="badge-urgency" style="background:rgba(232,93,38,0.15); color:#E85D26;">Medium priority</span>
+                            <span class="badge-urgency">Medium priority</span>
                         </div>
                         <h3>Prasadam Distribution Drive</h3>
                         <p>New opportunity aligned with your seva inclination. Given your high engagement level, expanding to food seva could amplify your spiritual merit.</p>
@@ -264,7 +277,7 @@
                     <div class="recommendation-card">
                         <div class="rec-badge">
                             <span class="badge-match">60% match</span>
-                            <span class="badge-urgency" style="background:rgba(232,93,38,0.15); color:#E85D26;">Medium priority</span>
+                            <span class="badge-urgency">Medium priority</span>
                         </div>
                         <h3>Temple Infrastructure</h3>
                         <p>Maintenance and improvement of temple facilities. Help preserve the sacred space for generations to come.</p>
@@ -286,7 +299,7 @@
                     <div class="recommendation-card">
                         <div class="rec-badge">
                             <span class="badge-match">45% match</span>
-                            <span class="badge-urgency" style="background:rgba(107,114,128,0.15); color:#6b7280;">Low priority</span>
+                            <span class="badge-urgency">Low priority</span>
                         </div>
                         <h3>Spiritual Education</h3>
                         <p>Religious classes and cultural programs. Support the next generation of spiritual leaders and knowledge keepers.</p>
@@ -315,6 +328,7 @@
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h2 class="section-title">AI Insights &amp; <span class="gradient-text">Recommendations</span></h2>
+                <div class="section-title-line"></div>
                 <p class="section-subtitle">Data-driven insights to maximize your spiritual impact</p>
             </div>
 
@@ -352,6 +366,7 @@
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h2 class="section-title">How AI <span class="gradient-text">Recommendations</span> Work</h2>
+                <div class="section-title-line"></div>
                 <p class="section-subtitle">Four steps to smarter, more impactful donations</p>
             </div>
 
@@ -396,6 +411,7 @@
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h2 class="section-title">Benefits of <span class="gradient-text">AI-powered Donations</span></h2>
+                <div class="section-title-line"></div>
                 <p class="section-subtitle">Transform your giving experience with intelligent technology</p>
             </div>
 
@@ -454,6 +470,7 @@
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h2 class="section-title">Success <span class="gradient-text">Stories</span></h2>
+                <div class="section-title-line"></div>
                 <p class="section-subtitle">Real devotees, real impact</p>
             </div>
 
@@ -513,21 +530,18 @@
 
 
     <!-- ============================================================
-    FOOTER
+    FOOTER – ORANGE
     ============================================================ -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container-xl">
             <div class="row g-4 pb-4">
-
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
                         <span class="footer-logo-box">🛕</span>
-                        <span class="footer-brand-text">PRASADM</span>
+                        <span class="footer-brand-text">SEWAI</span>
                     </div>
-                    <p class="footer-text-sm">Planning &amp; Resource Automation System for Analytical Data Management</p>
-                    <p class="footer-text-sm">Digitizing devotion with modern temple management solutions that honor tradition.</p>
+                    <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
                 </div>
-
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
@@ -539,19 +553,16 @@
                         <li><a href="../contact.html">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
                     <h4 class="footer-heading">Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About PRASADM</a></li>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
-                    <h4 class="footer-heading">Connect With Us</h4>
+                    <h4 class="footer-heading">Connect</h4>
                     <div class="d-flex gap-2">
                         <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -559,20 +570,91 @@
                         <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
             </div>
             <div class="footer-divider"></div>
-            <div class="footer-copyright">&copy; 2025 PRASADM. All rights reserved. Built with dedication for temples worldwide.</div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved. Built with dedication for temples worldwide.</div>
         </div>
     </footer>
 
 
     <!-- ============================================================
-    BOOTSTRAP JS
+    SCRIPTS
     ============================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/shared/shared.js"></script>
 
-</body>
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR ===== -->
+    <script>
+        (function() {
+            const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
+            let lastScroll = 0;
 
+            if (toggle && menu) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+
+            const hero = document.getElementById('smartDonationsHero');
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + h + 'px)';
+            }
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
+        })();
+    </script>
+
+</body>
 </html>

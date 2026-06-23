@@ -1,40 +1,77 @@
 /* ============================================================
-   PROCEDURES PAGE STYLES
+   PROCEDURES PAGE STYLES – MATCHING HOME PAGE THEME
    ============================================================ */
+
+:root {
+    --primary-orange: #E85D26;
+    --primary-orange-dark: #C44A1A;
+    --primary-orange-deeper: #8B1A0A;
+    --primary-gold: #FFD700;
+    --primary-gold-dark: #D4A800;
+    --saffron: #FF9933;
+    --dark-bg: #1a0a0a;
+    --dark-bg-light: #2d1a0a;
+    --warm-white: #fff8f0;
+    --cream-bg: #fdf6f0;
+}
 
 /* ── Procedures Hero ── */
 .procedures-hero {
-    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 100%);
-    padding: 3.5rem 0 3rem;
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
     color: #fff;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-orange);
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
 }
 
 .procedures-hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 900;
     margin-bottom: 0.5rem;
+    color: #fff;
 }
 
 .procedures-hero .lead {
-    color: rgba(255, 255, 255, 0.8);
     font-size: 1.15rem;
+    color: rgba(255, 215, 0, 0.8);
     max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
-/* ── Sidebar Navigation ── */
+.procedures-hero .hero-line {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-orange);
+    border-radius: 2px;
+    margin: 1rem auto;
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+/* ── Sidebar – VERTICAL ON ALL SCREENS ── */
 .procedures-sidebar {
     position: sticky;
     top: 100px;
-    background: #fff;
+    background: var(--warm-white);
     border-radius: 16px;
     padding: 1.5rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+    border: 1px solid rgba(232, 93, 38, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .procedures-sidebar .nav-link {
     padding: 0.6rem 1.5rem;
-    color: #555;
+    color: #6b4226;
     font-weight: 500;
     font-size: 0.9rem;
     border-left: 3px solid transparent;
@@ -42,91 +79,84 @@
     border-radius: 0;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .procedures-sidebar .nav-link:hover {
     background: rgba(232, 93, 38, 0.06);
-    color: #E85D26;
-    border-left-color: #E85D26;
+    color: var(--primary-orange);
+    border-left-color: var(--primary-orange);
 }
 
 .procedures-sidebar .nav-link.active {
     background: rgba(232, 93, 38, 0.1);
-    color: #E85D26;
-    border-left-color: #E85D26;
+    color: var(--primary-orange);
+    border-left-color: var(--primary-orange);
     font-weight: 700;
 }
 
 .procedures-sidebar .nav-link .nav-letter {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 28px;
     height: 28px;
-    background: #E85D26;
+    background: var(--primary-orange);
     color: #fff;
     border-radius: 50%;
-    text-align: center;
-    line-height: 28px;
     font-size: 0.75rem;
     font-weight: 700;
-    margin-right: 0.75rem;
     flex-shrink: 0;
 }
 
 .procedures-sidebar .nav-link:hover .nav-letter {
-    background: #C44A1A;
+    background: var(--primary-orange-dark);
 }
 
 /* ── Content Sections ── */
-.procedures-content {
-    padding: 0 0 2rem;
-}
-
 .procedure-section {
-    background: #fff;
+    background: var(--warm-white);
     border-radius: 16px;
     padding: 2rem 2rem 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+    border: 1px solid rgba(232, 93, 38, 0.08);
     scroll-margin-top: 90px;
 }
 
-.procedure-section .section-header {
+.section-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
     margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid #f0f0f0;
 }
 
-.procedure-section .section-letter {
-    display: inline-block;
+.section-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
-    background: #E85D26;
+    background: var(--primary-orange);
     color: #fff;
     border-radius: 12px;
-    text-align: center;
-    line-height: 44px;
     font-size: 1.2rem;
     font-weight: 800;
+    margin-right: 0.75rem;
     flex-shrink: 0;
 }
 
-.procedure-section .section-title {
+.section-title {
     font-weight: 700;
     font-size: 1.4rem;
-    color: #1A1A2E;
+    color: #3d1a0a;
     margin: 0;
 }
 
-/* ── Procedure Items ── */
 .procedure-item {
     display: flex;
     gap: 1rem;
-    padding: 0.7rem 0;
-    border-bottom: 1px solid #f5f5f5;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(232, 93, 38, 0.08);
     align-items: flex-start;
 }
 
@@ -134,46 +164,46 @@
     border-bottom: none;
 }
 
-.procedure-item .procedure-icon {
-    font-size: 1rem;
-    color: #E85D26;
+.procedure-icon {
+    font-size: 1.1rem;
+    color: var(--primary-orange);
     margin-top: 0.1rem;
     flex-shrink: 0;
     width: 24px;
     text-align: center;
 }
 
-.procedure-item .procedure-text {
+.procedure-text {
     flex: 1;
 }
 
-.procedure-item .procedure-text .procedure-label {
+.procedure-label {
     display: block;
-    color: #1A1A2E;
+    color: #3d1a0a;
     font-weight: 700;
     font-size: 0.95rem;
 }
 
-.procedure-item .procedure-text .procedure-desc {
-    color: #666;
+.procedure-desc {
+    color: #6b4226;
     font-size: 0.88rem;
     line-height: 1.5;
-    margin: 0.15rem 0 0 0;
+    margin: 0.2rem 0 0 0;
 }
 
-/* ── Registrations & Certificates Box ── */
+/* ── Registrations Box ── */
 .registrations-box {
-    background: linear-gradient(135deg, #f8f9fa, #fff);
+    background: linear-gradient(135deg, #fdf6f0, #fce8d0);
     border-radius: 16px;
     padding: 2rem 2rem;
-    border: 2px solid #E85D26;
+    border: 2px solid var(--primary-orange);
     margin-top: 2rem;
 }
 
 .registrations-box h3 {
     font-weight: 700;
     font-size: 1.3rem;
-    color: #1A1A2E;
+    color: #3d1a0a;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -181,30 +211,30 @@
 }
 
 .registrations-box h3 .reg-icon {
-    color: #E85D26;
+    color: var(--primary-orange);
 }
 
 .registrations-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem 2rem;
+    gap: 0.75rem 2rem;
 }
 
-.registrations-grid .reg-item {
+.reg-item {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.35rem 0;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
     font-size: 0.9rem;
-    color: #444;
-    border-bottom: 1px solid #f0f0f0;
+    color: #6b4226;
+    border-bottom: 1px solid rgba(232, 93, 38, 0.08);
 }
 
-.registrations-grid .reg-item:last-child {
+.reg-item:last-child {
     border-bottom: none;
 }
 
-.registrations-grid .reg-item .reg-check {
+.reg-check {
     color: #10B981;
     font-weight: 700;
 }
@@ -212,24 +242,27 @@
 /* ── CTA Section ── */
 .section-cta-feature {
     padding: 3rem 0;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
 }
 
 .cta-feature-banner {
-    background: linear-gradient(135deg, #E85D26 0%, #C44A1A 50%, #8B1A0A 100%);
     border-radius: 24px;
-    padding: 4rem 3rem;
+    padding: 4rem 2.5rem;
     text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    background: rgba(255, 215, 0, 0.02);
 }
 
 .cta-feature-banner h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
-    font-weight: 800;
-    color: #fff;
+    font-weight: 900;
+    color: var(--primary-gold);
     margin-bottom: 0.75rem;
 }
 
 .cta-feature-banner p {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 215, 0, 0.7);
     font-size: 1.05rem;
     max-width: 600px;
     margin: 0 auto 2rem;
@@ -237,23 +270,23 @@
 }
 
 .btn-cta-white {
-    background: #fff !important;
-    color: #E85D26 !important;
+    background: var(--primary-gold) !important;
+    color: #1a0a0a !important;
     border: none !important;
     padding: 0.9rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
-    transition: background 0.3s, transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-cta-white:hover {
-    background: #f0f0f0 !important;
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
 }
 
 .btn-cta-outline-white {
     background: transparent !important;
-    border: 2px solid #fff !important;
+    border: 2px solid rgba(255, 215, 0, 0.3) !important;
     color: #fff !important;
     padding: 0.9rem 2.5rem;
     border-radius: 50px;
@@ -262,67 +295,63 @@
 }
 
 .btn-cta-outline-white:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 215, 0, 0.05);
     transform: translateY(-2px);
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
+/* ── Responsive – SIDEBAR STAYS VERTICAL ── */
 @media (max-width: 992px) {
+    .procedures-hero {
+        padding: 120px 0 40px;
+        min-height: 30vh;
+    }
     .procedures-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .procedures-sidebar {
         position: relative;
         top: 0;
         margin-bottom: 2rem;
-        display: flex;
-        flex-wrap: wrap;
         padding: 1rem;
         gap: 0.25rem;
+        flex-direction: column;
     }
 
     .procedures-sidebar .nav-link {
-        padding: 0.4rem 0.8rem;
+        padding: 0.5rem 1rem;
         border-left: none;
         border-bottom: 2px solid transparent;
-        font-size: 0.8rem;
-    }
-
-    .procedures-sidebar .nav-link .nav-letter {
-        width: 22px;
-        height: 22px;
-        line-height: 22px;
-        font-size: 0.6rem;
-        margin-right: 0.4rem;
+        font-size: 0.85rem;
+        border-radius: 6px;
     }
 
     .procedures-sidebar .nav-link:hover,
     .procedures-sidebar .nav-link.active {
         border-left: none;
-        border-bottom-color: #E85D26;
+        border-bottom-color: var(--primary-orange);
+        background: rgba(232, 93, 38, 0.06);
+    }
+
+    .procedures-sidebar .nav-link .nav-letter {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
     }
 
     .procedure-section {
         padding: 1.5rem 1.25rem 1rem;
     }
-
-    .procedure-section .section-title {
+    .section-title {
         font-size: 1.2rem;
     }
-
     .registrations-grid {
         grid-template-columns: 1fr;
         gap: 0.25rem;
     }
-
     .cta-feature-banner {
         padding: 2.5rem 1.5rem;
     }
-
     .cta-feature-banner h2 {
         font-size: 1.8rem;
     }
@@ -330,76 +359,111 @@
 
 @media (max-width: 768px) {
     .procedures-hero {
-        padding: 2.5rem 0 2rem;
+        padding: 100px 0 30px;
     }
-
     .procedures-hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
-
     .procedures-hero .lead {
         font-size: 1rem;
+    }
+
+    .procedures-sidebar {
+        padding: 0.75rem;
+        gap: 0.15rem;
+    }
+
+    .procedures-sidebar .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 
     .procedure-section {
         padding: 1.25rem 1rem 0.75rem;
     }
-
-    .procedure-section .section-title {
+    .section-title {
         font-size: 1.1rem;
     }
-
-    .procedure-item .procedure-text .procedure-label {
+    .procedure-label {
         font-size: 0.88rem;
     }
-
-    .procedure-item .procedure-text .procedure-desc {
+    .procedure-desc {
         font-size: 0.82rem;
     }
-
     .registrations-box {
         padding: 1.25rem 1rem;
     }
-
     .registrations-box h3 {
         font-size: 1.1rem;
     }
-
     .cta-feature-banner h2 {
         font-size: 1.5rem;
     }
 }
 
 @media (max-width: 576px) {
+    .procedures-hero {
+        padding: 90px 0 20px;
+    }
+    .procedures-hero h1 {
+        font-size: 1.6rem;
+    }
+    .procedures-hero .lead {
+        font-size: 0.85rem;
+    }
+
     .procedures-sidebar {
-        flex-direction: column;
+        padding: 0.5rem;
         gap: 0.1rem;
     }
 
-    .procedure-section .section-letter {
-        width: 32px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 0.9rem;
+    .procedures-sidebar .nav-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+        border-radius: 4px;
     }
 
+    .procedures-sidebar .nav-link .nav-letter {
+        width: 20px;
+        height: 20px;
+        font-size: 0.55rem;
+    }
+
+    .section-letter {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+    }
+    .section-title {
+        font-size: 1rem;
+    }
     .procedure-item {
         padding: 0.5rem 0;
         gap: 0.6rem;
     }
-
-    .registrations-grid .reg-item {
+    .procedure-label {
         font-size: 0.82rem;
     }
-
+    .procedure-desc {
+        font-size: 0.78rem;
+    }
+    .registrations-box {
+        padding: 1rem;
+    }
+    .registrations-box h3 {
+        font-size: 1rem;
+    }
+    .reg-item {
+        font-size: 0.82rem;
+        padding: 0.3rem 0;
+    }
     .cta-feature-banner {
         padding: 2rem 1.25rem;
     }
-
     .cta-feature-banner h2 {
         font-size: 1.3rem;
     }
-
     .btn-cta-white,
     .btn-cta-outline-white {
         width: 100%;

@@ -4,64 +4,76 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Payment Gateway – Features | PRASADM</title>
+    <title>Payment Gateway – Features | SEWAI</title>
+    <meta name="description" content="Secure payment gateway for temple donations – multiple payment methods, recurring donations, digital receipts, and bank-level security.">
 
     <!-- ===== BOOTSTRAP 5 ===== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== GOOGLE FONTS ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
     <!-- ===== SHARED CSS ===== -->
     <link rel="stylesheet" href="../assets/css/shared/shared.css">
 
     <!-- ===== FEATURES PAGE CSS ===== -->
     <link rel="stylesheet" href="../assets/css/features.css">
+
 </head>
 
 <body>
 
     <!-- ============================================================
-    NAVBAR
+    RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE
     ============================================================ -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container-xl">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-                <span class="nav-logo-box">🛕</span>
-                <span class="nav-brand-text">SEWAI</span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav mx-auto gap-lg-2">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
-                    <li class="nav-item dropdown features-dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="featuresDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Features
-                        </a>
-                        <ul class="dropdown-menu features-menu" aria-labelledby="featuresDropdown">
-                            <li><a class="dropdown-item" href="setting-up.html">Setting Up</a></li>
-                            <li><a class="dropdown-item" href="devotee-connect.html">Devotee Connect</a></li>
-                            <li><a class="dropdown-item" href="payment-gateway.html">Payment Gateway</a></li>
-                            <li><a class="dropdown-item" href="calendar-events.html">Calendar Events</a></li>
-                            <li><a class="dropdown-item" href="hall-booking.html">Hall Booking</a></li>
-                            <li><a class="dropdown-item" href="ecommerce.html">E‑commerce</a></li>
-                            <li><a class="dropdown-item" href="inventory.html">Inventory</a></li>
-                            <li><a class="dropdown-item" href="ai-features.html">AI Features</a></li>
-                            <li><a class="dropdown-item" href="procedures.html">Procedures</a></li>
-                            <li><a class="dropdown-item" href="smart-donations.html">Smart Donations</a></li>
-                            <li><a class="dropdown-item" href="website-template.html">Website Template</a></li>
-                            <li><a class="dropdown-item" href="deva-program.html">Deva Program</a></li>
+    <nav class="navbar-shirdi" id="mainNav">
+        <div class="navbar-shirdi-container">
+
+            <!-- LINE 1: Brand + Toggle Button -->
+            <div class="navbar-shirdi-top">
+                <div class="navbar-top-row">
+                    <div class="navbar-shirdi-brand">
+                        <img src="../assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ -->
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- LINE 2: Navigation (hidden on mobile, shown when toggle clicked) -->
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
+                <ul class="nav-shirdi-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li class="dropdown-shirdi">
+                        <a href="features.html">Features ▼</a>
+                        <ul class="dropdown-shirdi-menu">
+                            <li><a href="setting-up.html">Setting Up</a></li>
+                            <li><a href="devotee-connect.html">Devotee Connect</a></li>
+                            <li><a href="payment-gateway.html" class="active">Payment Gateway</a></li>
+                            <li><a href="calendar-events.html">Calendar Events</a></li>
+                            <li><a href="hall-booking.html">Hall Booking</a></li>
+                            <li><a href="ecommerce.html">E‑commerce</a></li>
+                            <li><a href="inventory.html">Inventory</a></li>
+                            <li><a href="ai-features.html">AI Features</a></li>
+                            <li><a href="procedures.html">Procedures</a></li>
+                            <li><a href="smart-donations.html">Smart Donations</a></li>
+                            <!-- <li><a href="website-template.html">Website Template</a></li> -->
+                            <li><a href="deva-program.html">Deva Program</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="../knowledge-base.html">Knowledge Base</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../media.html">Media</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                    <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                    <li><a href="../media.html">Media</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li class="nav-shirdi-cta"><a href="../contact.html" class="btn-shirdi-cta">Request Quote</a></li>
                 </ul>
-                <a href="../contact.html" class="btn btn-cta flex-shrink-0">Request Quote</a>
             </div>
+
         </div>
     </nav>
 
@@ -69,11 +81,12 @@
     <!-- ============================================================
     FEATURE HERO
     ============================================================ -->
-    <section class="feature-page-hero">
+    <section class="feature-page-hero" id="featureHero">
         <div class="container-xl">
-            <div class="row">
+            <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
-                    <h1>Payment Gateway</h1>
+                    <h1>Payment <span class="text-gold">Gateway</span></h1>
+                    <div class="hero-line"></div>
                     <p class="lead">Secure, flexible, and comprehensive payment solutions designed specifically for temple donation management.</p>
                 </div>
             </div>
@@ -131,7 +144,7 @@
                         </div>
                         <h3>Multiple Payment Methods</h3>
                         <p>Accept donations through various payment channels including cards, UPI, bank transfers, and digital wallets.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Credit/Debit Cards</li>
                             <li>UPI Payments</li>
                             <li>Net Banking</li>
@@ -149,7 +162,7 @@
                         </div>
                         <h3>Secure Transactions</h3>
                         <p>Enterprise-grade security with PCI DSS compliance ensuring all transactions are safe and protected.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>SSL Encryption</li>
                             <li>PCI DSS Compliant</li>
                             <li>Fraud Detection</li>
@@ -179,7 +192,7 @@
                         </div>
                         <h3>Recurring Donations</h3>
                         <p>Enable devotees to set up automatic recurring donations for convenient and consistent giving.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Monthly Donations</li>
                             <li>Annual Offerings</li>
                             <li>Festival Contributions</li>
@@ -197,7 +210,7 @@
                         </div>
                         <h3>Digital Receipts</h3>
                         <p>Automatic generation of digital receipts and tax-deductible certificates for all donations.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Instant Receipts</li>
                             <li>Tax Certificates</li>
                             <li>Donation Summary</li>
@@ -227,7 +240,7 @@
                         </div>
                         <h3>Multi-Currency Support</h3>
                         <p>Accept donations from devotees worldwide with support for multiple currencies and conversion.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Indian Rupee (INR)</li>
                             <li>US Dollar (USD)</li>
                             <li>Euro (EUR)</li>
@@ -245,7 +258,7 @@
                         </div>
                         <h3>Mobile Payments</h3>
                         <p>Optimized mobile payment experience for donations on-the-go with quick payment options.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Mobile-Optimized</li>
                             <li>Quick Pay</li>
                             <li>Touch ID/Face ID</li>
@@ -275,7 +288,7 @@
                         </div>
                         <h3>Payment Analytics</h3>
                         <p>Comprehensive analytics and reporting to track donation patterns and financial insights.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Donation Trends</li>
                             <li>Payment Reports</li>
                             <li>Donor Analytics</li>
@@ -293,7 +306,7 @@
                         </div>
                         <h3>Donor Recognition</h3>
                         <p>Acknowledge and appreciate donors with recognition features and donor management tools.</p>
-                        <ul style="padding-left:1.2rem; color:#666; font-size:0.9rem; line-height:2;">
+                        <ul class="feature-list">
                             <li>Donor Walls</li>
                             <li>Recognition Certificates</li>
                             <li>Donor Levels</li>
@@ -315,39 +328,39 @@
         <div class="container-xl">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <h2 style="font-weight:800; color:#1A1A2E; font-size:2.2rem;">Bank-Level <span class="gradient-text">Security</span></h2>
-                    <p style="color:#555; font-size:1.05rem; line-height:1.7; margin-bottom:1.5rem;">
+                    <h2 style="font-weight:800; color:#3d1a0a; font-size:2.2rem;">Bank-Level <span class="gradient-text">Security</span></h2>
+                    <p style="color:#6b4226; font-size:1.05rem; line-height:1.7; margin-bottom:1.5rem;">
                         Your donations are protected by the same security standards used by leading financial institutions.
                     </p>
                     <div class="row g-3">
                         <div class="col-md-4 col-6">
-                            <div style="background:#f5f5f5; border-radius:12px; padding:1.25rem; text-align:center;">
-                                <div style="font-size:2rem; margin-bottom:0.3rem;">🛡️</div>
-                                <div style="font-weight:700; font-size:0.9rem; color:#1A1A2E;">PCI DSS Certified</div>
-                                <div style="font-size:0.75rem; color:#888;">Fully compliant with Payment Card Industry Data Security Standards for maximum protection.</div>
+                            <div class="security-item">
+                                <div class="security-icon">🛡️</div>
+                                <div class="security-title">PCI DSS Certified</div>
+                                <div class="security-desc">Fully compliant with Payment Card Industry Data Security Standards for maximum protection.</div>
                             </div>
                         </div>
                         <div class="col-md-4 col-6">
-                            <div style="background:#f5f5f5; border-radius:12px; padding:1.25rem; text-align:center;">
-                                <div style="font-size:2rem; margin-bottom:0.3rem;">🌐</div>
-                                <div style="font-weight:700; font-size:0.9rem; color:#1A1A2E;">Global Standards</div>
-                                <div style="font-size:0.75rem; color:#888;">Adheres to international security protocols and compliance requirements worldwide.</div>
+                            <div class="security-item">
+                                <div class="security-icon">🌐</div>
+                                <div class="security-title">Global Standards</div>
+                                <div class="security-desc">Adheres to international security protocols and compliance requirements worldwide.</div>
                             </div>
                         </div>
                         <div class="col-md-4 col-6">
-                            <div style="background:#f5f5f5; border-radius:12px; padding:1.25rem; text-align:center;">
-                                <div style="font-size:2rem; margin-bottom:0.3rem;">⏱️</div>
-                                <div style="font-weight:700; font-size:0.9rem; color:#1A1A2E;">Real-time Monitoring</div>
-                                <div style="font-size:0.75rem; color:#888;">Continuous monitoring and fraud detection systems protect every transaction.</div>
+                            <div class="security-item">
+                                <div class="security-icon">⏱️</div>
+                                <div class="security-title">Real-time Monitoring</div>
+                                <div class="security-desc">Continuous monitoring and fraud detection systems protect every transaction.</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div style="background:linear-gradient(135deg,#1a0a2e,#2d1b4e); border-radius:20px; padding:2.5rem; color:#fff; text-align:center;">
-                        <div style="font-size:4rem; margin-bottom:1rem;">🔒</div>
-                        <h3 style="color:#FFD700; font-weight:700;">Your Trust, Our Priority</h3>
-                        <p style="color:rgba(255,255,255,0.8); line-height:1.7;">Every transaction is encrypted and monitored to ensure the highest level of security for your temple and devotees.</p>
+                    <div class="security-banner">
+                        <div class="security-banner-icon">🔒</div>
+                        <h3 class="security-banner-title">Your Trust, Our Priority</h3>
+                        <p class="security-banner-desc">Every transaction is encrypted and monitored to ensure the highest level of security for your temple and devotees.</p>
                     </div>
                 </div>
             </div>
@@ -373,21 +386,18 @@
 
 
     <!-- ============================================================
-    FOOTER
+    FOOTER – ORANGE
     ============================================================ -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container-xl">
             <div class="row g-4 pb-4">
-
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
                         <span class="footer-logo-box">🛕</span>
-                        <span class="footer-brand-text">PRASADM</span>
+                        <span class="footer-brand-text">SEWAI</span>
                     </div>
-                    <p class="footer-text-sm">Planning &amp; Resource Automation System for Analytical Data Management</p>
-                    <p class="footer-text-sm">Digitizing devotion with modern temple management solutions that honor tradition.</p>
+                    <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
                 </div>
-
                 <div class="col-md-3">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
@@ -399,19 +409,16 @@
                         <li><a href="../contact.html">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
                     <h4 class="footer-heading">Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About PRASADM</a></li>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
-                    <h4 class="footer-heading">Connect With Us</h4>
+                    <h4 class="footer-heading">Connect</h4>
                     <div class="d-flex gap-2">
                         <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -419,20 +426,91 @@
                         <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
             </div>
             <div class="footer-divider"></div>
-            <div class="footer-copyright">&copy; 2025 PRASADM. All rights reserved. Built with dedication for temples worldwide.</div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved. Built with dedication for temples worldwide.</div>
         </div>
     </footer>
 
 
     <!-- ============================================================
-    BOOTSTRAP JS
+    SCRIPTS
     ============================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/shared/shared.js"></script>
 
-</body>
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR ===== -->
+    <script>
+        (function() {
+            const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
+            let lastScroll = 0;
 
+            if (toggle && menu) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+
+            const hero = document.getElementById('featureHero');
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + h + 'px)';
+            }
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
+        })();
+    </script>
+
+</body>
 </html>
