@@ -6,216 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SEWAI – Smart Temple Management</title>
     <meta name="description" content="SEWAI – Smart Temple Management System.">
-    <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/png" sizes="62x62" href="assets/images/favicon.png">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- ===== BOOTSTRAP 5 ===== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
-    <!-- ===== SHARED CSS ===== -->
     <link rel="stylesheet" href="assets/css/shared/shared.css">
-
-    <!-- ===== HOME CSS ===== -->
     <link rel="stylesheet" href="assets/css/home.css">
-
-    <!-- ===== SLIDESHOW STYLES ===== -->
-    <style>
-        .hero-shirdi {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-slideshow {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            will-change: opacity;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-        }
-
-        .hero-slideshow-overlay {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 26, 0.55);
-            z-index: 2;
-        }
-
-        .hero-shirdi-content {
-            position: relative;
-            z-index: 3;
-        }
-
-        .slide-controls {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            transform: translateY(-50%);
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            pointer-events: none;
-        }
-
-        .slide-controls button {
-            pointer-events: auto;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slide-controls button:hover {
-            background: rgba(255, 215, 0, 0.25);
-            border-color: var(--primary-gold);
-            transform: scale(1.1);
-        }
-
-        .slide-controls button:active {
-            transform: scale(0.95);
-        }
-
-        .slide-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            gap: 10px;
-            pointer-events: none;
-        }
-
-        .slide-dots .dot {
-            pointer-events: auto;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slide-dots .dot.active {
-            background: var(--primary-gold);
-            border-color: var(--primary-gold);
-            transform: scale(1.2);
-        }
-
-        .slide-dots .dot:hover {
-            background: rgba(255, 215, 0, 0.5);
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .slide-controls button {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            .slide-controls {
-                padding: 0 10px;
-            }
-            .slide-dots .dot {
-                width: 10px;
-                height: 10px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .slide-controls button {
-                width: 34px;
-                height: 34px;
-                font-size: 0.8rem;
-            }
-            .slide-dots {
-                bottom: 20px;
-                gap: 8px;
-            }
-            .slide-dots .dot {
-                width: 8px;
-                height: 8px;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
-    <!-- ============================================================
-   TEMPLE PRELOADER – appears while page loads
-   ============================================================ -->
-<div id="templePreloader">
-    <div class="preloader-content">
-        <!-- Diya / Lamp -->
-        <div class="diya-container">
-            <div class="diya">
-                <div class="diya-body"></div>
-                <div class="flame">
-                    <div class="flame-inner"></div>
+
+    <!-- PRELOADER -->
+    <div id="templePreloader">
+        <div class="preloader-content">
+            <div class="diya-container">
+                <div class="diya">
+                    <div class="diya-body"></div>
+                    <div class="flame">
+                        <div class="flame-inner"></div>
+                    </div>
+                    <div class="diya-shadow"></div>
                 </div>
-                <div class="diya-shadow"></div>
+                <div class="diya-glow"></div>
             </div>
-            <div class="diya-glow"></div>
-        </div>
-
-        <!-- Om Symbol (optional – you can replace with your logo) -->
-        <div class="om-symbol">🕉️</div>
-
-        <!-- Message -->
-        <p class="preloader-message">श्री गणेशाय नमः</p>
-        <p class="preloader-sub-message">Blessings loading... please wait</p>
-
-        <!-- Loading bar -->
-        <div class="preloader-bar">
-            <div class="preloader-bar-fill"></div>
+            <div class="om-symbol">🕉️</div>
+            <p class="preloader-message">श्री गणेशाय नमः</p>
+            <p class="preloader-sub-message">Blessings loading... please wait</p>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
         </div>
     </div>
-</div>
 
-    <!-- ============================================================
-    RESPONSIVE NAVBAR – CENTERED BRAND + CENTERED LINKS
-    ============================================================ -->
+    <!-- NAVBAR -->
     <nav class="navbar-shirdi" id="mainNav">
         <div class="navbar-shirdi-container">
 
-            <!-- LINE 1: Brand – CENTERED -->
             <div class="navbar-shirdi-top">
                 <div class="navbar-top-row">
                     <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
@@ -229,34 +56,31 @@
                 </div>
             </div>
 
-            <!-- LINE 2: Navigation – CENTERED LINKS -->
+            <!-- KEY FIX: position:relative wrapper so dropdown positions relative to this bar -->
             <div class="navbar-shirdi-bottom" id="navbarMenu">
                 <ul class="nav-shirdi-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown-shirdi">
-                        <a href="features.html">Features ▼</a>
+                        <a href="features.html" class="dropdown-trigger">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                         <ul class="dropdown-shirdi-menu">
-                            <!-- ===== Temple Services with nested fly-out sub-menu (now first) ===== -->
                             <li class="dropdown-sub">
-                                <a href="features/temple-services.html">Temple Services</a>
+                                <a href="features/temple-services.html">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
                                 <ul class="dropdown-sub-menu">
-                                    <li><a href="features/temple-services/abhishekam.html">Csr Temple Tourism</a></li>
-                                    <li><a href="features/temple-services/archana.html">Temple Education</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Temple Placement</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Temple Gurukul</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Dawn to Dust Service</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Life-Astro Service</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Temple Maps</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Bhajan Jaming</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Temple Security</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Temple Vip Moment</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Prasad</a></li>
-                                    <li><a href="features/temple-services/pooja-booking.html">Pooja</a></li>
-                                    <!-- Add more services here manually using the same <li><a>...</a></li> pattern -->
+                                    <li><a href="features/temple-services/csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                    <li><a href="features/temple-services/temple-education.html">Temple Education</a></li>
+                                    <li><a href="features/temple-services/temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="features/temple-services/temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="features/temple-services/dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="features/temple-services/life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="features/temple-services/temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="features/temple-services/bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="features/temple-services/temple-security.html">Temple Security</a></li>
+                                    <li><a href="features/temple-services/temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="features/temple-services/prasad.html">Prasad</a></li>
+                                    <li><a href="features/temple-services/pooja.html">Pooja</a></li>
                                 </ul>
                             </li>
-
                             <li><a href="features/setting-up.html">Setting Up</a></li>
                             <li><a href="features/devotee-connect.html">Devotee Connect</a></li>
                             <li><a href="features/payment-gateway.html">Payment Gateway</a></li>
@@ -271,7 +95,6 @@
                             <li><a href="features/templemerchandise.html">Temple Merchandise</a></li>
                         </ul>
                     </li>
-
                     <li><a href="knowledge-base.html">Knowledge Base</a></li>
                     <li><a href="media.html">Media</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -283,9 +106,7 @@
     </nav>
 
 
-    <!-- ============================================================
-    HERO SECTION – WITH SLIDESHOW
-    ============================================================ -->
+    <!-- HERO SECTION -->
     <section class="hero-shirdi" id="hero">
 
         <div class="hero-slideshow" id="heroSlideshow">
@@ -298,42 +119,33 @@
         <div class="hero-slideshow-overlay"></div>
 
         <div class="slide-controls">
-            <button id="prevSlide" aria-label="Previous image">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button id="nextSlide" aria-label="Next image">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <button id="prevSlide" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextSlide" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
         </div>
-
-        <div class="slide-dots" id="slideDots"></div>
 
         <div class="container-xl hero-shirdi-content">
             <div class="row align-items-center justify-content-center hero-shirdi-grid">
                 <div class="col-lg-8 col-xl-7 hero-shirdi-left text-center">
-
                     <h1 class="hero-shirdi-title">
                         Smart<span class="text-gold">Temple</span><br>
                         <span class="text-white">Management</span>
                     </h1>
-
                     <p class="hero-shirdi-subtitle mx-auto">
                         Experience the future of temple administration with
                         <span class="text-gold fw-bold">SEWAI</span>
                         — Smart &amp; Automated Temple Management System.
                     </p>
-
                     <div class="d-flex flex-wrap gap-3 justify-content-center hero-shirdi-actions">
                         <div class="hero-shirdi-action"><span class="action-icon">💰</span><span class="action-label">Smart Donations</span></div>
                         <div class="hero-shirdi-action"><span class="action-icon">📅</span><span class="action-label">Event Management</span></div>
                         <div class="hero-shirdi-action"><span class="action-icon">👥</span><span class="action-label">Community Connect</span></div>
                     </div>
-
+                    <!-- Dots sit neatly between badges and CTA buttons -->
+                    <div class="slide-dots-inline" id="slideDots"></div>
                     <div class="d-flex flex-wrap gap-3 justify-content-center hero-shirdi-buttons">
                         <a href="contact.html" class="btn btn-shirdi-primary">🕉 Start Journey →</a>
                         <a href="features.html" class="btn btn-shirdi-outline">📱 Explore Features →</a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -341,9 +153,7 @@
     </section>
 
 
-    <!-- ============================================================
-    FEATURES GRID
-    ============================================================ -->
+    <!-- FEATURES GRID -->
     <section class="section-pad section-features" id="features">
         <div class="container-xl">
             <div class="text-center mb-5">
@@ -358,9 +168,7 @@
     </section>
 
 
-    <!-- ============================================================
-    HOW IT WORKS
-    ============================================================ -->
+    <!-- HOW IT WORKS -->
     <section class="section-pad section-how-it-works" id="how-it-works">
         <div class="container-xl">
             <div class="text-center mb-5">
@@ -373,24 +181,20 @@
     </section>
 
 
-    <!-- ============================================================
-    MISSION SECTION
-    ============================================================ -->
+    <!-- MISSION SECTION -->
     <section class="section-pad section-mission" id="mission">
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h2 class="section-title">Smart Mission: <span class="gradient-text">Bridging Worlds</span></h2>
                 <div class="section-title-line"></div>
-                <p class="text-muted mx-auto" style="max-width:650px; line-height:1.7; font-size:1rem;">SEWAI harmoniously bridges the eternal wisdom of ancient traditions with the limitless possibilities of modern technology. We empower temples to serve their communities more effectively while preserving the spiritual essence that has guided humanity for millennia.</p>
+                <p class="text-muted mx-auto" style="max-width:650px; line-height:1.7; font-size:1rem;">SEWAI harmoniously bridges the eternal wisdom of ancient traditions with the limitless possibilities of modern technology.</p>
             </div>
             <div id="missionGrid" class="row g-4"></div>
         </div>
     </section>
 
 
-    <!-- ============================================================
-    PHILOSOPHY SECTION
-    ============================================================ -->
+    <!-- PHILOSOPHY SECTION -->
     <section class="section-pad-sm section-philosophy" id="philosophy">
         <div class="container-xl">
             <div class="philosophy-banner">
@@ -404,9 +208,7 @@
     </section>
 
 
-    <!-- ============================================================
-    STATS SECTION
-    ============================================================ -->
+    <!-- STATS SECTION -->
     <section class="section-stats" id="stats">
         <div class="container-xl">
             <div class="stats-banner">
@@ -417,14 +219,12 @@
     </section>
 
 
-    <!-- ============================================================
-    TEMPLE ECOSYSTEM
-    ============================================================ -->
+    <!-- TEMPLE ECOSYSTEM -->
     <section class="section-pad-sm section-ecosystem" id="ecosystem">
         <div class="container-xl">
             <div class="ecosystem-banner">
                 <div class="text-center mb-4">
-                    <div class="ecosystem-icon">🔔</div>
+                    <!-- Removed the bell icon completely -->
                     <h2 class="ecosystem-title">Complete Temple Ecosystem</h2>
                 </div>
                 <div id="ecosystemGrid" class="row g-3"></div>
@@ -433,9 +233,7 @@
     </section>
 
 
-    <!-- ============================================================
-    WHY CHOOSE SEWAI
-    ============================================================ -->
+    <!-- WHY CHOOSE SEWAI -->
     <section class="section-pad section-why-choose" id="why-choose">
         <div class="container-xl">
             <div class="text-center mb-5">
@@ -448,9 +246,7 @@
     </section>
 
 
-    <!-- ============================================================
-    CTA SECTION
-    ============================================================ -->
+    <!-- CTA SECTION -->
     <section class="section-pad-sm section-cta" id="cta">
         <div class="container-xl">
             <div class="cta-banner">
@@ -465,15 +261,14 @@
     </section>
 
 
-    <!-- ============================================================
-    FOOTER – ORANGE
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="footer" id="footer">
         <div class="container-xl">
             <div class="row g-4 pb-4">
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="footer-logo-box">🛕</span>
+                        <!-- ✅ Updated: Logo image instead of emoji -->
+                        <img src="assets/images/favicon.png" alt="SEWAI Logo" style="height: 100px; width: auto; object-fit: contain;">
                         <span class="footer-brand-text">SEWAI</span>
                     </div>
                     <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
@@ -513,239 +308,254 @@
     </footer>
 
 
-    <!-- ============================================================
-    SCRIPTS
-    ============================================================ -->
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/shared/shared.js"></script>
     <script src="assets/js/home.js"></script>
 
-    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR ===== -->
     <script>
-        (function() {
-            const navbar = document.getElementById('mainNav');
-            const toggle = document.getElementById('navbarToggle');
-            const menu = document.getElementById('navbarMenu');
-            let lastScroll = 0;
+    (function () {
 
-            // ── Toggle Menu ──
-            if (toggle && menu) {
-                toggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    menu.classList.toggle('open');
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                });
+        /* ── Preloader ── */
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var pl = document.getElementById('templePreloader');
+                if (pl) pl.classList.add('hidden');
+            }, 2400);
+        });
 
-                menu.querySelectorAll('a').forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        menu.classList.remove('open');
-                        const icon = toggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
-                    });
-                });
+        var navbar  = document.getElementById('mainNav');
+        var toggle  = document.getElementById('navbarToggle');
+        var menu    = document.getElementById('navbarMenu');
+        var hero    = document.getElementById('hero');
+        var lastScroll = 0;
 
-                document.addEventListener('click', function(e) {
-                    if (!navbar.contains(e.target)) {
-                        menu.classList.remove('open');
-                        const icon = toggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
-                    }
-                });
+        /* ── Hero height: always fill viewport minus navbar ── */
+        function adjustHero() {
+            if (!navbar || !hero) return;
+            var h = navbar.offsetHeight;
+            hero.style.paddingTop = h + 'px';
+            /* Force hero to fill remaining viewport exactly */
+            hero.style.minHeight  = '100vh';
+            hero.style.height     = '100vh';
+        }
+        window.addEventListener('load',   adjustHero);
+        window.addEventListener('resize', adjustHero);
+        /* Also call once immediately so it's set before load fires */
+        adjustHero();
+
+        /* ── Navbar scroll hide ── */
+        window.addEventListener('scroll', function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScroll && scrollTop > 100) {
+                navbar.classList.add('hidden-nav');
+            } else {
+                navbar.classList.remove('hidden-nav');
             }
+            lastScroll = scrollTop;
+        });
 
-            // ── Dropdown toggle on mobile (Features) ──
-            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
-                dropdownLink.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 992) {
-                        e.preventDefault();
-                        const parent = this.parentElement;
-                        parent.classList.toggle('active');
-                    }
+        /* ── Mobile toggle ── */
+        if (toggle && menu) {
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                menu.classList.toggle('open');
+                var icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth > 992) return;
+                    menu.classList.remove('open');
+                    var icon = toggle.querySelector('i');
+                    if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
                 });
             });
 
-            // ── Sub-dropdown toggle on mobile (Temple Services) ──
-            document.querySelectorAll('.dropdown-sub > a').forEach(function(subLink) {
-                subLink.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 992) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        const parent = this.parentElement;
-                        parent.classList.toggle('active');
-                    }
-                });
+            document.addEventListener('click', function (e) {
+                if (!navbar.contains(e.target)) {
+                    menu.classList.remove('open');
+                    var icon = toggle.querySelector('i');
+                    if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
+                }
             });
+        }
 
-            // ── Hide navbar on scroll ──
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScroll && scrollTop > 100) {
-                    navbar.classList.add('hidden-nav');
-                } else {
-                    navbar.classList.remove('hidden-nav');
-                }
-                lastScroll = scrollTop;
-            });
-
-            // ── Dynamic hero offset ──
-            const hero = document.getElementById('hero');
-
-            function adjustHero() {
-                if (!navbar || !hero) return;
-                const h = navbar.offsetHeight;
-                hero.style.paddingTop = h + 'px';
-                hero.style.minHeight = 'calc(100vh - ' + h + 'px)';
-            }
-
-            window.addEventListener('load', adjustHero);
-            window.addEventListener('resize', adjustHero);
-
-            // ── Slideshow ──
-            (function() {
-                const slides = document.querySelectorAll('.hero-slide');
-                const dotsContainer = document.getElementById('slideDots');
-                const prevBtn = document.getElementById('prevSlide');
-                const nextBtn = document.getElementById('nextSlide');
-                let currentIndex = 0;
-                let slideInterval;
-                const intervalTime = 5000;
-
-                if (slides.length === 0) return;
-
-                slides.forEach((_, index) => {
-                    const dot = document.createElement('span');
-                    dot.className = 'dot' + (index === 0 ? ' active' : '');
-                    dot.dataset.index = index;
-                    dot.addEventListener('click', function() {
-                        goToSlide(parseInt(this.dataset.index));
-                    });
-                    dotsContainer.appendChild(dot);
-                });
-
-                const dots = dotsContainer.querySelectorAll('.dot');
-
-                function goToSlide(index) {
-                    if (index < 0) index = slides.length - 1;
-                    if (index >= slides.length) index = 0;
-
-                    slides.forEach((slide, i) => {
-                        slide.classList.toggle('active', i === index);
-                    });
-
-                    dots.forEach((dot, i) => {
-                        dot.classList.toggle('active', i === index);
-                    });
-
-                    currentIndex = index;
-                }
-
-                function nextSlide() {
-                    goToSlide(currentIndex + 1);
-                }
-
-                function prevSlide() {
-                    goToSlide(currentIndex - 1);
-                }
-
-                function startAutoSlide() {
-                    if (slideInterval) clearInterval(slideInterval);
-                    slideInterval = setInterval(nextSlide, intervalTime);
-                }
-
-                function stopAutoSlide() {
-                    if (slideInterval) {
-                        clearInterval(slideInterval);
-                        slideInterval = null;
-                    }
-                }
-
-                nextBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    stopAutoSlide();
-                    nextSlide();
-                    startAutoSlide();
-                });
-
-                prevBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    stopAutoSlide();
-                    prevSlide();
-                    startAutoSlide();
-                });
-
-                const heroSection = document.getElementById('hero');
-                heroSection.addEventListener('mouseenter', stopAutoSlide);
-                heroSection.addEventListener('mouseleave', startAutoSlide);
-
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'ArrowLeft') {
-                        stopAutoSlide();
-                        prevSlide();
-                        startAutoSlide();
-                    } else if (e.key === 'ArrowRight') {
-                        stopAutoSlide();
-                        nextSlide();
-                        startAutoSlide();
-                    }
-                });
-
-                let wheelTimeout = false;
-                heroSection.addEventListener('wheel', function(e) {
-                    if (e.target.closest('.hero-shirdi-content')) return;
+        /* ── Mobile: Features dropdown toggle ── */
+        document.querySelectorAll('.dropdown-shirdi > a.dropdown-trigger').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 992) {
                     e.preventDefault();
-                    if (wheelTimeout) return;
-                    wheelTimeout = true;
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
 
-                    if (e.deltaY > 0) {
-                        stopAutoSlide();
-                        nextSlide();
-                    } else {
-                        stopAutoSlide();
-                        prevSlide();
-                    }
-                    startAutoSlide();
+        /* ── Mobile: Temple Services sub-dropdown toggle ── */
+        document.querySelectorAll('.dropdown-sub > a').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
 
-                    setTimeout(() => {
-                        wheelTimeout = false;
-                    }, 800);
-                }, { passive: false });
+        /* ── Desktop: Smart sub-dropdown positioning ──
+           Keeps the fly-out on screen regardless of monitor width            */
+        document.querySelectorAll('.dropdown-sub').forEach(function (item) {
+            item.addEventListener('mouseenter', function () {
+                if (window.innerWidth <= 992) return;
+                var subMenu = item.querySelector('.dropdown-sub-menu');
+                if (!subMenu) return;
 
-                let touchStartX = 0;
-                let touchEndX = 0;
+                /* Reset so we can measure fresh */
+                subMenu.style.left  = '';
+                subMenu.style.right = '';
+                subMenu.style.top   = '';
 
-                heroSection.addEventListener('touchstart', function(e) {
-                    touchStartX = e.changedTouches[0].screenX;
-                }, { passive: true });
+                var rect    = item.getBoundingClientRect();
+                var smRect  = subMenu.getBoundingClientRect();
+                var vw      = window.innerWidth;
 
-                heroSection.addEventListener('touchend', function(e) {
-                    touchEndX = e.changedTouches[0].screenX;
-                    const diff = touchStartX - touchEndX;
-                    if (Math.abs(diff) > 50) {
-                        stopAutoSlide();
-                        if (diff > 0) {
-                            nextSlide();
-                        } else {
-                            prevSlide();
-                        }
-                        startAutoSlide();
-                    }
-                }, { passive: true });
+                /* Default: open to the right */
+                if (rect.right + smRect.width + 10 > vw) {
+                    /* Not enough space on the right → open to the left */
+                    subMenu.style.left  = 'auto';
+                    subMenu.style.right = '100%';
+                } else {
+                    subMenu.style.left  = '100%';
+                    subMenu.style.right = 'auto';
+                }
 
-                goToSlide(0);
-                startAutoSlide();
-            })();
+                /* Vertical: if it overflows bottom, shift up */
+                subMenu.style.top = '0';
+                var afterRect = subMenu.getBoundingClientRect();
+                if (afterRect.bottom > window.innerHeight - 20) {
+                    var overflow = afterRect.bottom - (window.innerHeight - 20);
+                    subMenu.style.top = '-' + overflow + 'px';
+                }
+            });
+        });
+
+        /* ── Desktop: Smart main-dropdown horizontal centering ──
+           Clamps so the panel never bleeds off either edge               */
+        document.querySelectorAll('.dropdown-shirdi').forEach(function (item) {
+            item.addEventListener('mouseenter', function () {
+                if (window.innerWidth <= 992) return;
+                var ddMenu = item.querySelector('.dropdown-shirdi-menu');
+                if (!ddMenu) return;
+
+                /* Reset positioning */
+                ddMenu.style.left      = '';
+                ddMenu.style.right     = '';
+                ddMenu.style.transform = '';
+
+                /* Get measurements after display:grid kicks in briefly */
+                ddMenu.style.visibility = 'hidden';
+                ddMenu.style.display    = 'grid';
+
+                var menuRect = ddMenu.getBoundingClientRect();
+                var vw       = window.innerWidth;
+                var mw       = menuRect.width;
+                var margin   = 12; /* minimum gap from viewport edge */
+
+                /* Position relative to the orange bar (its offsetParent) */
+                var barRect  = item.closest('.navbar-shirdi-bottom').getBoundingClientRect();
+                var itemRect = item.getBoundingClientRect();
+                var itemCenterRelBar = (itemRect.left + itemRect.width / 2) - barRect.left;
+
+                var idealLeft = itemCenterRelBar - mw / 2;
+                /* Clamp: don't bleed left */
+                var clampedLeft = Math.max(margin, idealLeft);
+                /* Clamp: don't bleed right */
+                if (clampedLeft + mw > vw - margin) {
+                    clampedLeft = vw - mw - margin;
+                }
+                /* Convert to position relative to the bar */
+                var finalLeft = clampedLeft - barRect.left;
+
+                ddMenu.style.left       = finalLeft + 'px';
+                ddMenu.style.transform  = 'none';
+                ddMenu.style.visibility = '';
+                ddMenu.style.display    = '';
+            });
+        });
+
+        /* ── Slideshow ── */
+        (function () {
+            var slides        = document.querySelectorAll('.hero-slide');
+            var dotsContainer = document.getElementById('slideDots');
+            var prevBtn       = document.getElementById('prevSlide');
+            var nextBtn       = document.getElementById('nextSlide');
+            var currentIndex  = 0;
+            var slideInterval;
+            var intervalTime  = 5000;
+
+            if (!slides.length) return;
+
+            slides.forEach(function (_, index) {
+                var dot = document.createElement('span');
+                dot.className = 'dot' + (index === 0 ? ' active' : '');
+                dot.dataset.index = index;
+                dot.addEventListener('click', function () { goToSlide(parseInt(this.dataset.index)); });
+                dotsContainer.appendChild(dot);
+            });
+
+            var dots = dotsContainer.querySelectorAll('.dot');
+
+            function goToSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                slides.forEach(function (s, i) { s.classList.toggle('active', i === index); });
+                dots.forEach(function (d, i)   { d.classList.toggle('active', i === index); });
+                currentIndex = index;
+            }
+
+            function startAuto() { if (slideInterval) clearInterval(slideInterval); slideInterval = setInterval(function () { goToSlide(currentIndex + 1); }, intervalTime); }
+            function stopAuto()  { if (slideInterval) { clearInterval(slideInterval); slideInterval = null; } }
+
+            nextBtn.addEventListener('click', function (e) { e.stopPropagation(); stopAuto(); goToSlide(currentIndex + 1); startAuto(); });
+            prevBtn.addEventListener('click', function (e) { e.stopPropagation(); stopAuto(); goToSlide(currentIndex - 1); startAuto(); });
+
+            hero.addEventListener('mouseenter', stopAuto);
+            hero.addEventListener('mouseleave', startAuto);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft')  { stopAuto(); goToSlide(currentIndex - 1); startAuto(); }
+                if (e.key === 'ArrowRight') { stopAuto(); goToSlide(currentIndex + 1); startAuto(); }
+            });
+
+            var wheelLock = false;
+            hero.addEventListener('wheel', function (e) {
+                if (e.target.closest('.hero-shirdi-content')) return;
+                e.preventDefault();
+                if (wheelLock) return;
+                wheelLock = true;
+                stopAuto();
+                if (e.deltaY > 0) goToSlide(currentIndex + 1); else goToSlide(currentIndex - 1);
+                startAuto();
+                setTimeout(function () { wheelLock = false; }, 800);
+            }, { passive: false });
+
+            var touchStartX = 0;
+            hero.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+            hero.addEventListener('touchend',   function (e) {
+                var diff = touchStartX - e.changedTouches[0].screenX;
+                if (Math.abs(diff) > 50) { stopAuto(); if (diff > 0) goToSlide(currentIndex + 1); else goToSlide(currentIndex - 1); startAuto(); }
+            }, { passive: true });
+
+            goToSlide(0);
+            startAuto();
         })();
+
+    })();
     </script>
-    
+
 </body>
 </html>

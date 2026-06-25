@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temple Security – SEWAI | Smart Temple Management</title>
+    <meta name="description" content="Temple Security – Comprehensive security solutions for temples including CCTV monitoring, crowd management, and devotee safety.">
+    <link rel="icon" type="image/png" sizes="62x62" href="../../assets/images/favicon.png">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/shared/shared.css">
+
+    <style>
+        /* ── Page specific styles ── */
+        .security-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
+            color: #fff;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-orange, #E85D26);
+            display: flex;
+            align-items: center;
+            min-height: 40vh;
+        }
+
+        .security-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .security-hero .text-gold {
+            color: var(--primary-gold, #FFD700) !important;
+        }
+
+        .security-hero .hero-line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange, #E85D26);
+            border-radius: 2px;
+            margin: 1rem auto;
+        }
+
+        .security-hero .lead {
+            font-size: 1.15rem;
+            color: rgba(255, 215, 0, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Section styles ── */
+        .section-security-details {
+            background: linear-gradient(135deg, #fdf6f0 0%, #fce8d0 100%);
+        }
+
+        .security-feature-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            height: 100%;
+            text-align: center;
+        }
+
+        .security-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(232, 93, 38, 0.12);
+            border-color: var(--primary-orange, #E85D26);
+        }
+
+        .security-feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            color: #fff;
+        }
+
+        .security-feature-card h3 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #3d1a0a;
+            margin-bottom: 0.5rem;
+        }
+
+        .security-feature-card p {
+            color: #6b4226;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ── Security features list ── */
+        .security-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(232, 93, 38, 0.08);
+            align-items: flex-start;
+        }
+
+        .security-item:last-child {
+            border-bottom: none;
+        }
+
+        .security-icon {
+            font-size: 1.3rem;
+            color: var(--primary-orange, #E85D26);
+            flex-shrink: 0;
+            width: 30px;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+
+        .security-text {
+            flex: 1;
+        }
+
+        .security-text strong {
+            display: block;
+            color: #3d1a0a;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .security-text span {
+            color: #6b4226;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* ── Stats ── */
+        .security-stat-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .security-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(232, 93, 38, 0.1);
+        }
+
+        .security-stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-orange, #E85D26);
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+
+        .security-stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6b4226;
+        }
+
+        /* ── Emergency contacts ── */
+        .emergency-contact-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .emergency-contact-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .emergency-contact-card .em-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .emergency-contact-card .em-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-orange, #E85D26);
+        }
+
+        .emergency-contact-card .em-label {
+            font-size: 0.85rem;
+            color: #6b4226;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .security-hero {
+                padding: 120px 0 40px;
+                min-height: 30vh;
+            }
+            .security-hero h1 {
+                font-size: 2.5rem;
+            }
+            .security-stat-number {
+                font-size: 2.2rem;
+            }
+            .emergency-contact-card .em-number {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .security-hero {
+                padding: 100px 0 30px;
+            }
+            .security-hero h1 {
+                font-size: 2rem;
+            }
+            .security-hero .lead {
+                font-size: 1rem;
+            }
+            .security-stat-number {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .security-hero {
+                padding: 90px 0 20px;
+            }
+            .security-hero h1 {
+                font-size: 1.6rem;
+            }
+            .security-hero .lead {
+                font-size: 0.85rem;
+            }
+            .security-feature-card {
+                padding: 1.25rem 1rem;
+            }
+            .security-feature-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 1.4rem;
+            }
+            .security-stat-number {
+                font-size: 1.5rem;
+            }
+            .security-text strong {
+                font-size: 0.88rem;
+            }
+            .security-text span {
+                font-size: 0.82rem;
+            }
+            .emergency-contact-card .em-number {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ============================================================
+    RESPONSIVE NAVBAR – identical to home (with correct paths)
+    ============================================================ -->
+    <nav class="navbar-shirdi" id="mainNav">
+        <div class="navbar-shirdi-container">
+
+            <div class="navbar-shirdi-top">
+                <div class="navbar-top-row">
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="navbar-shirdi-brand">
+                        <img src="../../assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
+                <ul class="nav-shirdi-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../about.html">About Us</a></li>
+                    <li class="dropdown-shirdi">
+                        <a href="../../features.html" class="dropdown-trigger active">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-shirdi-menu">
+                            <li class="dropdown-sub">
+                                <a href="../temple-services.html" class="active">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <ul class="dropdown-sub-menu">
+                                      <li><a href="csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                   <li><a href="temple-education.html">Temple Education</a></li>
+                                    <li><a href="temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="temple-security.html">Temple Security</a></li>
+                                    <li><a href="temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="prasad.html">Prasad</a></li>
+                                    <li><a href="pooja.html">Pooja</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../setting-up.html">Setting Up</a></li>
+                            <li><a href="../devotee-connect.html">Devotee Connect</a></li>
+                            <li><a href="../payment-gateway.html">Payment Gateway</a></li>
+                            <li><a href="../calendar-events.html">Temple Events</a></li>
+                            <li><a href="../hall-booking.html">Hall Booking</a></li>
+                            <li><a href="../ecommerce.html">Temple E-MarketPlace</a></li>
+                            <li><a href="../inventory.html">Inventory</a></li>
+                            <li><a href="../ai-features.html">AI Features</a></li>
+                            <li><a href="../procedures.html">Procedures</a></li>
+                            <li><a href="../smart-donations.html">Smart Donations</a></li>
+                            <li><a href="../deva-program.html">Deva Program</a></li>
+                            <li><a href="../templemerchandise.html">Temple Merchandise</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../knowledge-base.html">Knowledge Base</a></li>
+                    <li><a href="../../media.html">Media</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                    <li class="nav-shirdi-cta"><a href="../../contact.html" class="btn-shirdi-cta">Request Quote</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ============================================================
+    SECURITY HERO
+    ============================================================ -->
+    <section class="security-hero" id="securityHero">
+        <div class="container-xl">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1>Temple <span class="text-gold">Security</span></h1>
+                    <div class="hero-line"></div>
+                    <p class="lead">Comprehensive security solutions for temples including CCTV monitoring, crowd management, and devotee safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    STATS SECTION
+    ============================================================ -->
+    <section class="section-pad-sm">
+        <div class="container-xl">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">200+</div>
+                        <div class="security-stat-label">Temples Secured</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">500+</div>
+                        <div class="security-stat-label">CCTV Cameras</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">98%</div>
+                        <div class="security-stat-label">Incident Reduction</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">24/7</div>
+                        <div class="security-stat-label">Security Monitoring</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    ABOUT TEMPLE SECURITY
+    ============================================================ -->
+    <section class="section-pad section-security-details">
+        <div class="container-xl">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 style="font-weight:800; color:#3d1a0a; font-size:2rem;">What is <span class="gradient-text">Temple Security?</span></h2>
+                    <div style="width:80px;height:4px;background:var(--primary-orange);border-radius:2px;margin:1rem 0 1.5rem;"></div>
+                    <p style="color:#6b4226; font-size:1rem; line-height:1.8;">
+                        Temple Security is a comprehensive security solution designed specifically for the unique needs of temple environments. It combines advanced technology with traditional safety practices to ensure the protection of temple premises, sacred artifacts, devotees, and staff.
+                    </p>
+                    <p style="color:#6b4226; font-size:1rem; line-height:1.8;">
+                        Our security solutions include CCTV surveillance, crowd management systems, emergency response protocols, trained security personnel, and intelligent safety systems that work together to create a secure and peaceful environment for worship.
+                    </p>
+                    <a href="../../contact.html" class="btn btn-shirdi-primary" style="margin-top:1rem;">Get Security Solutions →</a>
+                </div>
+                <div class="col-lg-6">
+                    <div style="background:linear-gradient(135deg,var(--primary-orange),var(--saffron));border-radius:20px;padding:3rem 2rem;text-align:center;color:#fff;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(232,93,38,0.15);">
+                        <span style="font-size:5rem;display:block;margin-bottom:1rem;">🛡️</span>
+                        <h3 style="font-weight:700;font-size:1.5rem;">Safe &amp; Secure Worship</h3>
+                        <p style="color:rgba(255,255,255,0.85);font-size:1rem;max-width:400px;">Protecting sacred spaces and devotees with comprehensive security solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KEY FEATURES – 4 Cards
+    ============================================================ -->
+    <section class="section-pad">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Security <span class="gradient-text">Features</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">Comprehensive security solutions for temple safety and devotee protection.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- CCTV Surveillance -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-feature-card">
+                        <div class="security-feature-icon" style="background:linear-gradient(135deg,#7C3AED,#9F67F0);">📹</div>
+                        <h3>CCTV Surveillance</h3>
+                        <p>24/7 high-definition CCTV monitoring with intelligent analytics for real-time threat detection and incident response.</p>
+                    </div>
+                </div>
+
+                <!-- Crowd Management -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-feature-card">
+                        <div class="security-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669);">👥</div>
+                        <h3>Crowd Management</h3>
+                        <p>Professional crowd management systems for festivals, special events, and daily operations to ensure devotee safety.</p>
+                    </div>
+                </div>
+
+                <!-- Security Personnel -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-feature-card">
+                        <div class="security-feature-icon" style="background:linear-gradient(135deg,#E85D26,#FF7A1A);">🛡️</div>
+                        <h3>Security Personnel</h3>
+                        <p>Trained and certified security guards for temple premises, VIP protection, and emergency response.</p>
+                    </div>
+                </div>
+
+                <!-- Emergency Response -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="security-feature-card">
+                        <div class="security-feature-icon" style="background:linear-gradient(135deg,#3B82F6,#2563EB);">🚨</div>
+                        <h3>Emergency Response</h3>
+                        <p>Quick-response emergency protocols for medical incidents, natural disasters, and security threats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    SECURITY SERVICES DETAILED
+    ============================================================ -->
+    <section class="section-pad section-security-details">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Security <span class="gradient-text">Services</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">End-to-end security solutions for temple safety.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="security-item">
+                        <div class="security-icon">🔒</div>
+                        <div class="security-text">
+                            <strong>Access Control Systems</strong>
+                            <span>Biometric access control, RFID systems, and automated entry management for restricted areas and sacred spaces.</span>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">🔔</div>
+                        <div class="security-text">
+                            <strong>Intrusion Detection</strong>
+                            <span>Advanced alarm systems, motion sensors, and security alerts for unauthorized access and suspicious activities.</span>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">🔥</div>
+                        <div class="security-text">
+                            <strong>Fire Safety Systems</strong>
+                            <span>Fire alarm systems, smoke detectors, fire extinguishers, and emergency evacuation plans for temple safety.</span>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">📱</div>
+                        <div class="security-text">
+                            <strong>Smart Security Monitoring</strong>
+                            <span>Remote monitoring through mobile apps, real-time alerts, and integrated security management dashboards.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="security-item">
+                        <div class="security-icon">🚗</div>
+                        <div class="security-text">
+                            <strong>Vehicle &amp; Traffic Management</strong>
+                            <span>Parking management, vehicle access control, and traffic flow management for temple premises.</span>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">📋</div>
+                        <div class="security-text">
+                            <strong>Security Audits &amp; Assessment</strong>
+                            <span>Comprehensive security audits, vulnerability assessments, and customized security recommendations.</span>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">👨‍✈️</div>
+                        <div class="security-text">
+                            <strong>Security Personnel Training</strong>
+                            <span>Training programs for temple security staff on protocols, customer service, and emergency handling.</span>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">📊</div>
+                        <div class="security-text">
+                            <strong>Incident Reporting &amp; Analytics</strong>
+                            <span>Detailed incident reports, security analytics, and actionable insights for continuous improvement.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    EMERGENCY CONTACTS
+    ============================================================ -->
+    <section class="section-pad">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Emergency <span class="gradient-text">Contacts</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">24/7 emergency support for immediate assistance.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="emergency-contact-card">
+                        <span class="em-icon">🚑</span>
+                        <div class="em-number">102</div>
+                        <div class="em-label">Emergency Medical</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="emergency-contact-card">
+                        <span class="em-icon">🚔</span>
+                        <div class="em-number">112</div>
+                        <div class="em-label">Police Emergency</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="emergency-contact-card">
+                        <span class="em-icon">🔥</span>
+                        <div class="em-number">101</div>
+                        <div class="em-label">Fire Emergency</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="emergency-contact-card">
+                        <span class="em-icon">🛡️</span>
+                        <div class="em-number">1800-XXX-XXXX</div>
+                        <div class="em-label">Temple Security Helpline</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    BENEFITS OF TEMPLE SECURITY
+    ============================================================ -->
+    <section class="section-pad section-security-details">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Benefits of <span class="gradient-text">Temple Security</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">Why comprehensive security is essential for temples.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="security-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🙏</div>
+                        <h3>Sacred Space Protection</h3>
+                        <p>Protect the sanctity of temple premises, sacred artifacts, and the spiritual environment for devotees.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="security-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">👥</div>
+                        <h3>Devotee Safety</h3>
+                        <p>Ensure the safety and well-being of all devotees visiting the temple, especially during festivals and crowded events.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="security-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">💎</div>
+                        <h3>Asset Protection</h3>
+                        <p>Protect temple valuables, donations, jewelry, and religious artifacts from theft and damage.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="security-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">😌</div>
+                        <h3>Peace of Mind</h3>
+                        <p>Create a sense of security and peace for devotees, allowing them to focus on their spiritual practice without worry.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="security-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">📈</div>
+                        <h3>Improved Reputation</h3>
+                        <p>Enhance the temple's reputation as a safe and secure place of worship, attracting more devotees.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="security-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">⚡</div>
+                        <h3>Quick Response</h3>
+                        <p>Immediate response to security incidents, medical emergencies, and other critical situations with trained personnel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="section-pad-sm section-cta">
+        <div class="container-xl">
+            <div class="cta-banner">
+                <h2 class="cta-title">Secure Your Sacred Space</h2>
+                <p class="cta-subtitle">Protect your temple, devotees, and sacred artifacts with our comprehensive security solutions.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="../../contact.html" class="btn btn-cta-white">Get a Free Security Audit</a>
+                    <a href="../../features.html" class="btn btn-cta-outline-white">Explore All Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    FOOTER – same as home
+    ============================================================ -->
+    <footer class="footer" id="footer">
+        <div class="container-xl">
+            <div class="row g-4 pb-4">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="../../assets/images/favicon.png" alt="SEWAI Logo" style="height: 40px; width: auto; object-fit: contain;">
+                        <span class="footer-brand-text">SEWAI</span>
+                    </div>
+                    <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../features.html">Features</a></li>
+                        <li><a href="../../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../../media.html">Media</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/shared/shared.js"></script>
+
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR (same as home) ===== -->
+    <script>
+        (function () {
+            const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
+            let lastScroll = 0;
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            // ── Mobile dropdown toggle ──
+            document.querySelectorAll('.dropdown-shirdi > a.dropdown-trigger').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.dropdown-sub > a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Hide navbar on scroll ──
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+
+            // ── Dynamic hero offset ──
+            const hero = document.getElementById('securityHero');
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + 'h + 'px)';
+            }
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
+
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temple VIP Moment – SEWAI | Smart Temple Management</title>
+    <meta name="description" content="Temple VIP Moment – Special VIP darshan and personalized spiritual experiences for devotees seeking a deeper connection with the divine.">
+    <link rel="icon" type="image/png" sizes="62x62" href="../../assets/images/favicon.png">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/shared/shared.css">
+
+    <style>
+        /* ── Page specific styles ── */
+        .vip-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
+            color: #fff;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-orange, #E85D26);
+            display: flex;
+            align-items: center;
+            min-height: 40vh;
+        }
+
+        .vip-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .vip-hero .text-gold {
+            color: var(--primary-gold, #FFD700) !important;
+        }
+
+        .vip-hero .hero-line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange, #E85D26);
+            border-radius: 2px;
+            margin: 1rem auto;
+        }
+
+        .vip-hero .lead {
+            font-size: 1.15rem;
+            color: rgba(255, 215, 0, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Section styles ── */
+        .section-vip-details {
+            background: linear-gradient(135deg, #fdf6f0 0%, #fce8d0 100%);
+        }
+
+        .vip-feature-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            height: 100%;
+            text-align: center;
+        }
+
+        .vip-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(232, 93, 38, 0.12);
+            border-color: var(--primary-orange, #E85D26);
+        }
+
+        .vip-feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            color: #fff;
+        }
+
+        .vip-feature-card h3 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #3d1a0a;
+            margin-bottom: 0.5rem;
+        }
+
+        .vip-feature-card p {
+            color: #6b4226;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ── Benefits list ── */
+        .vip-benefit-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(232, 93, 38, 0.08);
+            align-items: flex-start;
+        }
+
+        .vip-benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .vip-benefit-icon {
+            font-size: 1.3rem;
+            color: var(--primary-orange, #E85D26);
+            flex-shrink: 0;
+            width: 30px;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+
+        .vip-benefit-text {
+            flex: 1;
+        }
+
+        .vip-benefit-text strong {
+            display: block;
+            color: #3d1a0a;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .vip-benefit-text span {
+            color: #6b4226;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* ── Stats ── */
+        .vip-stat-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .vip-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(232, 93, 38, 0.1);
+        }
+
+        .vip-stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-orange, #E85D26);
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+
+        .vip-stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6b4226;
+        }
+
+        /* ── Experience Preview ── */
+        .experience-preview {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            text-align: center;
+        }
+
+        .experience-preview-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .experience-preview h3 {
+            font-weight: 700;
+            color: #3d1a0a;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-preview p {
+            color: #6b4226;
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .experience-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .experience-highlights span {
+            background: rgba(232, 93, 38, 0.08);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #3d1a0a;
+            font-weight: 500;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .vip-hero {
+                padding: 120px 0 40px;
+                min-height: 30vh;
+            }
+            .vip-hero h1 {
+                font-size: 2.5rem;
+            }
+            .vip-stat-number {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vip-hero {
+                padding: 100px 0 30px;
+            }
+            .vip-hero h1 {
+                font-size: 2rem;
+            }
+            .vip-hero .lead {
+                font-size: 1rem;
+            }
+            .vip-stat-number {
+                font-size: 1.8rem;
+            }
+            .experience-preview {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vip-hero {
+                padding: 90px 0 20px;
+            }
+            .vip-hero h1 {
+                font-size: 1.6rem;
+            }
+            .vip-hero .lead {
+                font-size: 0.85rem;
+            }
+            .vip-feature-card {
+                padding: 1.25rem 1rem;
+            }
+            .vip-feature-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 1.4rem;
+            }
+            .vip-stat-number {
+                font-size: 1.5rem;
+            }
+            .vip-benefit-text strong {
+                font-size: 0.88rem;
+            }
+            .vip-benefit-text span {
+                font-size: 0.82rem;
+            }
+            .experience-preview-icon {
+                font-size: 3rem;
+            }
+            .experience-highlights span {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.8rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ============================================================
+    RESPONSIVE NAVBAR – identical to home (with correct paths)
+    ============================================================ -->
+    <nav class="navbar-shirdi" id="mainNav">
+        <div class="navbar-shirdi-container">
+
+            <div class="navbar-shirdi-top">
+                <div class="navbar-top-row">
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="navbar-shirdi-brand">
+                        <img src="../../assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
+                <ul class="nav-shirdi-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../about.html">About Us</a></li>
+                    <li class="dropdown-shirdi">
+                        <a href="../../features.html" class="dropdown-trigger active">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-shirdi-menu">
+                            <li class="dropdown-sub">
+                                <a href="../temple-services.html" class="active">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <ul class="dropdown-sub-menu">
+                                      <li><a href="csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                    <li><a href="temple-education.html">Temple Education</a></li>
+                                    <li><a href="temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="temple-security.html">Temple Security</a></li>
+                                    <li><a href="temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="prasad.html">Prasad</a></li>
+                                    <li><a href="pooja.html">Pooja</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../setting-up.html">Setting Up</a></li>
+                            <li><a href="../devotee-connect.html">Devotee Connect</a></li>
+                            <li><a href="../payment-gateway.html">Payment Gateway</a></li>
+                            <li><a href="../calendar-events.html">Temple Events</a></li>
+                            <li><a href="../hall-booking.html">Hall Booking</a></li>
+                            <li><a href="../ecommerce.html">Temple E-MarketPlace</a></li>
+                            <li><a href="../inventory.html">Inventory</a></li>
+                            <li><a href="../ai-features.html">AI Features</a></li>
+                            <li><a href="../procedures.html">Procedures</a></li>
+                            <li><a href="../smart-donations.html">Smart Donations</a></li>
+                            <li><a href="../deva-program.html">Deva Program</a></li>
+                            <li><a href="../templemerchandise.html">Temple Merchandise</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../knowledge-base.html">Knowledge Base</a></li>
+                    <li><a href="../../media.html">Media</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                    <li class="nav-shirdi-cta"><a href="../../contact.html" class="btn-shirdi-cta">Request Quote</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ============================================================
+    VIP HERO
+    ============================================================ -->
+    <section class="vip-hero" id="vipHero">
+        <div class="container-xl">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1>Temple <span class="text-gold">VIP Moment</span></h1>
+                    <div class="hero-line"></div>
+                    <p class="lead">Special VIP darshan and personalized spiritual experiences for devotees seeking a deeper connection with the divine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    STATS SECTION
+    ============================================================ -->
+    <section class="section-pad-sm">
+        <div class="container-xl">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-stat-card">
+                        <div class="vip-stat-number">10K+</div>
+                        <div class="vip-stat-label">VIP Experiences</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-stat-card">
+                        <div class="vip-stat-number">99%</div>
+                        <div class="vip-stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-stat-card">
+                        <div class="vip-stat-number">150+</div>
+                        <div class="vip-stat-label">Partner Temples</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-stat-card">
+                        <div class="vip-stat-number">24/7</div>
+                        <div class="vip-stat-label">Concierge Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    ABOUT VIP MOMENT
+    ============================================================ -->
+    <section class="section-pad section-vip-details">
+        <div class="container-xl">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 style="font-weight:800; color:#3d1a0a; font-size:2rem;">What is <span class="gradient-text">Temple VIP Moment?</span></h2>
+                    <div style="width:80px;height:4px;background:var(--primary-orange);border-radius:2px;margin:1rem 0 1.5rem;"></div>
+                    <p style="color:#6b4226; font-size:1rem; line-height:1.8;">
+                        Temple VIP Moment is a curated spiritual experience designed for devotees seeking a deeper, more personal connection with the divine. It offers exclusive darshan, personalized rituals, and intimate spiritual guidance in a serene and sacred environment.
+                    </p>
+                    <p style="color:#6b4226; font-size:1rem; line-height:1.8;">
+                        Whether you're celebrating a special occasion, seeking spiritual solace, or simply desire a more profound temple experience, our VIP program ensures every moment is meaningful and memorable.
+                    </p>
+                    <a href="../../contact.html" class="btn btn-shirdi-primary" style="margin-top:1rem;">Book VIP Experience →</a>
+                </div>
+                <div class="col-lg-6">
+                    <div style="background:linear-gradient(135deg,var(--primary-orange),var(--saffron));border-radius:20px;padding:3rem 2rem;text-align:center;color:#fff;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(232,93,38,0.15);">
+                        <span style="font-size:5rem;display:block;margin-bottom:1rem;">👑</span>
+                        <h3 style="font-weight:700;font-size:1.5rem;">Exclusive Divine Experience</h3>
+                        <p style="color:rgba(255,255,255,0.85);font-size:1rem;max-width:400px;">Personalized spiritual moments designed to deepen your connection with the divine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    EXPERIENCE PREVIEW
+    ============================================================ -->
+    <section class="section-pad">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">VIP <span class="gradient-text">Experience</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">What makes our VIP Moment truly special.</p>
+            </div>
+
+            <div class="experience-preview">
+                <span class="experience-preview-icon">✨</span>
+                <h3>Your VIP Moment Awaits</h3>
+                <p>Experience the divine like never before with our exclusive VIP darshan and personalized spiritual services.</p>
+                <div class="experience-highlights">
+                    <span>👑 VIP Darshan</span>
+                    <span>🙏 Personal Priest</span>
+                    <span>🌸 Special Offerings</span>
+                    <span>📿 Sacred Chants</span>
+                    <span>🎵 Personalized Bhajans</span>
+                    <span>📜 Spiritual Guidance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KEY FEATURES – 4 Cards
+    ============================================================ -->
+    <section class="section-pad section-vip-details">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">VIP <span class="gradient-text">Features</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">Exclusive services designed to create a memorable and spiritually enriching experience.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- VIP Darshan -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-feature-card">
+                        <div class="vip-feature-icon" style="background:linear-gradient(135deg,#7C3AED,#9F67F0);">👑</div>
+                        <h3>VIP Darshan</h3>
+                        <p>Priority darshan with dedicated priest, personalized prayers, and blessings in a serene environment.</p>
+                    </div>
+                </div>
+
+                <!-- Personalized Rituals -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-feature-card">
+                        <div class="vip-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669);">🙏</div>
+                        <h3>Personalized Rituals</h3>
+                        <p>Customized poojas, abhishekams, and ceremonies tailored to your spiritual needs and preferences.</p>
+                    </div>
+                </div>
+
+                <!-- Concierge Service -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-feature-card">
+                        <div class="vip-feature-icon" style="background:linear-gradient(135deg,#E85D26,#FF7A1A);">🤝</div>
+                        <h3>Concierge Service</h3>
+                        <p>Dedicated concierge to assist with all arrangements including transportation, accommodation, and special requests.</p>
+                    </div>
+                </div>
+
+                <!-- Sacred Offerings -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="vip-feature-card">
+                        <div class="vip-feature-icon" style="background:linear-gradient(135deg,#3B82F6,#2563EB);">🌸</div>
+                        <h3>Sacred Offerings</h3>
+                        <p>Specially curated offerings including flowers, fruits, prasadam, and other sacred items for your pooja.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    VIP BENEFITS
+    ============================================================ -->
+    <section class="section-pad">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">VIP <span class="gradient-text">Benefits</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">What you receive with every VIP Moment experience.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">🕊️</div>
+                        <div class="vip-benefit-text">
+                            <strong>Exclusive Darshan</strong>
+                            <span>Private darshan with no waiting lines, allowing you to spend quality time in the presence of the divine.</span>
+                        </div>
+                    </div>
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">📿</div>
+                        <div class="vip-benefit-text">
+                            <strong>Personal Priest</strong>
+                            <span>Dedicated priest to guide you through rituals, explain their significance, and offer spiritual counsel.</span>
+                        </div>
+                    </div>
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">🎵</div>
+                        <div class="vip-benefit-text">
+                            <strong>Sacred Music</strong>
+                            <span>Personalized bhajans and mantras performed during your darshan for a truly divine atmosphere.</span>
+                        </div>
+                    </div>
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">📸</div>
+                        <div class="vip-benefit-text">
+                            <strong>Commemorative Photos</strong>
+                            <span>Professional photographs of your spiritual experience to cherish the divine moment forever.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">🌸</div>
+                        <div class="vip-benefit-text">
+                            <strong>Special Offerings</strong>
+                            <span>Curated offerings including floral garlands, sacred threads, prasadam, and other blessed items.</span>
+                        </div>
+                    </div>
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">🛕</div>
+                        <div class="vip-benefit-text">
+                            <strong>Temple Tour</strong>
+                            <span>Personalized guided tour of the temple premises with detailed insights into its history and architecture.</span>
+                        </div>
+                    </div>
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">📜</div>
+                        <div class="vip-benefit-text">
+                            <strong>Blessings Certificate</strong>
+                            <span>Official temple certificate with personalized blessings from the priest as a sacred keepsake.</span>
+                        </div>
+                    </div>
+                    <div class="vip-benefit-item">
+                        <div class="vip-benefit-icon">🤝</div>
+                        <div class="vip-benefit-text">
+                            <strong>Dedicated Support</strong>
+                            <span>24/7 concierge support before, during, and after your VIP Moment experience.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="section-pad-sm section-cta">
+        <div class="container-xl">
+            <div class="cta-banner">
+                <h2 class="cta-title">Book Your VIP Moment</h2>
+                <p class="cta-subtitle">Experience the divine like never before with our exclusive VIP darshan and personalized spiritual services.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="../../contact.html" class="btn btn-cta-white">Book Now</a>
+                    <a href="../../features.html" class="btn btn-cta-outline-white">Explore All Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    FOOTER – same as home
+    ============================================================ -->
+    <footer class="footer" id="footer">
+        <div class="container-xl">
+            <div class="row g-4 pb-4">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="../../assets/images/favicon.png" alt="SEWAI Logo" style="height: 40px; width: auto; object-fit: contain;">
+                        <span class="footer-brand-text">SEWAI</span>
+                    </div>
+                    <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../features.html">Features</a></li>
+                        <li><a href="../../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../../media.html">Media</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/shared/shared.js"></script>
+
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR (same as home) ===== -->
+    <script>
+        (function () {
+            const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
+            let lastScroll = 0;
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            // ── Mobile dropdown toggle ──
+            document.querySelectorAll('.dropdown-shirdi > a.dropdown-trigger').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.dropdown-sub > a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Hide navbar on scroll ──
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+
+            // ── Dynamic hero offset ──
+            const hero = document.getElementById('vipHero');
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + 'h + 'px)';
+            }
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
+
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bhajan Jaming – SEWAI | Smart Temple Management</title>
+    <meta name="description" content="Bhajan Jaming – Devotional music and bhajan sessions with live performances, community singing, and spiritual music workshops.">
+    <link rel="icon" type="image/png" sizes="62x62" href="../../assets/images/favicon.png">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/shared/shared.css">
+
+    <style>
+        /* ── Page specific styles ── */
+        .bhajan-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
+            color: #fff;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-orange, #E85D26);
+            display: flex;
+            align-items: center;
+            min-height: 40vh;
+        }
+
+        .bhajan-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .bhajan-hero .text-gold {
+            color: var(--primary-gold, #FFD700) !important;
+        }
+
+        .bhajan-hero .hero-line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange, #E85D26);
+            border-radius: 2px;
+            margin: 1rem auto;
+        }
+
+        .bhajan-hero .lead {
+            font-size: 1.15rem;
+            color: rgba(255, 215, 0, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Section styles ── */
+        .section-bhajan-details {
+            background: linear-gradient(135deg, #fdf6f0 0%, #fce8d0 100%);
+        }
+
+        .bhajan-feature-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            height: 100%;
+            text-align: center;
+        }
+
+        .bhajan-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(232, 93, 38, 0.12);
+            border-color: var(--primary-orange, #E85D26);
+        }
+
+        .bhajan-feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            color: #fff;
+        }
+
+        .bhajan-feature-card h3 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #3d1a0a;
+            margin-bottom: 0.5rem;
+        }
+
+        .bhajan-feature-card p {
+            color: #6b4226;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ── Session types ── */
+        .session-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(232, 93, 38, 0.08);
+            align-items: flex-start;
+        }
+
+        .session-item:last-child {
+            border-bottom: none;
+        }
+
+        .session-icon {
+            font-size: 1.3rem;
+            color: var(--primary-orange, #E85D26);
+            flex-shrink: 0;
+            width: 30px;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+
+        .session-text {
+            flex: 1;
+        }
+
+        .session-text strong {
+            display: block;
+            color: #3d1a0a;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .session-text span {
+            color: #6b4226;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* ── Stats ── */
+        .bhajan-stat-card {
+            background: var(--warm-white, #fff8f0);
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(232, 93, 38, 0.06);
+            border: 1px solid rgba(232, 93, 38, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .bhajan-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(232, 93, 38, 0.1);
+        }
+
+        .bhajan-stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-orange, #E85D26);
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+
+        .bhajan-stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6b4226;
+        }
+
+        /* ── Instruments section ── */
+        .instrument-tag {
+            display: inline-block;
+            background: rgba(232, 93, 38, 0.08);
+            color: #3d1a0a;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .instrument-tag:hover {
+            background: var(--primary-orange, #E85D26);
+            color: #fff;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .bhajan-hero {
+                padding: 120px 0 40px;
+                min-height: 30vh;
+            }
+            .bhajan-hero h1 {
+                font-size: 2.5rem;
+            }
+            .bhajan-stat-number {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bhajan-hero {
+                padding: 100px 0 30px;
+            }
+            .bhajan-hero h1 {
+                font-size: 2rem;
+            }
+            .bhajan-hero .lead {
+                font-size: 1rem;
+            }
+            .bhajan-stat-number {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .bhajan-hero {
+                padding: 90px 0 20px;
+            }
+            .bhajan-hero h1 {
+                font-size: 1.6rem;
+            }
+            .bhajan-hero .lead {
+                font-size: 0.85rem;
+            }
+            .bhajan-feature-card {
+                padding: 1.25rem 1rem;
+            }
+            .bhajan-feature-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 1.4rem;
+            }
+            .bhajan-stat-number {
+                font-size: 1.5rem;
+            }
+            .session-text strong {
+                font-size: 0.88rem;
+            }
+            .session-text span {
+                font-size: 0.82rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ============================================================
+    RESPONSIVE NAVBAR – identical to home (with correct paths)
+    ============================================================ -->
+    <nav class="navbar-shirdi" id="mainNav">
+        <div class="navbar-shirdi-container">
+
+            <div class="navbar-shirdi-top">
+                <div class="navbar-top-row">
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="navbar-shirdi-brand">
+                        <img src="../../assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-shirdi-bottom" id="navbarMenu">
+                <ul class="nav-shirdi-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../about.html">About Us</a></li>
+                    <li class="dropdown-shirdi">
+                        <a href="../../features.html" class="dropdown-trigger active">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-shirdi-menu">
+                            <li class="dropdown-sub">
+                                <a href="../temple-services.html" class="active">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <ul class="dropdown-sub-menu">
+                                 <li><a href="csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                    <li><a href="temple-education.html">Temple Education</a></li>
+                                    <li><a href="temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="temple-security.html">Temple Security</a></li>
+                                    <li><a href="temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="prasad.html">Prasad</a></li>
+                                    <li><a href="pooja.html">Pooja</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../setting-up.html">Setting Up</a></li>
+                            <li><a href="../devotee-connect.html">Devotee Connect</a></li>
+                            <li><a href="../payment-gateway.html">Payment Gateway</a></li>
+                            <li><a href="../calendar-events.html">Temple Events</a></li>
+                            <li><a href="../hall-booking.html">Hall Booking</a></li>
+                            <li><a href="../ecommerce.html">Temple E-MarketPlace</a></li>
+                            <li><a href="../inventory.html">Inventory</a></li>
+                            <li><a href="../ai-features.html">AI Features</a></li>
+                            <li><a href="../procedures.html">Procedures</a></li>
+                            <li><a href="../smart-donations.html">Smart Donations</a></li>
+                            <li><a href="../deva-program.html">Deva Program</a></li>
+                            <li><a href="../templemerchandise.html">Temple Merchandise</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../knowledge-base.html">Knowledge Base</a></li>
+                    <li><a href="../../media.html">Media</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                    <li class="nav-shirdi-cta"><a href="../../contact.html" class="btn-shirdi-cta">Request Quote</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ============================================================
+    BHAJAN HERO
+    ============================================================ -->
+    <section class="bhajan-hero" id="bhajanHero">
+        <div class="container-xl">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1>Bhajan <span class="text-gold">Jaming</span></h1>
+                    <div class="hero-line"></div>
+                    <p class="lead">Devotional music and bhajan sessions with live performances, community singing, and spiritual music workshops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    STATS SECTION
+    ============================================================ -->
+    <section class="section-pad-sm">
+        <div class="container-xl">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-stat-card">
+                        <div class="bhajan-stat-number">100+</div>
+                        <div class="bhajan-stat-label">Bhajan Sessions</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-stat-card">
+                        <div class="bhajan-stat-number">5K+</div>
+                        <div class="bhajan-stat-label">Devotees Participated</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-stat-card">
+                        <div class="bhajan-stat-number">25+</div>
+                        <div class="bhajan-stat-label">Expert Artists</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-stat-card">
+                        <div class="bhajan-stat-number">98%</div>
+                        <div class="bhajan-stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    ABOUT BHAJAN JAMING
+    ============================================================ -->
+    <section class="section-pad section-bhajan-details">
+        <div class="container-xl">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 style="font-weight:800; color:#3d1a0a; font-size:2rem;">What is <span class="gradient-text">Bhajan Jaming?</span></h2>
+                    <div style="width:80px;height:4px;background:var(--primary-orange);border-radius:2px;margin:1rem 0 1.5rem;"></div>
+                    <p style="color:#6b4226; font-size:1rem; line-height:1.8;">
+                        Bhajan Jaming is a devotional music experience that brings together artists, musicians, and devotees to celebrate spirituality through sacred music. Our sessions feature live bhajan performances, community singing, and interactive workshops that connect hearts through the power of devotion.
+                    </p>
+                    <p style="color:#6b4226; font-size:1rem; line-height:1.8;">
+                        Whether you're an experienced musician or a devotee looking to immerse yourself in devotional melodies, Bhajan Jaming offers a welcoming space to explore and experience the joy of spiritual music in a community setting.
+                    </p>
+                    <a href="../../contact.html" class="btn btn-shirdi-primary" style="margin-top:1rem;">Join a Session →</a>
+                </div>
+                <div class="col-lg-6">
+                    <div style="background:linear-gradient(135deg,var(--primary-orange),var(--saffron));border-radius:20px;padding:3rem 2rem;text-align:center;color:#fff;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(232,93,38,0.15);">
+                        <span style="font-size:5rem;display:block;margin-bottom:1rem;">🎵</span>
+                        <h3 style="font-weight:700;font-size:1.5rem;">Music of the Soul</h3>
+                        <p style="color:rgba(255,255,255,0.85);font-size:1rem;max-width:400px;">Experience the divine through devotional music and connect with fellow devotees through sacred melodies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    KEY FEATURES – 4 Cards
+    ============================================================ -->
+    <section class="section-pad">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Key <span class="gradient-text">Features</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">Our Bhajan Jaming sessions offer a complete devotional music experience for all devotees.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Live Performances -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-feature-card">
+                        <div class="bhajan-feature-icon" style="background:linear-gradient(135deg,#7C3AED,#9F67F0);">🎤</div>
+                        <h3>Live Performances</h3>
+                        <p>Authentic live bhajan performances by experienced artists and musicians creating a divine atmosphere.</p>
+                    </div>
+                </div>
+
+                <!-- Community Singing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-feature-card">
+                        <div class="bhajan-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669);">👥</div>
+                        <h3>Community Singing</h3>
+                        <p>Group bhajan singing sessions where everyone can participate and experience the collective devotion.</p>
+                    </div>
+                </div>
+
+                <!-- Music Workshops -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-feature-card">
+                        <div class="bhajan-feature-icon" style="background:linear-gradient(135deg,#E85D26,#FF7A1A);">📚</div>
+                        <h3>Music Workshops</h3>
+                        <p>Interactive workshops to learn bhajan singing, harmonium, tabla, and other devotional instruments.</p>
+                    </div>
+                </div>
+
+                <!-- Spiritual Themes -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bhajan-feature-card">
+                        <div class="bhajan-feature-icon" style="background:linear-gradient(135deg,#3B82F6,#2563EB);">🕉️</div>
+                        <h3>Spiritual Themes</h3>
+                        <p>Bhajans focused on various deities, festivals, and spiritual themes for a meaningful experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    SESSION TYPES
+    ============================================================ -->
+    <section class="section-pad section-bhajan-details">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Session <span class="gradient-text">Types</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">Different types of bhajan sessions designed for all age groups and musical interests.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="session-item">
+                        <div class="session-icon">🌅</div>
+                        <div class="session-text">
+                            <strong>Morning Bhajan Session</strong>
+                            <span>Start your day with divine melodies – peaceful bhajans and mantras to uplift the spirit.</span>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-icon">🌙</div>
+                        <div class="session-text">
+                            <strong>Evening Bhajan Sandhya</strong>
+                            <span>Special evening bhajan sessions with lamps, incense, and soothing devotional music.</span>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-icon">🎵</div>
+                        <div class="session-text">
+                            <strong>Instrumental Jam</strong>
+                            <span>Musician-led instrumental sessions featuring harmonium, tabla, dholak, and other traditional instruments.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="session-item">
+                        <div class="session-icon">👶</div>
+                        <div class="session-text">
+                            <strong>Children's Bhajan Group</strong>
+                            <span>Engaging and fun bhajan sessions for children to learn about devotion through music.</span>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-icon">🎤</div>
+                        <div class="session-text">
+                            <strong>Open Mic Bhajan</strong>
+                            <span>Opportunity for devotees to perform their favorite bhajans and share their talent.</span>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-icon">🕊️</div>
+                        <div class="session-text">
+                            <strong>Festival Special</strong>
+                            <span>Special bhajan sessions during festivals with thematic songs and celebrations.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    INSTRUMENTS SECTION
+    ============================================================ -->
+    <section class="section-pad">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Instruments <span class="gradient-text">We Use</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">A variety of traditional instruments create the authentic devotional music experience.</p>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;">
+                <span class="instrument-tag">🎹 Harmonium</span>
+                <span class="instrument-tag">🥁 Tabla</span>
+                <span class="instrument-tag">🪘 Dholak</span>
+                <span class="instrument-tag">🔔 Manjira</span>
+                <span class="instrument-tag">🪇 Kartal</span>
+                <span class="instrument-tag">🎸 Synthesizer</span>
+                <span class="instrument-tag">🥁 Mridangam</span>
+                <span class="instrument-tag">🪘 Conga</span>
+                <span class="instrument-tag">🔔 Ghungroo</span>
+                <span class="instrument-tag">🎵 Tanpura</span>
+                <span class="instrument-tag">🪕 Sitar</span>
+                <span class="instrument-tag">🎻 Violin</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    BENEFITS
+    ============================================================ -->
+    <section class="section-pad section-bhajan-details">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Benefits of Bhajan <span class="gradient-text">Jaming</span></h2>
+                <div class="section-title-line"></div>
+                <p class="section-subtitle">Experience the transformative power of devotional music.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="bhajan-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">😌</div>
+                        <h3>Inner Peace</h3>
+                        <p>Experience deep inner peace and tranquility through the soothing power of devotional music and chanting.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bhajan-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🤝</div>
+                        <h3>Community Bonding</h3>
+                        <p>Connect with like-minded devotees and build meaningful relationships through shared musical experiences.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bhajan-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🙏</div>
+                        <h3>Spiritual Growth</h3>
+                        <p>Deepen your spiritual connection and understanding through the devotional lyrics and sacred music.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bhajan-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🎤</div>
+                        <h3>Creative Expression</h3>
+                        <p>Express your devotion through singing, playing instruments, and exploring your musical creativity.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bhajan-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🧠</div>
+                        <h3>Stress Relief</h3>
+                        <p>Release stress and anxiety with the therapeutic effects of devotional music and group singing.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bhajan-feature-card" style="text-align:left;">
+                        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🎵</div>
+                        <h3>Musical Skill Development</h3>
+                        <p>Learn bhajan singing, instrument playing, and musical appreciation from expert artists.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="section-pad-sm section-cta">
+        <div class="container-xl">
+            <div class="cta-banner">
+                <h2 class="cta-title">Join the Bhajan Jaming Experience</h2>
+                <p class="cta-subtitle">Immerse yourself in the divine melodies of devotional music and connect with a community of spiritual seekers.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="../../contact.html" class="btn btn-cta-white">Join Now</a>
+                    <a href="../../features.html" class="btn btn-cta-outline-white">Explore All Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+    FOOTER – same as home
+    ============================================================ -->
+    <footer class="footer" id="footer">
+        <div class="container-xl">
+            <div class="row g-4 pb-4">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="../../assets/images/favicon.png" alt="SEWAI Logo" style="height: 40px; width: auto; object-fit: contain;">
+                        <span class="footer-brand-text">SEWAI</span>
+                    </div>
+                    <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../features.html">Features</a></li>
+                        <li><a href="../../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../../media.html">Media</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/shared/shared.js"></script>
+
+    <!-- ===== NAVBAR TOGGLE & SCROLL BEHAVIOR (same as home) ===== -->
+    <script>
+        (function () {
+            const navbar = document.getElementById('mainNav');
+            const toggle = document.getElementById('navbarToggle');
+            const menu = document.getElementById('navbarMenu');
+            let lastScroll = 0;
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!navbar.contains(e.target)) {
+                        menu.classList.remove('open');
+                        const icon = toggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            }
+
+            // ── Mobile dropdown toggle ──
+            document.querySelectorAll('.dropdown-shirdi > a.dropdown-trigger').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.dropdown-sub > a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Hide navbar on scroll ──
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScroll && scrollTop > 100) {
+                    navbar.classList.add('hidden-nav');
+                } else {
+                    navbar.classList.remove('hidden-nav');
+                }
+                lastScroll = scrollTop;
+            });
+
+            // ── Dynamic hero offset ──
+            const hero = document.getElementById('bhajanHero');
+            function adjustHero() {
+                if (!navbar || !hero) return;
+                const h = navbar.offsetHeight;
+                hero.style.paddingTop = h + 'px';
+                hero.style.minHeight = 'calc(100vh - ' + 'h + 'px)';
+            }
+            window.addEventListener('load', adjustHero);
+            window.addEventListener('resize', adjustHero);
+
+        })();
+    </script>
+
+</body>
+</html>

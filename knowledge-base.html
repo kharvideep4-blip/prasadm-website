@@ -29,47 +29,63 @@
     <!-- ============================================================
     RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE (same as home/about)
     ============================================================ -->
+    <!-- NAVBAR -->
     <nav class="navbar-shirdi" id="mainNav">
         <div class="navbar-shirdi-container">
 
-            <!-- LINE 1: Brand + Toggle Button -->
             <div class="navbar-shirdi-top">
                 <div class="navbar-top-row">
-                    <div class="navbar-shirdi-brand">
-                        <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
-                        <span class="brand-shirdi-main">SEWAI</span>
-                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
-                    </div>
-                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ -->
                     <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
                     </button>
+                    <div class="navbar-shirdi-brand">
+                        <img src="assets/images/favicon.png" alt="SEWAI Logo" class="brand-logo-img">
+                        <span class="brand-shirdi-main">SEWAI</span>
+                        <span class="brand-shirdi-sub">· Smart Temple Management</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- LINE 2: Navigation (hidden on mobile, shown when toggle clicked) -->
+            <!-- KEY FIX: position:relative wrapper so dropdown positions relative to this bar -->
             <div class="navbar-shirdi-bottom" id="navbarMenu">
                 <ul class="nav-shirdi-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown-shirdi">
-                        <a href="features.html">Features ▼</a>
+                        <a href="features.html" class="dropdown-trigger">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                         <ul class="dropdown-shirdi-menu">
+                            <li class="dropdown-sub">
+                                <a href="features/temple-services.html">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <ul class="dropdown-sub-menu">
+                                   <li><a href="features/temple-services/csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                    <li><a href="features/temple-services/temple-education.html">Temple Education</a></li>
+                                    <li><a href="features/temple-services/temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="features/temple-services/temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="features/temple-services/dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="features/temple-services/life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="features/temple-services/temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="features/temple-services/bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="features/temple-services/temple-security.html">Temple Security</a></li>
+                                    <li><a href="features/temple-services/temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="features/temple-services/prasad.html">Prasad</a></li>
+                                    <li><a href="features/temple-services/pooja.html">Pooja</a></li>
+                                </ul>
+                            </li>
                             <li><a href="features/setting-up.html">Setting Up</a></li>
                             <li><a href="features/devotee-connect.html">Devotee Connect</a></li>
                             <li><a href="features/payment-gateway.html">Payment Gateway</a></li>
-                            <li><a href="features/calendar-events.html">Calendar Events</a></li>
+                            <li><a href="features/calendar-events.html">Temple Events</a></li>
                             <li><a href="features/hall-booking.html">Hall Booking</a></li>
-                            <li><a href="features/ecommerce.html">E‑commerce</a></li>
+                            <li><a href="features/ecommerce.html">Temple E-MarketPlace</a></li>
                             <li><a href="features/inventory.html">Inventory</a></li>
                             <li><a href="features/ai-features.html">AI Features</a></li>
                             <li><a href="features/procedures.html">Procedures</a></li>
                             <li><a href="features/smart-donations.html">Smart Donations</a></li>
-                            <!-- <li><a href="features/website-template.html">Website Template</a></li> -->
                             <li><a href="features/deva-program.html">Deva Program</a></li>
+                            <li><a href="features/templemerchandise.html">Temple Merchandise</a></li>
                         </ul>
                     </li>
-                    <li><a href="knowledge-base.html" class="active">Knowledge Base</a></li>
+                    <li><a href="knowledge-base.html">Knowledge Base</a></li>
                     <li><a href="media.html">Media</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li class="nav-shirdi-cta"><a href="contact.html" class="btn-shirdi-cta">Request Quote</a></li>
@@ -78,6 +94,7 @@
 
         </div>
     </nav>
+
 
 
     <!-- ============================================================
@@ -377,12 +394,13 @@
     <!-- ============================================================
     FOOTER – ORANGE (same as home)
     ============================================================ -->
-    <footer class="footer" id="footer">
+   <footer class="footer" id="footer">
         <div class="container-xl">
             <div class="row g-4 pb-4">
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="footer-logo-box">🛕</span>
+                        <!-- ✅ Updated: Logo image instead of emoji -->
+                        <img src="assets/images/favicon.png" alt="SEWAI Logo" style="height: 80px; width: auto; object-fit: contain;">
                         <span class="footer-brand-text">SEWAI</span>
                     </div>
                     <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
@@ -417,7 +435,7 @@
                 </div>
             </div>
             <div class="footer-divider"></div>
-            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved. Built with dedication for temples worldwide.</div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
         </div>
     </footer>
 

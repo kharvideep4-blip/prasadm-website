@@ -22,51 +22,151 @@
     <!-- ===== ABOUT PAGE CSS ===== -->
     <link rel="stylesheet" href="assets/css/about.css">
 
+    <style>
+        /* ── Vision Image Styling ── */
+        .vision-image-box {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(232, 93, 38, 0.15);
+            background: linear-gradient(135deg, var(--primary-orange), var(--saffron));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .vision-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .vision-image-box .vision-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: #fff;
+            text-align: center;
+        }
+
+        .vision-image-box .vision-overlay .vision-label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .vision-image-box .vision-overlay .vision-sub-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ── Replace placeholder with actual image ── */
+        .vision-image-placeholder {
+            display: none;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .vision-image-box {
+                min-height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vision-image-box {
+                min-height: 180px;
+            }
+            .vision-image-box .vision-overlay {
+                padding: 1rem 1.2rem;
+            }
+            .vision-image-box .vision-overlay .vision-label {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vision-image-box {
+                min-height: 150px;
+            }
+            .vision-image-box .vision-overlay .vision-label {
+                font-size: 0.9rem;
+            }
+            .vision-image-box .vision-overlay .vision-sub-label {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
+    <!-- PRELOADER (optional – copy from index.html if needed) -->
+    <!-- ... -->
+
     <!-- ============================================================
-    RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE (same as home)
+    RESPONSIVE NAVBAR – IDENTICAL TO HOME PAGE
     ============================================================ -->
     <nav class="navbar-shirdi" id="mainNav">
         <div class="navbar-shirdi-container">
 
-            <!-- LINE 1: Brand + Toggle Button -->
             <div class="navbar-shirdi-top">
                 <div class="navbar-top-row">
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
                     <div class="navbar-shirdi-brand">
                         <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
                         <span class="brand-shirdi-main">SEWAI</span>
                         <span class="brand-shirdi-sub">· Smart Temple Management</span>
                     </div>
-                    <!-- ★ TOGGLE BUTTON ★ -->
-                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
                 </div>
             </div>
 
-            <!-- LINE 2: Navigation (hidden on mobile, shown when toggle clicked) -->
             <div class="navbar-shirdi-bottom" id="navbarMenu">
                 <ul class="nav-shirdi-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
                     <li class="dropdown-shirdi">
-                        <a href="features.html">Features ▼</a>
+                        <a href="features.html" class="dropdown-trigger">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                         <ul class="dropdown-shirdi-menu">
+                            <li class="dropdown-sub">
+                                <a href="features/temple-services.html">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <ul class="dropdown-sub-menu">
+                                    <li><a href="features/temple-services/csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                    <li><a href="features/temple-services/temple-education.html">Temple Education</a></li>
+                                    <li><a href="features/temple-services/temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="features/temple-services/temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="features/temple-services/dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="features/temple-services/life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="features/temple-services/temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="features/temple-services/bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="features/temple-services/temple-security.html">Temple Security</a></li>
+                                    <li><a href="features/temple-services/temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="features/temple-services/prasad.html">Prasad</a></li>
+                                    <li><a href="features/temple-services/pooja.html">Pooja</a></li>
+                                </ul>
+                            </li>
                             <li><a href="features/setting-up.html">Setting Up</a></li>
                             <li><a href="features/devotee-connect.html">Devotee Connect</a></li>
                             <li><a href="features/payment-gateway.html">Payment Gateway</a></li>
-                            <li><a href="features/calendar-events.html">Calendar Events</a></li>
+                            <li><a href="features/calendar-events.html">Temple Events</a></li>
                             <li><a href="features/hall-booking.html">Hall Booking</a></li>
-                            <li><a href="features/ecommerce.html">E‑commerce</a></li>
+                            <li><a href="features/ecommerce.html">Temple E-MarketPlace</a></li>
                             <li><a href="features/inventory.html">Inventory</a></li>
                             <li><a href="features/ai-features.html">AI Features</a></li>
                             <li><a href="features/procedures.html">Procedures</a></li>
                             <li><a href="features/smart-donations.html">Smart Donations</a></li>
-                            <!-- <li><a href="features/website-template.html">Website Template</a></li> -->
                             <li><a href="features/deva-program.html">Deva Program</a></li>
+                            <li><a href="features/templemerchandise.html">Temple Merchandise</a></li>
                         </ul>
                     </li>
                     <li><a href="knowledge-base.html">Knowledge Base</a></li>
@@ -132,7 +232,7 @@
 
 
     <!-- ============================================================
-    OUR SMART JOURNEY + VISION
+    OUR SMART JOURNEY + VISION (with image)
     ============================================================ -->
     <section class="section-pad section-vision" id="visionSection">
         <div class="container-xl">
@@ -144,9 +244,13 @@
 
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="vision-image-placeholder">
-                        <span class="vision-icon">🛕</span>
-                        <span class="vision-label">The Vision Behind SEWAI</span>
+                    <!-- 🔥 VISION IMAGE BOX – replace src with your actual image -->
+                    <div class="vision-image-box">
+                        <img src="assets/images/vision-bg.jpg" alt="The Vision Behind SEWAI">
+                        <div class="vision-overlay">
+                            <!-- <span class="vision-label">🛕 The Vision Behind SEWAI</span> -->
+                            <!-- <span class="vision-sub-label">Bridging tradition with technology</span> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -262,7 +366,7 @@
 
 
     <!-- ============================================================
-    LEADERSHIP TEAM (fixed the broken structure)
+    LEADERSHIP TEAM
     ============================================================ -->
     <section class="section-pad section-leadership" id="leadershipSection">
         <div class="container-xl">
@@ -273,7 +377,6 @@
             </div>
 
             <div class="row g-4">
-                <!-- Member 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="leader-card">
                         <div class="leader-avatar" style="background:linear-gradient(135deg,#E85D26,#FF7A1A);">
@@ -285,11 +388,10 @@
                     </div>
                 </div>
 
-                <!-- Member 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="leader-card">
                         <div class="leader-avatar" style="background:linear-gradient(135deg,#7C3AED,#9F67F0);">
-                            <span class="leader-initial">JP</span>
+                            <span class="leader-initial">JB</span>
                         </div>
                         <h3 class="leader-name">Jatin Batodadra</h3>
                         <p class="leader-title">CTO &amp; Co-founder</p>
@@ -297,15 +399,14 @@
                     </div>
                 </div>
 
-                <!-- Member 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="leader-card">
                         <div class="leader-avatar" style="background:linear-gradient(135deg,#10B981,#059669);">
-                            <span class="leader-initial">MS</span>
+                            <span class="leader-initial"></span>
                         </div>
-                        <h3 class="leader-name">Mukesh Suthar</h3>
-                        <p class="leader-title">Head of Operations</p>
-                        <p class="leader-desc">Operations specialist ensuring seamless temple management experiences across India.</p>
+                        <h3 class="leader-name"></h3>
+                        <p class="leader-title"></p>
+                        <p class="leader-desc"></p>
                     </div>
                 </div>
             </div>
@@ -338,7 +439,8 @@
             <div class="row g-4 pb-4">
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="footer-logo-box">🛕</span>
+                        <!-- Logo same as navbar -->
+                        <img src="assets/images/sewai-logo.png" alt="SEWAI Logo" style="height: 40px; width: auto; object-fit: contain;">
                         <span class="footer-brand-text">SEWAI</span>
                     </div>
                     <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
@@ -373,7 +475,7 @@
                 </div>
             </div>
             <div class="footer-divider"></div>
-            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved. Built with dedication for temples worldwide.</div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
         </div>
     </footer>
 
@@ -393,7 +495,6 @@
             const menu = document.getElementById('navbarMenu');
             let lastScroll = 0;
 
-            // ── Toggle Menu ──
             if (toggle && menu) {
                 toggle.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -429,10 +530,21 @@
             }
 
             // ── Dropdown toggle on mobile ──
-            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
-                dropdownLink.addEventListener('click', function(e) {
+            document.querySelectorAll('.dropdown-shirdi > a.dropdown-trigger').forEach(function(link) {
+                link.addEventListener('click', function(e) {
                     if (window.innerWidth <= 992) {
                         e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Sub-dropdown toggle on mobile ──
+            document.querySelectorAll('.dropdown-sub > a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
                         this.parentElement.classList.toggle('active');
                     }
                 });

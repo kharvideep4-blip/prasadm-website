@@ -22,7 +22,6 @@
     <!-- ===== FEATURES CSS ===== -->
     <link rel="stylesheet" href="../assets/css/features.css">
 
-    <!-- ===== ADDITIONAL AI FEATURES STYLES (if needed) ===== -->
     <style>
         /* ── AI specific overrides ── */
         .ai-feature-card {
@@ -289,15 +288,16 @@
         }
 
         .live-stream-thumbnail {
-            padding: 3rem 1.5rem;
+            padding: 0.5rem 0.5rem 0 0.5rem;
             text-align: center;
             margin: 0.5rem 1.5rem 1rem;
             border-radius: 16px;
-            min-height: 200px;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, #1a0a0a, #2d1a0a);
         }
 
         .live-stream-info {
@@ -359,6 +359,7 @@
             overflow-y: auto;
             margin-bottom: 1rem;
             padding-right: 4px;
+            flex: 1;
         }
 
         .chat-message {
@@ -366,6 +367,19 @@
             border-radius: 12px;
             padding: 0.6rem 0.8rem;
             margin-bottom: 0.4rem;
+        }
+
+        .chat-message.self {
+            background: var(--primary-orange, #E85D26);
+            color: #fff;
+        }
+
+        .chat-message.self .chat-user {
+            color: #FFD700;
+        }
+
+        .chat-message.self p {
+            color: #fff;
         }
 
         .chat-user {
@@ -536,6 +550,45 @@
             background: linear-gradient(135deg, #fff5ee 0%, #fde8d8 100%);
         }
 
+        .feature-page-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a0a 100%);
+            color: #fff;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-orange, #E85D26);
+            display: flex;
+            align-items: center;
+            min-height: 40vh;
+        }
+
+        .feature-page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .feature-page-hero .text-gold {
+            color: var(--primary-gold, #FFD700) !important;
+        }
+
+        .feature-page-hero .hero-line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange, #E85D26);
+            border-radius: 2px;
+            margin: 1rem auto;
+        }
+
+        .feature-page-hero .lead {
+            font-size: 1.15rem;
+            color: rgba(255, 215, 0, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 992px) {
             .ai-tabs .nav-link {
@@ -556,6 +609,13 @@
             .workflow-arrow {
                 font-size: 0.8rem;
             }
+            .feature-page-hero {
+                padding: 120px 0 40px;
+                min-height: 30vh;
+            }
+            .feature-page-hero h1 {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -567,8 +627,8 @@
                 font-size: 2rem;
             }
             .live-stream-thumbnail {
-                min-height: 150px;
-                padding: 1.5rem 1rem;
+                padding: 0.3rem 0.3rem 0 0.3rem;
+                margin: 0.3rem 0.8rem 0.5rem;
             }
             .live-stream-info {
                 font-size: 0.75rem;
@@ -583,6 +643,15 @@
             }
             .next-time {
                 font-size: 1.8rem;
+            }
+            .feature-page-hero {
+                padding: 100px 0 30px;
+            }
+            .feature-page-hero h1 {
+                font-size: 2rem;
+            }
+            .feature-page-hero .lead {
+                font-size: 1rem;
             }
         }
 
@@ -622,6 +691,15 @@
                 flex-direction: column;
                 text-align: center;
             }
+            .feature-page-hero {
+                padding: 90px 0 20px;
+            }
+            .feature-page-hero h1 {
+                font-size: 1.6rem;
+            }
+            .feature-page-hero .lead {
+                font-size: 0.85rem;
+            }
         }
     </style>
 
@@ -630,23 +708,23 @@
 <body>
 
     <!-- ============================================================
-    RESPONSIVE NAVBAR – WITH HAMBURGER TOGGLE
+    RESPONSIVE NAVBAR – SAME STRUCTURE AS HOME PAGE
     ============================================================ -->
     <nav class="navbar-shirdi" id="mainNav">
         <div class="navbar-shirdi-container">
 
-            <!-- LINE 1: Brand + Toggle Button -->
+            <!-- LINE 1: Brand + Toggle Button (correctly positioned) -->
             <div class="navbar-shirdi-top">
                 <div class="navbar-top-row">
+                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ (outside brand div) -->
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
                     <div class="navbar-shirdi-brand">
                         <img src="../assets/images/sewai-logo.png" alt="SEWAI Logo" class="brand-logo-img">
                         <span class="brand-shirdi-main">SEWAI</span>
                         <span class="brand-shirdi-sub">· Smart Temple Management</span>
                     </div>
-                    <!-- ★ HAMBURGER TOGGLE BUTTON ★ -->
-                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
                 </div>
             </div>
 
@@ -656,20 +734,39 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../about.html">About Us</a></li>
                     <li class="dropdown-shirdi">
-                        <a href="features.html">Features ▼</a>
+                        <a href="features.html" class="dropdown-trigger">Features <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                         <ul class="dropdown-shirdi-menu">
+                            <!-- Temple Services (with sub-menu) -->
+                            <li class="dropdown-sub">
+                                <a href="temple-services.html">Temple Services <i class="fas fa-chevron-right sub-arrow"></i></a>
+                                <ul class="dropdown-sub-menu">
+                                    <li><a href="temple-services/csr-temple-tourism.html">Csr Temple Tourism</a></li>
+                                    <li><a href="temple-services/temple-education.html">Temple Education</a></li>
+                                    <li><a href="temple-services/temple-placement.html">Temple Placement</a></li>
+                                    <li><a href="temple-services/temple-gurukul.html">Temple Gurukul</a></li>
+                                    <li><a href="temple-services/dawn-to-dust-service.html">Dawn to Dust Service</a></li>
+                                    <li><a href="temple-services/life-astro-service.html">Life-Astro Service</a></li>
+                                    <li><a href="temple-services/temple-maps.html">Temple Maps</a></li>
+                                    <li><a href="temple-services/bhajan-jaming.html">Bhajan Jaming</a></li>
+                                    <li><a href="temple-services/temple-security.html">Temple Security</a></li>
+                                    <li><a href="temple-services/temple-vip-moment.html">Temple VIP Moment</a></li>
+                                    <li><a href="temple-services/prasad.html">Prasad</a></li>
+                                    <li><a href="temple-services/pooja.html">Pooja</a></li>
+                                </ul>
+                            </li>
                             <li><a href="setting-up.html">Setting Up</a></li>
                             <li><a href="devotee-connect.html">Devotee Connect</a></li>
                             <li><a href="payment-gateway.html">Payment Gateway</a></li>
-                            <li><a href="calendar-events.html">Calendar Events</a></li>
+                            <li><a href="calendar-events.html">Temple Events</a></li>
                             <li><a href="hall-booking.html">Hall Booking</a></li>
-                            <li><a href="ecommerce.html">E‑commerce</a></li>
+                            <li><a href="ecommerce.html">Temple E-MarketPlace</a></li>
                             <li><a href="inventory.html">Inventory</a></li>
+                            <!-- AI Features – active -->
                             <li><a href="ai-features.html" class="active">AI Features</a></li>
                             <li><a href="procedures.html">Procedures</a></li>
                             <li><a href="smart-donations.html">Smart Donations</a></li>
-                            <!-- <li><a href="website-template.html">Website Template</a></li> -->
                             <li><a href="deva-program.html">Deva Program</a></li>
+                            <li><a href="templemerchandise.html">Temple Merchandise</a></li>
                         </ul>
                     </li>
                     <li><a href="../knowledge-base.html">Knowledge Base</a></li>
@@ -877,26 +974,34 @@
                 </div>
 
                 <!-- ============================================================
-                TAB 3: LIVE DARSHAN
+                TAB 3: LIVE DARSHAN – with YouTube Embed
                 ============================================================ -->
                 <div class="tab-pane fade" id="darshan" role="tabpanel" aria-labelledby="darshan-tab">
                     <div class="row g-4">
-                        <!-- Live Stream -->
+                        <!-- Live Stream with YouTube Embed -->
                         <div class="col-lg-8">
                             <div class="live-stream-card">
                                 <div class="live-stream-badge">🔴 LIVE</div>
-                                <div class="live-stream-thumbnail" style="background:linear-gradient(135deg,#1a0a0a,#2d1a0a);">
-                                    <span style="font-size:4rem; color:#FFD700;">🛕</span>
-                                    <p style="color:#fff; margin-top:0.5rem;">Mahakal Live Darshan</p>
-                                    <p style="color:rgba(255,255,255,0.6); font-size:0.8rem;">Experience the divine morning arati with sacred chants and offerings to Lord Shiva.</p>
+                                <div class="live-stream-thumbnail" style="background:linear-gradient(135deg,#1a0a0a,#2d1a0a); padding: 0.5rem 0.5rem 0 0.5rem; min-height: auto;">
+                                    <!-- 🔥 YOUTUBE EMBED – Mahakal Live Darshan -->
+                                    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:16px; width:100%;">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/e8sQGtU6GQs?autoplay=1&mute=1" 
+                                            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
                                 </div>
                                 <div class="live-stream-info">
                                     <span><i class="fas fa-map-pin"></i> Shree Mahakaleshwar Temple, Ujjain</span>
-                                    <span><i class="far fa-clock"></i> 01:47 AM</span>
-                                    <span><i class="fas fa-users"></i> 1,247 watching</span>
+                                    <span><i class="far fa-clock"></i> <span id="liveTime">Loading...</span></span>
+                                    <span><i class="fas fa-users"></i> <span id="viewerCount">1,247</span> watching</span>
                                 </div>
                                 <div class="live-stream-actions">
-                                    <button class="btn btn-youtube">Watch on YouTube</button>
+                                    <button class="btn btn-youtube" onclick="window.open('https://www.youtube.com/live/e8sQGtU6GQs', '_blank')">
+                                        <i class="fab fa-youtube"></i> Watch on YouTube
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -905,7 +1010,7 @@
                         <div class="col-lg-4">
                             <div class="live-chat-card">
                                 <h4>Live Chat</h4>
-                                <div class="chat-messages">
+                                <div class="chat-messages" id="chatMessages">
                                     <div class="chat-message">
                                         <span class="chat-user">DevoteeRam</span>
                                         <span class="chat-time">10:45 PM</span>
@@ -928,10 +1033,10 @@
                                     </div>
                                 </div>
                                 <div class="chat-input-group">
-                                    <input type="text" class="chat-input" placeholder="Share your devotional thoughts...">
-                                    <button class="chat-send-btn">Send</button>
+                                    <input type="text" class="chat-input" id="chatInput" placeholder="Share your devotional thoughts...">
+                                    <button class="chat-send-btn" id="chatSendBtn">Send</button>
                                 </div>
-                                <p class="chat-join-count">Join 1,247 devotees in live darshan</p>
+                                <p class="chat-join-count">Join <span id="chatCount">1,247</span> devotees in live darshan</p>
                             </div>
                         </div>
                     </div>
@@ -941,8 +1046,8 @@
                         <div class="col-md-6">
                             <div class="next-darshan-card">
                                 <span class="next-badge">Next Live Darshan</span>
-                                <div class="next-time">01:47 AM</div>
-                                <span class="next-label">Live Darshan</span>
+                                <div class="next-time" id="nextTime">05:30 AM</div>
+                                <span class="next-label">Morning Aarti</span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -980,14 +1085,15 @@
 
 
     <!-- ============================================================
-    FOOTER – ORANGE
+    FOOTER – ORANGE (fixed logo)
     ============================================================ -->
     <footer class="footer" id="footer">
         <div class="container-xl">
             <div class="row g-4 pb-4">
                 <div class="col-md-3">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="footer-logo-box">🛕</span>
+                        <!-- ✅ Fixed: logo with correct path and size -->
+                        <img src="../assets/images/sewai-logo.png" alt="SEWAI Logo" style="height: 40px; width: auto; object-fit: contain;">
                         <span class="footer-brand-text">SEWAI</span>
                     </div>
                     <p class="footer-text-sm">Smart Temple Management System — Digitizing devotion with modern solutions.</p>
@@ -997,7 +1103,7 @@
                     <ul class="footer-links">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../about.html">About Us</a></li>
-                        <li><a href="setting-up.html">Features</a></li>
+                        <li><a href="features.html">Features</a></li>
                         <li><a href="../knowledge-base.html">Knowledge Base</a></li>
                         <li><a href="../media.html">Media</a></li>
                         <li><a href="../contact.html">Contact</a></li>
@@ -1022,7 +1128,7 @@
                 </div>
             </div>
             <div class="footer-divider"></div>
-            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved. Built with dedication for temples worldwide.</div>
+            <div class="footer-copyright">&copy; 2025 SEWAI. All rights reserved.</div>
         </div>
     </footer>
 
@@ -1076,8 +1182,9 @@
                 });
             }
 
-            document.querySelectorAll('.dropdown-shirdi > a').forEach(function(dropdownLink) {
-                dropdownLink.addEventListener('click', function(e) {
+            // ── Dropdown toggle on mobile ──
+            document.querySelectorAll('.dropdown-shirdi > a.dropdown-trigger').forEach(function(link) {
+                link.addEventListener('click', function(e) {
                     if (window.innerWidth <= 992) {
                         e.preventDefault();
                         this.parentElement.classList.toggle('active');
@@ -1085,6 +1192,18 @@
                 });
             });
 
+            // ── Sub-dropdown toggle on mobile ──
+            document.querySelectorAll('.dropdown-sub > a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ── Hide navbar on scroll ──
             window.addEventListener('scroll', function() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 if (scrollTop > lastScroll && scrollTop > 100) {
@@ -1095,15 +1214,206 @@
                 lastScroll = scrollTop;
             });
 
+            // ── Dynamic hero offset ──
             const hero = document.getElementById('featureHero');
             function adjustHero() {
                 if (!navbar || !hero) return;
                 const h = navbar.offsetHeight;
                 hero.style.paddingTop = h + 'px';
-                hero.style.minHeight = 'calc(100vh - ' + h + 'px)';
+                hero.style.minHeight = 'calc(100vh - ' + 'h + 'px)';
             }
             window.addEventListener('load', adjustHero);
             window.addEventListener('resize', adjustHero);
+
+        })();
+    </script>
+
+    <!-- ===== LIVE DARSHAN + CHAT SCRIPTS ===== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ── Live time & viewer count simulation ──
+            function updateLiveInfo() {
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                const timeEl = document.getElementById('liveTime');
+                if (timeEl) timeEl.textContent = timeStr;
+
+                const viewerEl = document.getElementById('viewerCount');
+                const chatCountEl = document.getElementById('chatCount');
+                if (viewerEl) {
+                    const base = 1247;
+                    const variation = Math.floor(Math.random() * 40) - 20;
+                    viewerEl.textContent = (base + variation).toLocaleString();
+                }
+                if (chatCountEl) {
+                    const base = 1247;
+                    const variation = Math.floor(Math.random() * 40) - 20;
+                    chatCountEl.textContent = (base + variation).toLocaleString();
+                }
+            }
+
+            setInterval(updateLiveInfo, 10000);
+            updateLiveInfo();
+
+            // ── Simulated Live Chat ──
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('chatSendBtn');
+
+            const users = ['DevoteeRam', 'SpiritualSeeker', 'Bhakti123', 'TemplePriest', 'ShivaBhakta', 'GaneshDevotee', 'KrishnaPremi', 'MaaDurga'];
+            const messages = [
+                'Har Har Mahadev! 🙏',
+                'Om Namah Shivaya 🌸',
+                'Such a peaceful darshan',
+                'Feeling blessed today',
+                'Beautiful aarti! ✨',
+                'Jai Shree Mahakal! 🕉️',
+                'May Lord\'s blessings be with all',
+                'Thank you for this live darshan',
+                'Divine experience! 🙏',
+                'Har Har Mahadev! 🔱'
+            ];
+
+            function getRandomTime() {
+                const now = new Date();
+                return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            }
+
+            function addMessage(user, text, isSelf = false) {
+                const div = document.createElement('div');
+                div.className = 'chat-message' + (isSelf ? ' self' : '');
+                div.innerHTML = `
+                    <span class="chat-user">${user}</span>
+                    <span class="chat-time">${getRandomTime()}</span>
+                    <p>${text}</p>
+                `;
+                chatMessages.appendChild(div);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Send message
+            function sendMessage() {
+                const text = chatInput.value.trim();
+                if (!text) return;
+                addMessage('You', text, true);
+                chatInput.value = '';
+
+                // Auto-reply after a short delay
+                setTimeout(() => {
+                    const user = users[Math.floor(Math.random() * users.length)];
+                    const msg = messages[Math.floor(Math.random() * messages.length)];
+                    addMessage(user, msg);
+                }, 1500);
+            }
+
+            if (sendBtn) {
+                sendBtn.addEventListener('click', sendMessage);
+            }
+
+            if (chatInput) {
+                chatInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') sendMessage();
+                });
+            }
+
+            // Generate random messages every 8-15 seconds
+            setInterval(() => {
+                const user = users[Math.floor(Math.random() * users.length)];
+                const msg = messages[Math.floor(Math.random() * messages.length)];
+                addMessage(user, msg);
+            }, Math.floor(Math.random() * 7000) + 8000);
+
+            // ── Workflow Animation ──
+            const steps = document.querySelectorAll('.workflow-step');
+            const progressSpan = document.getElementById('workflowProgress');
+            const startBtn = document.getElementById('startAnimation');
+            const resetBtn = document.getElementById('resetAnimation');
+            let animationRunning = false;
+            let currentStep = -1;
+            let intervalId = null;
+
+            function resetSteps() {
+                steps.forEach(step => {
+                    step.classList.remove('active', 'completed');
+                    const status = step.querySelector('.step-status');
+                    if (status) {
+                        status.textContent = 'Pending';
+                        status.style.background = 'rgba(0,0,0,0.1)';
+                    }
+                });
+                if (progressSpan) progressSpan.textContent = '0%';
+                currentStep = -1;
+                animationRunning = false;
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            }
+
+            function startAnimation() {
+                if (animationRunning) return;
+                resetSteps();
+                animationRunning = true;
+                currentStep = -1;
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+
+                intervalId = setInterval(function() {
+                    if (currentStep >= steps.length - 1) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                        animationRunning = false;
+                        return;
+                    }
+
+                    if (currentStep >= 0) {
+                        const prevStep = steps[currentStep];
+                        prevStep.classList.remove('active');
+                        prevStep.classList.add('completed');
+                        const status = prevStep.querySelector('.step-status');
+                        if (status) {
+                            status.textContent = 'Completed';
+                            status.style.background = 'rgba(255,255,255,0.2)';
+                        }
+                    }
+
+                    currentStep++;
+                    const currentStepEl = steps[currentStep];
+                    currentStepEl.classList.add('active');
+                    const status = currentStepEl.querySelector('.step-status');
+                    if (status) {
+                        status.textContent = 'Active';
+                        status.style.background = 'rgba(255,255,255,0.2)';
+                    }
+
+                    if (progressSpan) {
+                        const progress = Math.round(((currentStep + 1) / steps.length) * 100);
+                        progressSpan.textContent = progress + '%';
+                    }
+
+                }, 1200);
+            }
+
+            if (startBtn) {
+                startBtn.addEventListener('click', startAnimation);
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    if (intervalId) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                    }
+                    resetSteps();
+                });
+            }
+
+            resetSteps();
+
         })();
     </script>
 
