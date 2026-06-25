@@ -342,30 +342,38 @@ a { text-decoration: none; color: inherit; }
 /* ── CTA Button in nav ── */
 .nav-shirdi-cta { margin-left: auto; }
 
+/* ==============================================================
+   FIXED: REQUEST QUOTE – Now a plain text link like HOME/ABOUT
+   ============================================================== */
 .btn-shirdi-cta {
-    display: inline-block;
-    background: transparent;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    background: transparent !important;
     color: #ffffff !important;
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 7px 24px;
-    border-radius: 30px;
-    border: 2px solid rgba(255,255,255,0.4);
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 6px 4px !important;           /* Matches other nav links */
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;           /* No pill shape */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-decoration: none;
     white-space: nowrap;
     line-height: 1.4;
+    transition: color 0.2s, border-color 0.2s;
+    /* No box-shadow, no transform, no background */
 }
 
 .btn-shirdi-cta:hover {
-    background: var(--primary-gold);
-    color: #1A1A2E !important;
-    border-color: var(--primary-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+    background: transparent !important;
+    color: var(--primary-gold) !important;
+    border-bottom-color: var(--primary-gold) !important;
+    transform: none !important;            /* No lifting effect */
+    box-shadow: none !important;           /* No glow */
 }
+/* ============================================================== */
 
 
 /* ============================================================
@@ -523,21 +531,31 @@ a { text-decoration: none; color: inherit; }
 
     .nav-shirdi-cta { margin: 8px 0 0 0; width: 100%; }
 
+    /* Mobile REQUEST QUOTE – now matches other mobile nav links */
     .btn-shirdi-cta {
         width: 100%;
         text-align: center;
-        padding: 12px 20px;
-        font-size: 0.9rem;
-        background: var(--primary-gold) !important;
-        color: #1a0a0a !important;
-        border-radius: 30px;
-        font-weight: 700;
-        border-color: var(--primary-gold);
+        padding: 12px 8px !important;
+        background: transparent !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        justify-content: center;
+        display: flex !important;
+        letter-spacing: 0.5px;
+        transition: background 0.2s, color 0.2s;
+        /* No box-shadow, no lift, no glow */
     }
 
     .btn-shirdi-cta:hover {
-        background: #ffe066 !important;
-        transform: translateY(-1px);
+        background: rgba(255,215,0,0.15) !important;
+        color: var(--primary-gold) !important;
+        border-bottom-color: transparent !important;
+        transform: none !important;
+        box-shadow: none !important;
     }
 }
 
@@ -550,7 +568,7 @@ a { text-decoration: none; color: inherit; }
     .nav-shirdi-links > li > a  { font-size: 0.85rem; padding: 10px 6px; }
     .dropdown-shirdi-menu a     { font-size: 0.8rem; padding: 10px 16px; min-height: 38px; }
     .dropdown-sub .dropdown-sub-menu a { font-size: 0.75rem; padding: 8px 16px; min-height: 34px; }
-    .btn-shirdi-cta       { font-size: 0.8rem; padding: 10px 16px; }
+    .btn-shirdi-cta       { font-size: 0.85rem; padding: 10px 6px !important; }
 }
 
 

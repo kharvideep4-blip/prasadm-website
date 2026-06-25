@@ -45,15 +45,16 @@
     // 2. BELL CURSOR – VISUAL ONLY (NO SOUND)
     // ============================================================
 
-    var bellCursor = document.createElement('div');
-    bellCursor.className = 'bell-cursor';
-    bellCursor.textContent = '🔔';
-    document.body.appendChild(bellCursor);
+    // var bellCursor = document.createElement('div');
+    // bellCursor.className = 'bell-cursor';
+    // bellCursor.textContent = '🔔';
+    // bellCursor.display = 'none';
+    // document.body.appendChild(bellCursor);
 
-    document.addEventListener('mousemove', function(e) {
-        bellCursor.style.left = e.clientX + 'px';
-        bellCursor.style.top = e.clientY + 'px';
-    });
+    // document.addEventListener('mousemove', function(e) {
+    //     bellCursor.style.left = e.clientX + 'px';
+    //     bellCursor.style.top = e.clientY + 'px';
+    // });
 
     function createRipple(x, y) {
         var ripple = document.createElement('div');
@@ -213,10 +214,10 @@
 // 2. BELL CURSOR + REAL INDIAN TEMPLE BELL SOUND (EMBEDDED MP3)
 // ============================================================
 
-var bellCursor = document.createElement('div');
-bellCursor.className = 'bell-cursor';
-bellCursor.textContent = '🔔';
-document.body.appendChild(bellCursor);
+// var bellCursor = document.createElement('div');
+// bellCursor.className = 'bell-cursor';
+// bellCursor.textContent = '🔔';
+// document.body.appendChild(bellCursor);
 
 document.addEventListener('mousemove', function(e) {
     bellCursor.style.left = e.clientX + 'px';
