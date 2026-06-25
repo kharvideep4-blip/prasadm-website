@@ -1,5 +1,5 @@
 /**
- * CONTACT PAGE JS – Form handling
+ * CONTACT PAGE JS – Form handling with Firestore
  * Only used on the Contact page
  */
 
@@ -8,6 +8,7 @@
 
     var form = document.getElementById('contactForm');
     var feedback = document.getElementById('formFeedback');
+    var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
 
     if (form && feedback) {
 
@@ -64,15 +65,59 @@
                 return;
             }
 
-            // Success – simulate submission
-            feedback.style.display = 'block';
-            feedback.className = 'mt-3 alert alert-success';
-            var safeName = name ? name.value.trim() : 'User';
-            feedback.textContent = 'Thank you, ' + safeName + '! Your message has been sent. We\'ll get back to you within 24 hours.';
+            // ── Prepare data ──
+            var fullName = name.value.trim();
+            var emailVal = email.value.trim();
+            var orgVal = org ? org.value.trim() : '';
+            var msgVal = message.value.trim();
 
-            // Optionally reset form
-            // form.reset();
-            // [name, email, message].forEach(function(f) { if (f) f.classList.remove('is-valid'); });
+            // ── Disable submit button ──
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            }
+
+            // ── Check if Firebase Firestore is available ──
+            if (typeof db === 'undefined') {
+                console.error('Firestore not available.');
+                feedback.style.display = 'block';
+                feedback.className = 'mt-3 alert alert-danger';
+                feedback.textContent = '❌ System error. Please try again later.';
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <i class="fas fa-arrow-right ms-2"></i>';
+                }
+                return;
+            }
+
+            // ── Save to Firestore ──
+            db.collection('contacts').add({
+                fullName: fullName,
+                email: emailVal,
+                orgName: orgVal || '',
+                message: msgVal,
+                status: 'new',
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            })
+            .then(function() {
+                feedback.style.display = 'block';
+                feedback.className = 'mt-3 alert alert-success';
+                feedback.textContent = '✅ Thank you, ' + fullName + '! Your message has been sent. We\'ll get back to you within 24 hours.';
+                form.reset();
+                [name, email, message].forEach(function(f) { if (f) f.classList.remove('is-valid'); });
+            })
+            .catch(function(error) {
+                console.error('Error submitting contact form:', error);
+                feedback.style.display = 'block';
+                feedback.className = 'mt-3 alert alert-danger';
+                feedback.textContent = '❌ Something went wrong. Please try again later.';
+            })
+            .finally(function() {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <i class="fas fa-arrow-right ms-2"></i>';
+                }
+            });
         });
 
         // Clear validation on input
